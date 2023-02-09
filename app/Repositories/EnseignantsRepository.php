@@ -61,7 +61,7 @@ class  EnseignantsRepository  implements  EnseignantsRepositoryInterface {
                 $Enseignants->save();
 
                 toastr()->success('Data has been saved successfully!');
-                return redirect()->route('parentes.index');
+                return redirect()->back();
 
 
 
