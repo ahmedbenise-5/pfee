@@ -25,15 +25,21 @@ class  EnseignantsRepository  implements  EnseignantsRepositoryInterface {
 
         public function StoreEnseignants($request){
 
-            $Enseignants =new Enseignants();
-            $Enseignants->Nom_enseignants= $request->Nom_enseignants;
-            $Enseignants->password= Hash::make($request->password);
-            $Enseignants->Genders_id= $request->Genders_id;
-            $Enseignants->specializations_id= $request->specializations_id;
-            $Enseignants->Date_join= $request->Date_join;
-            $Enseignants->Statut= $request->Statut;
-            $Enseignants->Adress= $request->Adress;
-            $Enseignants->save();
+
+                $Enseignants =new Enseignants();
+                $Enseignants->Nom_enseignants= $request->Nom_enseignants;
+                $Enseignants->email= $request->email;
+                $Enseignants->password= Hash::make($request->password);
+                $Enseignants->Genders_id= $request->Genders_id;
+                $Enseignants->specializations_id= $request->specializations_id;
+                $Enseignants->Date_join= $request->Date_join;
+                $Enseignants->Statut= $request->Statut;
+                $Enseignants->Adress= $request->Adress;
+                $Enseignants->save();
+
+
+
+
         }
 
 

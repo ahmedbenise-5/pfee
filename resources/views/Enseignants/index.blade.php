@@ -325,6 +325,21 @@
                                                 </div>
 
                                             </div>
+
+                                            <div class="col">
+                                                <div class="d-flex flex-column mb-8 fv-row">
+                                                    <!--begin::Label-->
+                                                    <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                                        <span class="required">E-mail</span>
+                                                        <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
+                                                            title="Specify a target name for future usage and reference"></i>
+                                                    </label>
+                                                    <!--end::Label-->
+                                                    <input type="text" name='email' class="form-control form-control-solid"
+                                                        placeholder="Enter Nom de enseignant" name="target_title" />
+                                                </div>
+
+                                            </div>
                                             <div class="col">
                                                 <div class="d-flex flex-column mb-8 fv-row">
                                                     <!--begin::Label-->
