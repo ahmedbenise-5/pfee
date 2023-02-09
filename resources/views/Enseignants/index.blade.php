@@ -7,6 +7,14 @@
 @section('css')
     @toastr_css
 
+
+    
+    <style>
+        table.dataTable>thead>tr>td:not(.sorting_disabled), table.dataTable>thead>tr>th:not(.sorting_disabled) {
+    padding-right: 0px !important;
+}
+    </style>
+
 @endsection
 
 
@@ -203,22 +211,15 @@
                                                             class="d-flex justify-content-start flex-column">
                                                             <a href="#"
                                                                 class="text-dark fw-bolder text-hover-primary fs-6">
-                                                                {{ $list_enseignant->Nom ? $list_enseignant->Nom : ' aucun section  ' }}
+                                                                {{ $list_enseignant->Nom_enseignants ? $list_enseignant->Nom_enseignants : ' aucun section  ' }}
                                                             </a>
                                                         </div>
                                                     </div>
                                                 </td>
                                                 <td>
-
-                                                    {{-- <a href="#"
-                                                        class="text-dark fw-bolder text-hover-primary d-block fs-6">
-                                                        {{ $list_enseignant->Classes->Nom_Classe ? $list_enseignant->Classes->Nom_Classe : ' aucun Description ' }}
-                                                    </a> --}}
-                                                </td>
-                                                <td>
                                                     <a href="#"
                                                         class="text-dark fw-bolder text-hover-primary d-block fs-6">
-                                                        @if ($list_enseignant->statut == 1)
+                                                        @if ($list_enseignant->Statut == 1)
                                                             <div class="badge badge-light-success">Acitve</div>
                                                         @else
                                                             <div class="badge badge-light-danger">Desactive</div>
@@ -227,6 +228,41 @@
 
                                                     </a>
                                                 </td>
+
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div
+                                                            class="d-flex justify-content-start flex-column">
+                                                            <a href="#"
+                                                                class="text-dark fw-bolder text-hover-primary fs-6">
+                                                                {{ $list_enseignant->Genders_id ? $list_enseignant->Genders_id : ' aucun section  ' }}
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div
+                                                            class="d-flex justify-content-start flex-column">
+                                                            <a href="#"
+                                                                class="text-dark fw-bolder text-hover-primary fs-6">
+                                                                {{ $list_enseignant->specializations_id ? $list_enseignant->specializations_id : ' aucun section  ' }}
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div
+                                                            class="d-flex justify-content-start flex-column">
+                                                            <a href="#"
+                                                                class="text-dark fw-bolder text-hover-primary fs-6">
+                                                                {{ $list_enseignant->Date_join ? $list_enseignant->Date_join : ' aucun section  ' }}
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+
                                                 <td>
                                                     <div class="d-flex justify-content flex-shrink-0">
                                                         <a href="#" data-bs-toggle="modal"
