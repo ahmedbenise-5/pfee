@@ -155,7 +155,6 @@ class ParentesController extends Controller
 
         $validator = Validator::make($request->all(), [
             'Email' => 'required|unique:parentes,Email,'.$request->id,
-            // 'Password' => 'required| min:6|regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\x])(?=.*[!$#%]).*$/',
             'Password' => 'required',
             'NomPraent' => 'required',
             'nomTravail' => 'required',
