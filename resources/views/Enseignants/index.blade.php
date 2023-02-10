@@ -8,13 +8,13 @@
     @toastr_css
 
 
-    
-    <style>
-        table.dataTable>thead>tr>td:not(.sorting_disabled), table.dataTable>thead>tr>th:not(.sorting_disabled) {
-    padding-right: 0px !important;
-}
-    </style>
 
+    <style>
+        table.dataTable>thead>tr>td:not(.sorting_disabled),
+        table.dataTable>thead>tr>th:not(.sorting_disabled) {
+            padding-right: 0px !important;
+        }
+    </style>
 @endsection
 
 
@@ -62,20 +62,27 @@
                     <div class="alert alert-danger d-flex align-items-center p-5 mb-10">
                         <!--begin::Svg Icon | path: icons/duotune/general/gen048.svg-->
                         <span class="svg-icon svg-icon-2hx svg-icon-danger me-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path opacity="0.3" d="M20.5543 4.37824L12.1798 2.02473C12.0626 1.99176 11.9376 1.99176 11.8203 2.02473L3.44572 4.37824C3.18118 4.45258 3 4.6807 3 4.93945V13.569C3 14.6914 3.48509 15.8404 4.4417 16.984C5.17231 17.8575 6.18314 18.7345 7.446 19.5909C9.56752 21.0295 11.6566 21.912 11.7445 21.9488C11.8258 21.9829 11.9129 22 12.0001 22C12.0872 22 12.1744 21.983 12.2557 21.9488C12.3435 21.912 14.4326 21.0295 16.5541 19.5909C17.8169 18.7345 18.8277 17.8575 19.5584 16.984C20.515 15.8404 21 14.6914 21 13.569V4.93945C21 4.6807 20.8189 4.45258 20.5543 4.37824Z" fill="black"></path>
-                                <path d="M10.5606 11.3042L9.57283 10.3018C9.28174 10.0065 8.80522 10.0065 8.51412 10.3018C8.22897 10.5912 8.22897 11.0559 8.51412 11.3452L10.4182 13.2773C10.8099 13.6747 11.451 13.6747 11.8427 13.2773L15.4859 9.58051C15.771 9.29117 15.771 8.82648 15.4859 8.53714C15.1948 8.24176 14.7183 8.24176 14.4272 8.53714L11.7002 11.3042C11.3869 11.6221 10.874 11.6221 10.5606 11.3042Z" fill="black"></path>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <path opacity="0.3"
+                                    d="M20.5543 4.37824L12.1798 2.02473C12.0626 1.99176 11.9376 1.99176 11.8203 2.02473L3.44572 4.37824C3.18118 4.45258 3 4.6807 3 4.93945V13.569C3 14.6914 3.48509 15.8404 4.4417 16.984C5.17231 17.8575 6.18314 18.7345 7.446 19.5909C9.56752 21.0295 11.6566 21.912 11.7445 21.9488C11.8258 21.9829 11.9129 22 12.0001 22C12.0872 22 12.1744 21.983 12.2557 21.9488C12.3435 21.912 14.4326 21.0295 16.5541 19.5909C17.8169 18.7345 18.8277 17.8575 19.5584 16.984C20.515 15.8404 21 14.6914 21 13.569V4.93945C21 4.6807 20.8189 4.45258 20.5543 4.37824Z"
+                                    fill="black"></path>
+                                <path
+                                    d="M10.5606 11.3042L9.57283 10.3018C9.28174 10.0065 8.80522 10.0065 8.51412 10.3018C8.22897 10.5912 8.22897 11.0559 8.51412 11.3452L10.4182 13.2773C10.8099 13.6747 11.451 13.6747 11.8427 13.2773L15.4859 9.58051C15.771 9.29117 15.771 8.82648 15.4859 8.53714C15.1948 8.24176 14.7183 8.24176 14.4272 8.53714L11.7002 11.3042C11.3869 11.6221 10.874 11.6221 10.5606 11.3042Z"
+                                    fill="black"></path>
                             </svg>
                         </span>
                         <!--end::Svg Icon-->
                         <div class="d-flex flex-column">
                             <h4 class="mb-1 text-danger">This is an alert</h4>
                             @foreach ($errors->all() as $error)
-                            <span>{{ $error }}</span>
+                                <span>{{ $error }}</span>
                             @endforeach
                         </div>
-                         <!--begin::Close-->
-                        <button type="button" class="position-absolute position-sm-relative m-2 m-sm-0 top-0 end-0 btn btn-icon ms-sm-auto" data-bs-dismiss="alert">
+                        <!--begin::Close-->
+                        <button type="button"
+                            class="position-absolute position-sm-relative m-2 m-sm-0 top-0 end-0 btn btn-icon ms-sm-auto"
+                            data-bs-dismiss="alert">
                             <i class="bi bi-x fs-1 text-primary"></i>
                         </button>
                     </div>
@@ -96,26 +103,32 @@
 
                                 <div class="me-4">
                                     <!--begin::Menu-->
-                                    <button type="button" class="btn btn-light-primary me-3" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+                                    <button type="button" class="btn btn-light-primary me-3" data-kt-menu-trigger="click"
+                                        data-kt-menu-placement="bottom-end">
                                         <!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
                                         <span class="svg-icon svg-icon-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                <path d="M19.0759 3H4.72777C3.95892 3 3.47768 3.83148 3.86067 4.49814L8.56967 12.6949C9.17923 13.7559 9.5 14.9582 9.5 16.1819V19.5072C9.5 20.2189 10.2223 20.7028 10.8805 20.432L13.8805 19.1977C14.2553 19.0435 14.5 18.6783 14.5 18.273V13.8372C14.5 12.8089 14.8171 11.8056 15.408 10.964L19.8943 4.57465C20.3596 3.912 19.8856 3 19.0759 3Z" fill="black"></path>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <path
+                                                    d="M19.0759 3H4.72777C3.95892 3 3.47768 3.83148 3.86067 4.49814L8.56967 12.6949C9.17923 13.7559 9.5 14.9582 9.5 16.1819V19.5072C9.5 20.2189 10.2223 20.7028 10.8805 20.432L13.8805 19.1977C14.2553 19.0435 14.5 18.6783 14.5 18.273V13.8372C14.5 12.8089 14.8171 11.8056 15.408 10.964L19.8943 4.57465C20.3596 3.912 19.8856 3 19.0759 3Z"
+                                                    fill="black"></path>
                                             </svg>
                                         </span>
-                                        <!--end::Svg Icon-->Filter</button>
-                                        <!--begin::Menu 1-->
-                                        <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" id="kt_menu_621214a8b8f66">
-                                            <!--begin::Header-->
-                                            <div class="px-7 py-5">
-                                                <div class="fs-5 text-dark fw-bolder">Filter Options</div>
-                                            </div>
-                                            <!--end::Header-->
-                                            <!--begin::Menu separator-->
-                                            <div class="separator border-gray-200"></div>
-                                            <!--end::Menu separator-->
-                                            <!--begin::Form-->
-                                            <form  action="{{URL::route('primaire')}}"  method="get">
+                                        <!--end::Svg Icon-->Filter
+                                    </button>
+                                    <!--begin::Menu 1-->
+                                    <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true"
+                                        id="kt_menu_621214a8b8f66">
+                                        <!--begin::Header-->
+                                        <div class="px-7 py-5">
+                                            <div class="fs-5 text-dark fw-bolder">Filter Options</div>
+                                        </div>
+                                        <!--end::Header-->
+                                        <!--begin::Menu separator-->
+                                        <div class="separator border-gray-200"></div>
+                                        <!--end::Menu separator-->
+                                        <!--begin::Form-->
+                                        <form action="{{ URL::route('primaire') }}" method="get">
                                             @csrf
                                             <div class="px-7 py-5">
                                                 <!--begin::Input group-->
@@ -123,29 +136,32 @@
                                                     <!--begin::Label-->
                                                     <label class="form-label fw-bold">Parent:</label>
                                                     <!--end::Label-->
-                                                        <!--begin::Input-->
-                                            <div>
-                                                <select class="form-select form-select-solid" data-control="select2"  name="Statut" data-placeholder="Select an option" data-allow-clear="true">
-                                                    <option  disabled selected> statuts </option>
-                                                 <option value="10">tous</option>
-                                                 <option value="1">Active</option>
-                                                 <option value="0">desactive</option>
-                                                </select>
-                                              </div>
-                                            <!--end::Input-->
+                                                    <!--begin::Input-->
+                                                    <div>
+                                                        <select class="form-select form-select-solid" data-control="select2"
+                                                            name="Statut" data-placeholder="Select an option"
+                                                            data-allow-clear="true">
+                                                            <option disabled selected> statuts </option>
+                                                            <option value="10">tous</option>
+                                                            <option value="1">Active</option>
+                                                            <option value="0">desactive</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--end::Input-->
                                                 </div>
                                                 <!--end::Input group-->
                                                 <!--begin::Actions-->
                                                 <div class="d-flex justify-content-end">
-                                                    <button type="reset" class="btn btn-sm btn-light btn-active-light-primary me-2">Reset</button>
+                                                    <button type="reset"
+                                                        class="btn btn-sm btn-light btn-active-light-primary me-2">Reset</button>
                                                     <button type="submit" class="btn btn-sm btn-primary">Apply</button>
                                                 </div>
                                                 <!--end::Actions-->
                                             </div>
-                                            </form>
-                                            <!--end::Form-->
-                                        </div>
-                                        <!--end::Menu 1-->
+                                        </form>
+                                        <!--end::Form-->
+                                    </div>
+                                    <!--end::Menu 1-->
                                     <!--end::Menu-->
                                 </div>
                                 <!--end::Wrapper-->
@@ -154,11 +170,12 @@
                                     data-bs-target="#kt_modal_new_target">
                                     <!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
                                     <span class="svg-icon svg-icon-3">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                            fill="none">
-                                            <rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1"
-                                                transform="rotate(-90 11.364 20.364)" fill="black" />
-                                            <rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="black" />
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none">
+                                            <rect opacity="0.5" x="11.364" y="20.364" width="16" height="2"
+                                                rx="1" transform="rotate(-90 11.364 20.364)" fill="black" />
+                                            <rect x="4.36396" y="11.364" width="16" height="2"
+                                                rx="1" fill="black" />
                                         </svg>
                                     </span>
                                     <!--end::Svg Icon-->Ajouter une Enseignant
@@ -171,17 +188,16 @@
                         <!--begin::Body-->
                         <div class="card-body py-3">
                             <!--begin::Accordion-->
-                           <!--begin::Table-->
-                           <table id="kt_datatable_example_5"  class="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4">
-                              <!--begin::Table head-->
+                            <!--begin::Table-->
+                            <table id="kt_datatable_example_5"
+                                class="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4">
+                                <!--begin::Table head-->
                                 <thead>
                                     <tr class="fw-bolder text-muted">
                                         <th class="w-25px">
-                                            <div
-                                                class="form-check form-check-sm form-check-custom form-check-solid">
+                                            <div class="form-check form-check-sm form-check-custom form-check-solid">
                                                 <input class="form-check-input" type="checkbox" value="1"
-                                                    data-kt-check="true"
-                                                    data-kt-check-target=".widget-9-check" />
+                                                    data-kt-check="true" data-kt-check-target=".widget-9-check" />
                                             </div>
                                         </th>
                                         <th class="min-w-150px">Nom de enseignant</th>
@@ -201,14 +217,13 @@
                                                 <td>
                                                     <div
                                                         class="form-check form-check-sm form-check-custom form-check-solid">
-                                                        <input class="form-check-input widget-9-check"
-                                                            type="checkbox" value="1" />
+                                                        <input class="form-check-input widget-9-check" type="checkbox"
+                                                            value="1" />
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="d-flex align-items-center">
-                                                        <div
-                                                            class="d-flex justify-content-start flex-column">
+                                                        <div class="d-flex justify-content-start flex-column">
                                                             <a href="#"
                                                                 class="text-dark fw-bolder text-hover-primary fs-6">
                                                                 {{ $list_enseignant->Nom_enseignants ? $list_enseignant->Nom_enseignants : ' aucun section  ' }}
@@ -231,30 +246,27 @@
 
                                                 <td>
                                                     <div class="d-flex align-items-center">
-                                                        <div
-                                                            class="d-flex justify-content-start flex-column">
+                                                        <div class="d-flex justify-content-start flex-column">
                                                             <a href="#"
                                                                 class="text-dark fw-bolder text-hover-primary fs-6">
-                                                                {{ $list_enseignant->Genders_id ? $list_enseignant->Genders_id : ' aucun section  ' }}
+                                                                {{ $list_enseignant->genders->Nom_g ? $list_enseignant->genders->Nom_g : ' aucun section  ' }}
                                                             </a>
                                                         </div>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="d-flex align-items-center">
-                                                        <div
-                                                            class="d-flex justify-content-start flex-column">
+                                                        <div class="d-flex justify-content-start flex-column">
                                                             <a href="#"
                                                                 class="text-dark fw-bolder text-hover-primary fs-6">
-                                                                {{ $list_enseignant->specializations_id ? $list_enseignant->specializations_id : ' aucun section  ' }}
+                                                                {{ $list_enseignant->specializations->Nom_Sp ? $list_enseignant->specializations->Nom_Sp : ' aucun section  ' }}
                                                             </a>
                                                         </div>
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="d-flex align-items-center">
-                                                        <div
-                                                            class="d-flex justify-content-start flex-column">
+                                                        <div class="d-flex justify-content-start flex-column">
                                                             <a href="#"
                                                                 class="text-dark fw-bolder text-hover-primary fs-6">
                                                                 {{ $list_enseignant->Date_join ? $list_enseignant->Date_join : ' aucun section  ' }}
@@ -270,9 +282,8 @@
                                                             class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                                             <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                                             <span class="svg-icon svg-icon-3">
-                                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                                    width="24" height="24"
-                                                                    viewBox="0 0 24 24" fill="none">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                    height="24" viewBox="0 0 24 24" fill="none">
                                                                     <path opacity="0.3"
                                                                         d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z"
                                                                         fill="black" />
@@ -288,9 +299,8 @@
                                                             class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
                                                             <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                                                             <span class="svg-icon svg-icon-3">
-                                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                                    width="24" height="24"
-                                                                    viewBox="0 0 24 24" fill="none">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                    height="24" viewBox="0 0 24 24" fill="none">
                                                                     <path
                                                                         d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z"
                                                                         fill="black" />
@@ -307,19 +317,278 @@
                                                     </div>
                                                 </td>
                                             </tr>
-                                               <!-- Modal -->
-                                        <!--end::Modal -->
+
+                                            <!-- Modal update  -->
+                                            <div class="modal fade" tabindex="-1" id="update{{ $list_enseignant->id }}">
+                                                <div class="modal-dialog mw-900px">
+                                                    <div class="modal-content">
+                                                        <div class="modal-body">
+                                                            <form autocomplete="off"
+                                                                action="{{ route('enseignants.update', 'update') }}"
+                                                                method="POST" id="kt_modal_new_target_form"
+                                                                class="form" action="#">
+                                                                @method('patch')
+                                                                @csrf
+                                                                <!--begin::Heading-->
+                                                                <div class="mb-13 text-center">
+                                                                    <!--begin::Title-->
+                                                                    <h1 class="mb-3">Set First Target</h1>
+                                                                    <!--end::Title-->
+                                                                    <!--begin::Description-->
+                                                                    <div class="text-muted fw-bold fs-5">If you need more
+                                                                        info, please check
+                                                                        <a href="#"
+                                                                            class="fw-bolder link-primary">Project
+                                                                            Guidelines</a>.
+                                                                    </div>
+                                                                    <!--end::Description-->
+                                                                </div>
+                                                                <!--end::Heading-->
+                                                                <!--begin::Input group-->
+
+                                                                <input type="hidden" name="id"
+                                                                    id="{{ $list_enseignant->id }}"
+                                                                    value="{{ $list_enseignant->id }}">
+
+                                                                <div class="row">
+                                                                    <div class="col">
+                                                                        <div class="d-flex flex-column mb-8 fv-row">
+                                                                            <!--begin::Label-->
+                                                                            <label
+                                                                                class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                                                                <span class="required">Nom de
+                                                                                    enseignant</span>
+                                                                                <i class="fas fa-exclamation-circle ms-2 fs-7"
+                                                                                    data-bs-toggle="tooltip"
+                                                                                    title="Specify a target name for future usage and reference"></i>
+                                                                            </label>
+                                                                            <!--end::Label-->
+                                                                            <input type="text" name='Nom_enseignants'
+                                                                                class="form-control form-control-solid"
+                                                                                placeholder="Enter Nom de enseignant"
+                                                                                value="{{ $list_enseignant->Nom_enseignants }}" />
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <div class="col">
+                                                                        <div class="d-flex flex-column mb-8 fv-row">
+                                                                            <!--begin::Label-->
+                                                                            <label
+                                                                                class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                                                                <span class="required">E-mail</span>
+                                                                                <i class="fas fa-exclamation-circle ms-2 fs-7"
+                                                                                    data-bs-toggle="tooltip"
+                                                                                    title="Specify a target name for future usage and reference"></i>
+                                                                            </label>
+                                                                            <!--end::Label-->
+                                                                            <input type="text" name='email'
+                                                                                class="form-control form-control-solid"
+                                                                                placeholder="Enter Nom de enseignant"
+                                                                                value="{{ $list_enseignant->email }}" />
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        <div class="d-flex flex-column mb-8 fv-row">
+                                                                            <!--begin::Label-->
+                                                                            <label
+                                                                                class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                                                                <span class="required">Password</span>
+                                                                                <i class="fas fa-exclamation-circle ms-2 fs-7"
+                                                                                    data-bs-toggle="tooltip"
+                                                                                    autocomplete="off"
+                                                                                    title="Specify a target name for future usage and reference"></i>
+                                                                            </label>
+                                                                            <!--end::Label-->
+                                                                            <input type="password" name='password'
+                                                                                class="form-control form-control-solid"
+                                                                                name="target_title" autocomplete="off" />
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                </div>
+
+                                                                <div class="row">
+                                                                    <div class="col">
+                                                                        <div class="d-flex flex-column mb-8 fv-row">
+                                                                            <!--begin::Label-->
+                                                                            <label
+                                                                                class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                                                                <span class="required">Genders</span>
+                                                                                <i class="fas fa-exclamation-circle ms-2 fs-7"
+                                                                                    data-bs-toggle="tooltip"
+                                                                                    title="Specify a target name for future usage and reference"></i>
+                                                                            </label>
+                                                                            <!--end::Label-->
+                                                                            <select class="form-select" name="Genders_id"
+                                                                                data-placeholder="Select an option">
+                                                                                @foreach ($list_genders as $genders)
+                                                                                    <option value="{{ $genders->id }}"
+                                                                                        {{ $genders->id == old('genders', $list_enseignant->Genders_id) ? 'selected' : '' }}>
+                                                                                        {{ $genders->Nom_g }}</option>
+                                                                                @endforeach
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col">
+                                                                        <div class="d-flex flex-column mb-8 fv-row">
+                                                                            <!--begin::Label-->
+                                                                            <label
+                                                                                class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                                                                <span
+                                                                                    class="required">Specialisation</span>
+                                                                                <i class="fas fa-exclamation-circle ms-2 fs-7"
+                                                                                    data-bs-toggle="tooltip"
+                                                                                    title="Specify a target name for future usage and reference"></i>
+                                                                            </label>
+                                                                            <!--end::Label-->
+                                                                            <select class="form-select"
+                                                                                name="specializations_id"
+                                                                                data-placeholder="Select an option">
+                                                                                @foreach ($list_specialisation as $specialisation)
+                                                                                    <option
+                                                                                        value="{{ $specialisation->id }}"
+                                                                                        {{ $specialisation->id == old('specialisation', $list_enseignant->specializations_id) ? 'selected' : '' }}>
+                                                                                        {{ $specialisation->Nom_Sp }}
+                                                                                    </option>
+                                                                                @endforeach
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="row">
+                                                                    <div class="col">
+
+                                                                        <div class="d-flex flex-column mb-8 fv-row">
+                                                                            <!--begin::Label-->
+                                                                            <label
+                                                                                class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                                                                <span class="required">Date joint</span>
+                                                                                <i class="fas fa-exclamation-circle ms-2 fs-7"
+                                                                                    data-bs-toggle="tooltip"
+                                                                                    title="Specify a target name for future usage and reference"></i>
+                                                                            </label>
+                                                                            <!--end::Label-->
+                                                                            <input class="form-control" type="date"
+                                                                                name="Date_join"
+                                                                                value="{{ $list_enseignant->Date_join }}">
+
+                                                                        </div>
+
+                                                                    </div>
+
+                                                                    <div class="col">
+                                                                        <div class="d-flex flex-column mb-8 fv-row">
+                                                                            <!--begin::Label-->
+                                                                            <label
+                                                                                class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                                                                <span class="required">Statut</span>
+                                                                                <i class="fas fa-exclamation-circle ms-2 fs-7"
+                                                                                    data-bs-toggle="tooltip"
+                                                                                    title="Specify a target name for future usage and reference"></i>
+                                                                            </label>
+                                                                            <!--end::Label-->
+                                                                            <select class="form-select" name="Statut"
+                                                                                data-placeholder="Select an option">
+                                                                                <option value="1"
+                                                                                    @if ($list_enseignant->Statut == '1') {{ 'selected' }} @endif>
+                                                                                    Active</option>
+                                                                                <option value="2"
+                                                                                    @if ($list_enseignant->Statut == '2') {{ 'selected' }} @endif>
+                                                                                    Desactive</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="row">
+
+                                                                    <div
+                                                                        class="d-flex flex-column mb-8 fv-row fv-plugins-icon-container">
+                                                                        <label
+                                                                            class="fs-6 fw-bold mb-2 required">Adresse</label>
+                                                                        <textarea class="form-control form-control-solid" rows="4" name="Adress"
+                                                                            placeholder="Type your ticket description" style="height: 137px;">{{ $list_enseignant->Adress }}</textarea>
+                                                                        <div
+                                                                            class="fv-plugins-message-container invalid-feedback">
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
 
 
-                                          <!-- modul delte -->
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-light"
+                                                                        data-bs-dismiss="modal">Close</button>
+                                                                    <button type="submit" class="btn btn-primary">Save
+                                                                        changes</button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end::Modal -->
 
-                                        <!-- end modal delete -->
+
+                                            <!-- modul delte -->
+
+                                            <div class="modal fade" tabindex="-1" id="delete{{ $list_enseignant->id }}">
+                                                <div class="modal-dialog mw-650px">
+                                                    <div class="modal-content">
+                                                        <div class="modal-body">
+                                                            <form action="{{ URL::route('enseignants.destroy', 'delete') }}"
+                                                                method="POST" id="kt_modal_new_target_form"
+                                                                class="form">
+                                                                @method('delete')
+                                                                @csrf
+                                                                <!--begin::Heading-->
+                                                                <div class="mb-13 text-center">
+                                                                    <!--begin::Title-->
+                                                                    <h1 class="mb-3">Set First Target</h1>
+                                                                    <!--end::Title-->
+                                                                    <!--begin::Description-->
+                                                                    <div class="text-muted fw-bold fs-5">If you need
+                                                                        more info, please check
+                                                                        <a href="#"
+                                                                            class="fw-bolder link-primary">Project
+                                                                            Guidelines</a>.
+                                                                    </div>
+                                                                    <!--end::Description-->
+                                                                </div>
+                                                                <!--end::Heading-->
+                                                                <!--begin::Input group-->
+                                                                <div class="d-flex flex-column mb-8 fv-row">
+                                                                    <!--begin::Label-->
+                                                                    <label
+                                                                        class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                                                        <span class="required">voulez-vous
+                                                                            supprimer Enseignant </span>
+                                                                        <code>{{ $list_enseignant->Nom_enseignants }}</code>
+                                                                        <input type="hidden" id="id" name="id"
+                                                                            value="{{ $list_enseignant->id }}">
+                                                                    </label>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-light"
+                                                                        data-bs-dismiss="modal">Close</button>
+                                                                    <button type="submit" class="btn btn-primary">Supprimer</button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- end modal delete -->
                                         @endforeach
                                     @endif
                                 </tbody>
                                 <!--end::Table body-->
-                           </table>
-                       <!--end::Table-->
+                            </table>
+                            <!--end::Table-->
 
                         </div>
                         <!--begin::Body-->
@@ -329,8 +598,9 @@
                             <div class="modal-dialog mw-900px">
                                 <div class="modal-content">
                                     <div class="modal-body">
-                                        <form action="{{ route('enseignants.store') }}" method="POST" id="kt_modal_new_target_form"
-                                            class="form" action="#">
+                                        <form action="{{ route('enseignants.store') }}" method="POST"
+                                            autocomplete="off" id="kt_modal_new_target_form" class="form"
+                                            action="#">
                                             @csrf
                                             <!--begin::Heading-->
                                             <div class="mb-13 text-center">
@@ -339,7 +609,8 @@
                                                 <!--end::Title-->
                                                 <!--begin::Description-->
                                                 <div class="text-muted fw-bold fs-5">If you need more info, please check
-                                                    <a href="#" class="fw-bolder link-primary">Project Guidelines</a>.
+                                                    <a href="#" class="fw-bolder link-primary">Project
+                                                        Guidelines</a>.
                                                 </div>
                                                 <!--end::Description-->
                                             </div>
@@ -347,49 +618,53 @@
                                             <!--begin::Input group-->
 
                                             <div class="row">
-                                            <div class="col">
-                                                <div class="d-flex flex-column mb-8 fv-row">
-                                                    <!--begin::Label-->
-                                                    <label class="d-flex align-items-center fs-6 fw-bold mb-2">
-                                                        <span class="required">Nom de enseignant</span>
-                                                        <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
-                                                            title="Specify a target name for future usage and reference"></i>
-                                                    </label>
-                                                    <!--end::Label-->
-                                                    <input type="text" name='Nom_enseignants' class="form-control form-control-solid"
-                                                        placeholder="Enter Nom de enseignant" name="target_title" />
+                                                <div class="col">
+                                                    <div class="d-flex flex-column mb-8 fv-row">
+                                                        <!--begin::Label-->
+                                                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                                            <span class="required">Nom de enseignant</span>
+                                                            <i class="fas fa-exclamation-circle ms-2 fs-7"
+                                                                data-bs-toggle="tooltip"
+                                                                title="Specify a target name for future usage and reference"></i>
+                                                        </label>
+                                                        <!--end::Label-->
+                                                        <input type="text" name='Nom_enseignants'
+                                                            class="form-control form-control-solid"
+                                                            placeholder="Enter Nom de enseignant" name="target_title" />
+                                                    </div>
+
                                                 </div>
 
-                                            </div>
+                                                <div class="col">
+                                                    <div class="d-flex flex-column mb-8 fv-row">
+                                                        <!--begin::Label-->
+                                                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                                            <span class="required">E-mail</span>
+                                                            <i class="fas fa-exclamation-circle ms-2 fs-7"
+                                                                data-bs-toggle="tooltip"
+                                                                title="Specify a target name for future usage and reference"></i>
+                                                        </label>
+                                                        <!--end::Label-->
+                                                        <input type="text" name='email'
+                                                            class="form-control form-control-solid" autocomplete="off" />
+                                                    </div>
 
-                                            <div class="col">
-                                                <div class="d-flex flex-column mb-8 fv-row">
-                                                    <!--begin::Label-->
-                                                    <label class="d-flex align-items-center fs-6 fw-bold mb-2">
-                                                        <span class="required">E-mail</span>
-                                                        <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
-                                                            title="Specify a target name for future usage and reference"></i>
-                                                    </label>
-                                                    <!--end::Label-->
-                                                    <input type="text" name='email' class="form-control form-control-solid"
-                                                        placeholder="Enter Nom de enseignant" name="target_title" />
                                                 </div>
+                                                <div class="col">
+                                                    <div class="d-flex flex-column mb-8 fv-row">
+                                                        <!--begin::Label-->
+                                                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                                            <span class="required">Password</span>
+                                                            <i class="fas fa-exclamation-circle ms-2 fs-7"
+                                                                data-bs-toggle="tooltip"
+                                                                title="Specify a target name for future usage and reference"></i>
+                                                        </label>
+                                                        <!--end::Label-->
+                                                        <input type="password" name='password'
+                                                            class="form-control form-control-solid" autocomplete="off" />
+                                                    </div>
 
-                                            </div>
-                                            <div class="col">
-                                                <div class="d-flex flex-column mb-8 fv-row">
-                                                    <!--begin::Label-->
-                                                    <label class="d-flex align-items-center fs-6 fw-bold mb-2">
-                                                        <span class="required">Password</span>
-                                                        <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
-                                                            title="Specify a target name for future usage and reference"></i>
-                                                    </label>
-                                                    <!--end::Label-->
-                                                    <input type="password" name='password' class="form-control form-control-solid"
-                                                        placeholder="Enter Nom de enseignant" name="target_title" />
                                                 </div>
-
-                                            </div>
 
                                             </div>
 
@@ -399,14 +674,16 @@
                                                         <!--begin::Label-->
                                                         <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                                                             <span class="required">Genders</span>
-                                                            <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
+                                                            <i class="fas fa-exclamation-circle ms-2 fs-7"
+                                                                data-bs-toggle="tooltip"
                                                                 title="Specify a target name for future usage and reference"></i>
                                                         </label>
                                                         <!--end::Label-->
-                                                        <select class="form-select" name="Genders_id" data-placeholder="Select an option">
-                                                            @foreach ($list_genders as  $genders)
-                                                            <option value="{{ $genders->id }}">{{ $genders->Nom_g }}</option>
-
+                                                        <select class="form-select" name="Genders_id"
+                                                            data-placeholder="Select an option">
+                                                            @foreach ($list_genders as $genders)
+                                                                <option value="{{ $genders->id }}">{{ $genders->Nom_g }}
+                                                                </option>
                                                             @endforeach
                                                         </select>
                                                     </div>
@@ -416,13 +693,16 @@
                                                         <!--begin::Label-->
                                                         <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                                                             <span class="required">Specialisation</span>
-                                                            <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
+                                                            <i class="fas fa-exclamation-circle ms-2 fs-7"
+                                                                data-bs-toggle="tooltip"
                                                                 title="Specify a target name for future usage and reference"></i>
                                                         </label>
                                                         <!--end::Label-->
-                                                        <select class="form-select" name="specializations_id" data-placeholder="Select an option">
-                                                            @foreach ( $list_specialisation as $specialisation )
-                                                            <option value="{{ $specialisation->id }}">{{ $specialisation->Nom_Sp }}</option>
+                                                        <select class="form-select" name="specializations_id"
+                                                            data-placeholder="Select an option">
+                                                            @foreach ($list_specialisation as $specialisation)
+                                                                <option value="{{ $specialisation->id }}">
+                                                                    {{ $specialisation->Nom_Sp }}</option>
                                                             @endforeach
                                                         </select>
                                                     </div>
@@ -436,7 +716,8 @@
                                                         <!--begin::Label-->
                                                         <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                                                             <span class="required">Date joint</span>
-                                                            <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
+                                                            <i class="fas fa-exclamation-circle ms-2 fs-7"
+                                                                data-bs-toggle="tooltip"
                                                                 title="Specify a target name for future usage and reference"></i>
                                                         </label>
                                                         <!--end::Label-->
@@ -446,34 +727,39 @@
 
                                                 </div>
 
-                                            <div class="col">
-                                                <div class="d-flex flex-column mb-8 fv-row">
-                                                    <!--begin::Label-->
-                                                    <label class="d-flex align-items-center fs-6 fw-bold mb-2">
-                                                        <span class="required">Statut</span>
-                                                        <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
-                                                            title="Specify a target name for future usage and reference"></i>
-                                                    </label>
-                                                    <!--end::Label-->
-                                                    <select class="form-select" name="Statut" data-placeholder="Select an option">
-                                                        <option value="1">Active</option>
-                                                        <option value="2">Desactive</option>
-                                                    </select>
+                                                <div class="col">
+                                                    <div class="d-flex flex-column mb-8 fv-row">
+                                                        <!--begin::Label-->
+                                                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                                            <span class="required">Statut</span>
+                                                            <i class="fas fa-exclamation-circle ms-2 fs-7"
+                                                                data-bs-toggle="tooltip"
+                                                                title="Specify a target name for future usage and reference"></i>
+                                                        </label>
+                                                        <!--end::Label-->
+                                                        <select class="form-select" name="Statut"
+                                                            data-placeholder="Select an option">
+                                                            <option value="1">Active</option>
+                                                            <option value="2">Desactive</option>
+                                                        </select>
+                                                    </div>
                                                 </div>
-                                            </div>
                                             </div>
 
                                             <div class="row">
 
-                                            <div class="d-flex flex-column mb-8 fv-row fv-plugins-icon-container">
-                                                <label class="fs-6 fw-bold mb-2 required" >Adresse</label>
-                                                <textarea class="form-control form-control-solid"  rows="4" name="Adress" placeholder="Type your ticket description" style="height: 137px;"></textarea>
-                                            <div class="fv-plugins-message-container invalid-feedback"></div></div>
+                                                <div class="d-flex flex-column mb-8 fv-row fv-plugins-icon-container">
+                                                    <label class="fs-6 fw-bold mb-2 required">Adresse</label>
+                                                    <textarea class="form-control form-control-solid" rows="4" name="Adress"
+                                                        placeholder="Type your ticket description" style="height: 137px;"></textarea>
+                                                    <div class="fv-plugins-message-container invalid-feedback"></div>
+                                                </div>
                                             </div>
 
 
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-light"
+                                                    data-bs-dismiss="modal">Close</button>
                                                 <button type="submit" class="btn btn-primary">Save changes</button>
                                             </div>
                                         </form>
@@ -499,9 +785,7 @@
 @endsection
 
 @section('scripts')
-
-
-{{-- <script type="text/javascript">
+    {{-- <script type="text/javascript">
 $(document).ready(function(){
     $('#datepicker').datepicker();
 });
@@ -510,7 +794,7 @@ $(document).ready(function(){
     @toastr_js
     @toastr_render
     {{-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> --}}
-{{--
+    {{--
     <script>
                 $(document).ready(function () {
                     $('select[name="Niveauxdetudes_id"]').on('change', function () {
@@ -534,9 +818,4 @@ $(document).ready(function(){
                     });
                 });
     </script> --}}
-
-
-
-
-
 @endsection
