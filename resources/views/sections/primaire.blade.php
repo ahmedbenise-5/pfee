@@ -328,6 +328,25 @@
                                                                 </select>
                                                             </div>
 
+                                                            <div class="d-flex flex-column mb-8">
+                                                                <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                                                    <span class="required">Enseignants</span>
+                                                                </label>
+                                                                <select class="form-select " id="multiple-checkboxes" multiple="multiple"
+                                                                    name="enseignant_id[]">
+                                                                    {{-- @foreach ($enseignants as $enseignant )
+                                                                    <option  value="{{$enseignant->id}}"
+                                                                        {{ $enseignant->id == old('enseignant', $enseignant->enseignant_id) ? 'selected' : '' }}
+                                                                        >{{$enseignant->Nom_enseignants}}</option>
+                                                                    @endforeach --}}
+
+                                                                    @foreach($enseignants as $tag)
+                                                                    <option value="{{$tag->id}}" {{in_array($tag->id, old("enseignant_id") ?: []) ? "selected": ""}}>{{$tag->Nom_enseignants}}</option>
+                                                                    @endforeach
+                                                                    
+                                                                </select>
+                                                            </div>
+
 
                                                             <!--end::Input group-->
                                                             <div class="mb-10">

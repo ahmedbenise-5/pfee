@@ -19,7 +19,8 @@ class DatabaseSeeder extends Seeder
             ReligionTableSeeder::class,
             GenreTableSeeder::class,
             SpecialitesTableSeeder::class,
-            NiveauxdetudeTableSeeder::class
+            NiveauxdetudeTableSeeder::class,
+            UsersTableSeeder::class
         ]);
     }
 }
