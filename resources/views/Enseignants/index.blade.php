@@ -505,6 +505,33 @@
                                                                 </div>
 
                                                                 <div class="row">
+                                                                    <div class="col">
+                                                                        <div class="d-flex flex-column mb-8 fv-row">
+                                                                            <!--begin::Label-->
+                                                                            <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                                                                <span class="required">Niveaux de etudes</span>
+                                                                                <i class="fas fa-exclamation-circle ms-2 fs-7"
+                                                                                    data-bs-toggle="tooltip"
+                                                                                    title="Specify a target name for future usage and reference"></i>
+                                                                            </label>
+                                                                            <!--end::Label-->
+                                                                            <select class="form-select" name="niveaux_etudes"
+                                                                                data-placeholder="Select an option">
+                                                                                <option value="Primaire"
+                                                                                @if ($list_enseignant->niveaux_etudes == 'Primaire') {{ 'selected' }} @endif
+                                                                                >Primaire</option>
+                                                                                <option value="Lycee"
+                                                                                @if ($list_enseignant->niveaux_etudes == 'Lycee') {{ 'selected' }} @endif
+                                                                                >Lycee</option>
+                                                                                <option value="College"
+                                                                                @if ($list_enseignant->niveaux_etudes == 'College') {{ 'selected' }} @endif
+                                                                                >College</option>
+                                                                            </select>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="row">
 
                                                                     <div
                                                                         class="d-flex flex-column mb-8 fv-row fv-plugins-icon-container">
@@ -741,6 +768,27 @@
                                                             data-placeholder="Select an option">
                                                             <option value="1">Active</option>
                                                             <option value="2">Desactive</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col">
+                                                    <div class="d-flex flex-column mb-8 fv-row">
+                                                        <!--begin::Label-->
+                                                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                                            <span class="required">Niveaux de etudes</span>
+                                                            <i class="fas fa-exclamation-circle ms-2 fs-7"
+                                                                data-bs-toggle="tooltip"
+                                                                title="Specify a target name for future usage and reference"></i>
+                                                        </label>
+                                                        <!--end::Label-->
+                                                        <select class="form-select" name="niveaux_etudes"
+                                                            data-placeholder="Select an option">
+                                                            <option value="Primaire">Primaire</option>
+                                                            <option value="Lycee">Lycee</option>
+                                                            <option value="College">College</option>
                                                         </select>
                                                     </div>
                                                 </div>

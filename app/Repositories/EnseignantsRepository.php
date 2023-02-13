@@ -42,6 +42,7 @@ class  EnseignantsRepository  implements EnseignantsRepositoryInterface
             'Date_join' => 'required',
             'Statut' => 'required',
             'Adress' => 'required',
+            'niveaux_etudes' => 'required',
 
         ], []);
         if ($validator->fails()) {
@@ -57,6 +58,7 @@ class  EnseignantsRepository  implements EnseignantsRepositoryInterface
         $Enseignants->password = Hash::make($request->password);
         $Enseignants->Genders_id = $request->Genders_id;
         $Enseignants->specializations_id = $request->specializations_id;
+        $Enseignants->niveaux_etudes = $request->niveaux_etudes;
         $Enseignants->Date_join = $request->Date_join;
         $Enseignants->Statut = $request->Statut;
         $Enseignants->Adress = $request->Adress;
@@ -81,6 +83,7 @@ class  EnseignantsRepository  implements EnseignantsRepositoryInterface
             'Date_join' => 'required',
             'Statut' => 'required',
             'Adress' => 'required',
+            'niveaux_etudes' => 'required',
 
         ], []);
         if ($validator->fails()) {
@@ -98,6 +101,7 @@ class  EnseignantsRepository  implements EnseignantsRepositoryInterface
         $Enseignants->Genders_id = $request->Genders_id;
         $Enseignants->specializations_id = $request->specializations_id;
         $Enseignants->Date_join = $request->Date_join;
+        $Enseignants->niveaux_etudes = $request->niveaux_etudes;
         $Enseignants->Statut = $request->Statut;
         $Enseignants->Adress = $request->Adress;
         $Enseignants->save();

@@ -24,4 +24,8 @@ class Enseignants extends Model
         return $this->belongsTo('App\Models\genders' ,'Genders_id');
     }
 
+    public function Sections(){
+        return $this->belongsToMany('App\Models\Sections','_sections__enseignants');
+    }
+
 }

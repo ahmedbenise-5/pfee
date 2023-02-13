@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\niveauxdetudes;
 use App\Models\Classes;
+use App\Models\Enseignants;
 use App\Models\Sections;
 use Illuminate\Support\Facades\Validator;
 
@@ -79,6 +80,7 @@ class SectionsController extends Controller
         $sections->classes_id = $request->classes_id;
         $sections->statut = $status_id;
         $sections->save();
+        $sections->Enseignants()->attach($request->enseignant_id);
         toastr()->success('Data has been saved successfully!');
         return redirect()->back();
 
@@ -219,7 +221,8 @@ class SectionsController extends Controller
         $list_sections= Sections::where('Niveauxdetudes_id',$list_niveauetudes->id)->get();
     }
 
-        return view('sections.primaire',compact('list_niveauetudes','list_classes','list_sections'));
+        $enseignants = Enseignants::where('niveaux_etudes','Primaire')->get();
+        return view('sections.primaire',compact('list_niveauetudes','list_classes','list_sections','enseignants'));
 
     }
 
@@ -247,8 +250,8 @@ class SectionsController extends Controller
             $list_sections= Sections::where('Niveauxdetudes_id',$list_niveauetudes->id)->get();
         }
 
-
-        return view('sections.lycee',compact('list_niveauetudes','list_classes','list_sections'));
+        $enseignants = Enseignants::where('niveaux_etudes','Lycee')->get();
+        return view('sections.lycee',compact('list_niveauetudes','list_classes','list_sections','enseignants'));
 
 
     }
@@ -276,7 +279,8 @@ class SectionsController extends Controller
             $list_classes =Classes::where('Niveauxdetudes_id',$list_niveauetudes->id)->get();
             $list_sections= Sections::where('Niveauxdetudes_id',$list_niveauetudes->id)->get();
         }
-        return view('sections.college',compact('list_niveauetudes','list_classes','list_sections'));
+        $enseignants = Enseignants::where('niveaux_etudes','College')->get();
+        return view('sections.college',compact('list_niveauetudes','list_classes','list_sections','enseignants'));
     }
 
     public function test_b(){

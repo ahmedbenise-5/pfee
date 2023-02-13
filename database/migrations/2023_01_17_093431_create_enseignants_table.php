@@ -18,6 +18,7 @@ class CreateEnseignantsTable extends Migration
             $table->string('Nom_enseignants');
             $table->string('email');
             $table->string('password', 60);
+            $table->string('niveaux_etudes');
             $table->string('Statut');
             $table->bigInteger('Genders_id')->unsigned();
             $table->bigInteger('specializations_id')->unsigned();
