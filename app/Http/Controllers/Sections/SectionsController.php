@@ -24,6 +24,7 @@ class SectionsController extends Controller
         //
         $niveauetudes = niveauxdetudes::with(['Sections'])->get();
         $list_niveauetudes =niveauxdetudes::all();
+
         return view('sections.index',compact('list_niveauetudes','niveauetudes'));
     }
 
@@ -74,11 +75,17 @@ class SectionsController extends Controller
         }
 
 
+        // $feat = [];
+        // foreach ($request->enseignant_id as $key => $n){
+        //   $feat[$n];
+        // }
+
         $sections= new  Sections();
         $sections->nom_section = $request->nom_section;
         $sections->Niveauxdetudes_id =$request->Niveauxdetudes_id;
         $sections->classes_id = $request->classes_id;
         $sections->statut = $status_id;
+        $sections->enseignant_id = json_encode($request->enseignant_id);
         $sections->save();
         $sections->Enseignants()->attach($request->enseignant_id);
         toastr()->success('Data has been saved successfully!');

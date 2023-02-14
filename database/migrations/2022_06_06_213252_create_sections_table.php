@@ -19,6 +19,7 @@ class CreateSectionsTable extends Migration
             $table->integer('statut');
             $table->bigInteger('Niveauxdetudes_id')->unsigned();
             $table->bigInteger('classes_id')->unsigned();
+            $table->string('enseignant_id');
             // foreign key
             $table->foreign('Niveauxdetudes_id')->references('id')->on('niveauxdetudes')->onDelete('cascade');
             $table->foreign('classes_id')->references('id')->on('classes')->onDelete('cascade');

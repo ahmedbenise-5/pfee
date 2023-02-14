@@ -340,10 +340,16 @@
                                                                         >{{$enseignant->Nom_enseignants}}</option>
                                                                     @endforeach --}}
 
-                                                                    @foreach($enseignants as $tag)
-                                                                    <option value="{{$tag->id}}" {{in_array($tag->id, old("enseignant_id") ?: []) ? "selected": ""}}>{{$tag->Nom_enseignants}}</option>
+                                                                    @foreach($enseignants as $row)
+                                                                    <option value="{{$row->id}}"
+
+                                                                        {{-- @if (in_array($tag->id, old('enseignant_id'))) selected @endif --}}
+
+                                                                        {{ in_array($row->id, json_decode($list_section->enseignant_id)) ? 'selected' : '' }}
+
+                                                                        >{{$row->Nom_enseignants}}</option>
                                                                     @endforeach
-                                                                    
+
                                                                 </select>
                                                             </div>
 
@@ -476,7 +482,6 @@
                                                     <span class="required">Nom niveaux de etudes</span>
                                                 </label>
                                                 <select class="form-select " name="Niveauxdetudes_id"  onchange="console.log($(this).val())">
-                                                    <option disabled="" selected=""> niveaux de etudes </option>
                                                     {{-- @foreach ($list_niveauetudes as $list_niveauetude ) --}}
                                                     <option value="{{$list_niveauetudes->id}}"  >{{$list_niveauetudes->Nom}}</option>
                                                     {{-- @endforeach --}}
@@ -490,7 +495,6 @@
                                                 </label>
                                                 <select class="form-select "
                                                     name="classes_id">
-                                                    <option disabled="" selected=""> Classes </option>
                                                     @foreach ($list_classes as $list_classe )
                                                     <option value="{{$list_classe->id}}">{{$list_classe->Nom_Classe}}</option>
                                                     @endforeach
