@@ -162,6 +162,7 @@ class SectionsController extends Controller
         $sections->nom_section = $request->nom_section;
         $sections->Niveauxdetudes_id =$request->Niveauxdetudes_id;
         $sections->classes_id = $request->classes_id;
+        $sections->enseignant_id = json_encode($request->enseignant_id);
         $sections->statut = $status_id;
         $sections->save();
         // dd($sections);

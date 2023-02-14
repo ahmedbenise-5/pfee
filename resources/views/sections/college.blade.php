@@ -315,17 +315,27 @@
                                                                 </select>
                                                             </div>
 
+
                                                             <div class="d-flex flex-column mb-8">
                                                                 <label class="d-flex align-items-center fs-6 fw-bold mb-2">
                                                                     <span class="required">Enseignants</span>
                                                                 </label>
                                                                 <select class="form-select " id="multiple-checkboxes" multiple="multiple"
-                                                                    name="classes_id">
-                                                                    @foreach ($enseignants as $enseignant )
-                                                                    <option value="{{$enseignant->id}}">{{$enseignant->Nom_enseignants}}</option>
+                                                                    name="enseignant_id[]">
+
+                                                                    @foreach($enseignants as $row)
+                                                                    <option value="{{$row->id}}"
+
+                                                                        {{-- @if (in_array($tag->id, old('enseignant_id'))) selected @endif --}}
+
+                                                                        {{ in_array($row->id, json_decode($list_section->enseignant_id)) ? 'selected' : '' }}
+
+                                                                        >{{$row->Nom_enseignants}}</option>
                                                                     @endforeach
+
                                                                 </select>
                                                             </div>
+
                                                             <!--end::Input group-->
                                                             <div class="mb-10">
                                                                 <!--begin::Label-->
@@ -480,7 +490,7 @@
                                                     <span class="required">Enseignants</span>
                                                 </label>
                                                 <select class="form-select " id="multiple-checkboxes" multiple="multiple"
-                                                    name="enseignant_id">
+                                                    name="enseignant_id[]">
                                                     @foreach ($enseignants as $enseignant )
                                                     <option value="{{$enseignant->id}}">{{$enseignant->Nom_enseignants}}</option>
                                                     @endforeach

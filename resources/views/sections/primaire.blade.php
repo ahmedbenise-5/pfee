@@ -334,11 +334,6 @@
                                                                 </label>
                                                                 <select class="form-select " id="multiple-checkboxes" multiple="multiple"
                                                                     name="enseignant_id[]">
-                                                                    {{-- @foreach ($enseignants as $enseignant )
-                                                                    <option  value="{{$enseignant->id}}"
-                                                                        {{ $enseignant->id == old('enseignant', $enseignant->enseignant_id) ? 'selected' : '' }}
-                                                                        >{{$enseignant->Nom_enseignants}}</option>
-                                                                    @endforeach --}}
 
                                                                     @foreach($enseignants as $row)
                                                                     <option value="{{$row->id}}"

@@ -270,94 +270,116 @@
                                                   </td>
                                               </tr>
                                                  <!-- Modal -->
-                                        <div class="modal fade" tabindex="-1" id="update{{$list_section->id}}">
-                                            <div class="modal-dialog mw-650px">
-                                                <div class="modal-content">
-                                                    <div class="modal-body">
-                                                        <form action="{{ route('sections.update','upadte')}}" method="POST"
-                                                            id="kt_modal_new_target_form" class="form">
-                                                            @method('patch')
-                                                            @csrf
-                                                            <!--begin::Heading-->
-                                                            <div class="mb-11 text-center">
-                                                                <!--begin::Title-->
-                                                                <h1 class="text-muted fw-bold ">upadte une section</h1>
-                                                                <!--end::Title-->
-                                                                <div class="separator border-2 my-10"></div>
-                                                            </div>
-                                                            <!--end::Heading-->
-                                                            <!--begin::Input group-->
-                                                            <div class="d-flex flex-column mb-8 fv-row">
-                                                                <!--begin::Label-->
-                                                                <label class="d-flex align-items-center fs-6 fw-bold mb-2">
-                                                                    <span class="required">Nom du section</span>
-                                                                    <input type="hidden" name="id" id="id" value="{{$list_section->id}}">
-                                                                    {{-- <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
-                                                                        title="Specify a target name for future usage and reference"></i> --}}
-                                                                </label>
-                                                                <!--end::Label-->
-                                                                <input type="text" name='nom_section'  value="{{ $list_section->nom_section }}" class="form-control form-control-solid"
-                                                                    placeholder="Enter Nom du section" name="nom_section" />
-                                                            </div>
-                                                            <!--end::Input group-->
-                                                            <!--begin::Input group-->
-                                                            <div class="d-flex flex-column mb-8">
-                                                                <label class="d-flex align-items-center fs-6 fw-bold mb-2">
-                                                                    <span class="required">Nom niveaux de etudes</span>
-                                                                </label>
-                                                                <select class="form-select " name="Niveauxdetudes_id"  onchange="console.log($(this).val())">
-                                                                    {{-- <option disabled="" selected=""> niveaux de etudes </option> --}}
-                                                                    {{-- @foreach ($list_niveauetudes as $list_niveauetude ) --}}
-                                                                    <option value="{{$list_niveauetudes->id}}" selected >{{$list_niveauetudes->Nom}}</option>
-                                                                    {{-- @endforeach --}}
-                                                                </select>
-                                                            </div>
-                                                            <!--end::Input group-->
-                                                            <!--begin::Input group-->
-                                                            <div class="d-flex flex-column mb-8">
-                                                                <label class="d-flex align-items-center fs-6 fw-bold mb-2">
-                                                                    <span class="required">Nom classe</span>
-                                                                </label>
-                                                                <select class="form-select "
-                                                                    name="classes_id">
-                                                                    @foreach ($list_classes as $list_classe )
-                                                                    <option value="{{$list_classe->id}}"
-                                                                        {{ $list_classe->id == old('list_classe', $list_section->classes_id) ? 'selected' : '' }}
-                                                                        >{{$list_classe->Nom_Classe}}</option>
-                                                                    @endforeach
-                                                                </select>
-                                                            </div>
+                                                <div class="modal fade" tabindex="-1" id="update{{$list_section->id}}">
+                                                    <div class="modal-dialog mw-650px">
+                                                        <div class="modal-content">
+                                                            <div class="modal-body">
+                                                                <form action="{{ route('sections.update','upadte')}}" method="POST"
+                                                                    id="kt_modal_new_target_form" class="form">
+                                                                    @method('patch')
+                                                                    @csrf
+                                                                    <!--begin::Heading-->
+                                                                    <div class="mb-11 text-center">
+                                                                        <!--begin::Title-->
+                                                                        <h1 class="text-muted fw-bold ">upadte une section</h1>
+                                                                        <!--end::Title-->
+                                                                        <div class="separator border-2 my-10"></div>
+                                                                    </div>
+                                                                    <!--end::Heading-->
+                                                                    <!--begin::Input group-->
+                                                                    <div class="d-flex flex-column mb-8 fv-row">
+                                                                        <!--begin::Label-->
+                                                                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                                                            <span class="required">Nom du section</span>
+                                                                            <input type="hidden" name="id" id="id" value="{{$list_section->id}}">
+                                                                            {{-- <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
+                                                                                title="Specify a target name for future usage and reference"></i> --}}
+                                                                        </label>
+                                                                        <!--end::Label-->
+                                                                        <input type="text" name='nom_section'  value="{{ $list_section->nom_section }}" class="form-control form-control-solid"
+                                                                            placeholder="Enter Nom du section" name="nom_section" />
+                                                                    </div>
+                                                                    <!--end::Input group-->
+                                                                    <!--begin::Input group-->
+                                                                    <div class="d-flex flex-column mb-8">
+                                                                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                                                            <span class="required">Nom niveaux de etudes</span>
+                                                                        </label>
+                                                                        <select class="form-select " name="Niveauxdetudes_id"  onchange="console.log($(this).val())">
+                                                                            {{-- <option disabled="" selected=""> niveaux de etudes </option> --}}
+                                                                            {{-- @foreach ($list_niveauetudes as $list_niveauetude ) --}}
+                                                                            <option value="{{$list_niveauetudes->id}}" selected >{{$list_niveauetudes->Nom}}</option>
+                                                                            {{-- @endforeach --}}
+                                                                        </select>
+                                                                    </div>
+                                                                    <!--end::Input group-->
+                                                                    <!--begin::Input group-->
+                                                                    <div class="d-flex flex-column mb-8">
+                                                                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                                                            <span class="required">Nom classe</span>
+                                                                        </label>
+                                                                        <select class="form-select "
+                                                                            name="classes_id">
+                                                                            @foreach ($list_classes as $list_classe )
+                                                                            <option value="{{$list_classe->id}}"
+                                                                                {{ $list_classe->id == old('list_classe', $list_section->classes_id) ? 'selected' : '' }}
+                                                                                >{{$list_classe->Nom_Classe}}</option>
+                                                                            @endforeach
+                                                                        </select>
+                                                                    </div>
+
+                                                                    <div class="d-flex flex-column mb-8">
+                                                                        <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                                                            <span class="required">Enseignants</span>
+                                                                        </label>
+                                                                        <select class="form-select " id="multiple-checkboxes" multiple="multiple"
+                                                                            name="enseignant_id[]">
+
+                                                                            @foreach($enseignants as $row)
+                                                                            <option value="{{$row->id}}"
+
+                                                                                {{-- @if (in_array($tag->id, old('enseignant_id'))) selected @endif --}}
+
+                                                                                {{ in_array($row->id, json_decode($list_section->enseignant_id)) ? 'selected' : '' }}
+
+                                                                                >{{$row->Nom_enseignants}}</option>
+                                                                            @endforeach
+
+                                                                        </select>
+                                                                    </div>
 
 
-                                                            <!--end::Input group-->
-                                                            <div class="mb-10">
-                                                                <!--begin::Label-->
-                                                                <label class="form-label fw-bold">Statut:</label>
-                                                                <!--end::Label-->
-                                                                <!--begin::Switch-->
-                                                                <div class="form-check form-switch form-switch-sm form-check-custom form-check-solid">
 
-                                                                    <input class="form-check-input" type="checkbox"
-                                                                    @if ($list_section->statut === 1)
-                                                                    checked="checked"
-                                                                    @elseif($list_section->statut === '0' )
-                                                                    checked="false"
-                                                                    @endif
-                                                                    name="statut" >
-                                                                    <label class="form-check-label">Active</label>
-                                                                </div>
-                                                                <!--end::Switch-->
+
+                                                                    <!--end::Input group-->
+                                                                    <div class="mb-10">
+                                                                        <!--begin::Label-->
+                                                                        <label class="form-label fw-bold">Statut:</label>
+                                                                        <!--end::Label-->
+                                                                        <!--begin::Switch-->
+                                                                        <div class="form-check form-switch form-switch-sm form-check-custom form-check-solid">
+
+                                                                            <input class="form-check-input" type="checkbox"
+                                                                            @if ($list_section->statut === 1)
+                                                                            checked="checked"
+                                                                            @elseif($list_section->statut === '0' )
+                                                                            checked="false"
+                                                                            @endif
+                                                                            name="statut" >
+                                                                            <label class="form-check-label">Active</label>
+                                                                        </div>
+                                                                        <!--end::Switch-->
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-light"
+                                                                            data-bs-dismiss="modal">Close</button>
+                                                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                                                    </div>
+                                                                </form>
                                                             </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-light"
-                                                                    data-bs-dismiss="modal">Close</button>
-                                                                <button type="submit" class="btn btn-primary">Save changes</button>
-                                                            </div>
-                                                        </form>
+                                                        </div>
                                                     </div>
                                                 </div>
-                                            </div>
-                                        </div>
                                         <!--end::Modal -->
 
 
@@ -483,7 +505,7 @@
                                                     <span class="required">Enseignants</span>
                                                 </label>
                                                 <select class="form-select " id="multiple-checkboxes" multiple="multiple"
-                                                    name="enseignant_id">
+                                                    name="enseignant_id[]">
                                                     @foreach ($enseignants as $enseignant )
                                                     <option value="{{$enseignant->id}}">{{$enseignant->Nom_enseignants}}</option>
                                                     @endforeach
