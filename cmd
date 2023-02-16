@@ -65,6 +65,12 @@ EnseignantsRepository
 EnseignantsRepositoryInterface
 
 
+// Etudiants
+
+1--- php artisan make:model Etudiants -mcr
+
+
+
 
 
 

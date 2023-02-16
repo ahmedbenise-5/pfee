@@ -60,10 +60,16 @@ Route::group(['namespace'=>'niveauxdetudes'],function(){
  });
 
 
+ //------------------ Enseignants ---------------
  Route::group(['namespace'=>'Enseignants'],function(){
      Route::resource('enseignants','EnseignantsController');
  });
 
+  //------------------Etudiants---------------
+
+  Route::group(['namespace'=>'Etudiants'],function(){
+    Route::resource('etudiants', EtudiantsController::class);
+  });
 
 
 
