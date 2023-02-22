@@ -50,7 +50,7 @@
         <!--begin::Post-->
         <div class="post d-flex flex-column-fluid" id="kt_post">
             <!--begin::Container-->
-            <div id="kt_content_container" class="container-xxl">
+            <div id="kt_content_container" class="container-fluid">
                 @if (count($errors) > 0)
                     <div class="alert alert-danger d-flex align-items-center p-5 mb-10">
                         <!--begin::Svg Icon | path: icons/duotune/general/gen048.svg-->
@@ -192,7 +192,7 @@
                                                     <label class="form-label required">Annee Academique</label>
                                                     <!--end::Label-->
                                                     <!--begin::Input-->
-                                                    <select class="form-select" name="List_classes[1][Niveauxdetudes_id]" data-placeholder="Select an option">
+                                                    <select class="form-select" name="anne_acd" data-placeholder="Select an option">
                                                         <option value="1">2023</option>
                                                         <option value="2">2024</option>
                                                         <option value="3">2025</option>
@@ -206,60 +206,83 @@
                                             </div>
                                             <div class="row g-9 mb-12">
                                                 <!--begin::Col-->
-                                                <div class="col-md-6 fv-row">
+                                                <div class="col-md fv-row">
+                                                    <label class="required fs-6 fw-bold mb-2">Nom Praent</label>
+                                                    <select class="form-select" name="nationalite_id"
+                                                        data-control="select2" data-placeholder="Select an option">
+
+                                                        @foreach ($list_parentes as $list_parente)
+                                                            <option value="{{ $list_parente->id }}">{{ $list_parente->NomPraent }}
+                                                            </option>
+                                                        @endforeach
+
+                                                    </select>
+                                                </div>
+                                                <div class="col-md fv-row">
                                                     <label class="required fs-6 fw-bold mb-2">nationalité</label>
                                                     <select class="form-select" name="nationalite_id"
                                                         data-control="select2" data-placeholder="Select an option">
 
-                                                        @foreach ($Nationalitie as $nationalite)
-                                                            <option value="{{ $nationalite->id }}">{{ $nationalite->Nom }}
+                                                        @foreach ($list_nationalities as $list_nationalitie)
+                                                            <option value="{{ $list_nationalitie->id }}">{{ $list_nationalitie->Nom }}
                                                             </option>
                                                         @endforeach
 
                                                     </select>
                                                 </div>
-                                                <div class="col-md-6 fv-row">
+                                                <div class="col-md fv-row">
                                                     <label class="required fs-6 fw-bold mb-2">Religion</label>
                                                     <select class="form-select " name="religion_id"
                                                         data-control="select2" data-placeholder="Select an option"
                                                         data-hide-search="flase">
-                                                        @foreach ($Religion as $religion)
-                                                            <option value="{{ $religion->id }}">{{ $religion->Nom }}
+                                                        @foreach ($list_religions as $list_religion)
+                                                            <option value="{{ $list_religion->id }}">{{ $list_religion->Nom }}
                                                             </option>
                                                         @endforeach
                                                     </select>
                                                 </div>
                                                 <!--end::Col-->
                                             </div>
-                                            <div class="row g-9 mb-12">
+                                            <div class="row">
                                                 <!--begin::Col-->
-                                                <div class="col-md-6 fv-row">
+                                                <div class="col fv-row">
+                                                    <label class="required fs-6 fw-bold mb-2">Niveauxdetudes</label>
+                                                    <select class="form-select" name="id_niveauxdetudes"
+                                                        data-control="select2" data-placeholder="Select an option">
+
+                                                        @foreach ($list_niveauxdetudes as $list_niveauxdetude)
+                                                            <option value="{{ $list_niveauxdetude->id }}">{{ $list_niveauxdetude->Nom }}
+                                                            </option>
+                                                        @endforeach
+
+                                                    </select>
+                                                </div>
+                                                <div class="col fv-row">
                                                     <label class="required fs-6 fw-bold mb-2">Niveauxdetudes</label>
                                                     <select class="form-select" name="nationalite_id"
                                                         data-control="select2" data-placeholder="Select an option">
 
-                                                        @foreach ($niveauxdetudes as $niveauxdetude)
-                                                            <option value="{{ $niveauxdetude->id }}">{{ $niveauxdetude->Nom }}
-                                                            </option>
+                                                        @foreach ($list_niveauxdetudes as $list_niveauxdetude)
+                                                           
                                                         @endforeach
 
                                                     </select>
                                                 </div>
-                                                <div class="col-md-6 fv-row">
+                                                <div class="col fv-row">
                                                     <label class="required fs-6 fw-bold mb-2">Classe</label>
-                                                    <select class="form-select " name="religion_id"
+                                                    <select class="form-select " name="classes_id"
                                                         data-control="select2" data-placeholder="Select an option"
                                                         data-hide-search="flase">
-                                                        @foreach ($Classes as $Classe)
-                                                            <option value="{{ $Classe->id }}">{{ $Classe->Nom_Classe }}
-                                                            </option>
+                                                        @foreach ($list_classes as $list_classe)
+                                                          
                                                         @endforeach
                                                     </select>
                                                 </div>
                                                 <!--end::Col-->
+                                                
                                             </div>
 
-                                            <div class="d-flex flex-column mb-8 fv-row fv-plugins-icon-container">
+                                            <div class="d-flex flex-column mb-8 mt-8 fv-row fv-plugins-icon-container">
                                                 <label class="fs-6 fw-bold mb-2 required">Adresse</label>
                                                 <textarea class="form-control form-control-solid" rows="4" name="adresse"
                                                     placeholder="Type your ticket description" style="height: 137px;"></textarea>
@@ -351,21 +374,31 @@
     @toastr_render
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
-    {{-- <script>
-        var myDropzone = new Dropzone("#kt_dropzonejs_example_1", {
-    url: "https://keenthemes.com/scripts/void.php", // Set the url for your upload script location
-    paramName: "file", // The name that will be used to transfer the file
-    maxFiles: 10,
-    maxFilesize: 10, // MB
-    addRemoveLinks: true,
-    accept: function(file, done) {
-        if (file.name == "wow.jpg") {
-            done("Naha, you don't.");
-        } else {
-            done();
-        }
-    }
-}); --}}
+
+    <script>
+        $(document).ready(function () {
+            $('select[name="id_niveauxdetudes"]').on('change', function () {
+                var id_niveauxdetudes = $(this).val();
+                // alert(Niveauxdetudes_id);
+                if (id_niveauxdetudes) {
+                    $.ajax({
+                        url: "{{ URL::to('getclasses') }}/" +id_niveauxdetudes,
+                        type: "GET",
+                        dataType: "json",
+                        success: function (data) {
+                            $('select[name="classes_id"]').empty();
+                            $.each(data, function (key, value) {
+                                $('select[name="classes_id"]').append('<option value="' + key + '">' + value + '</option>');
+                            });
+                        },
+                    });
+                } else {
+                    console.log('AJAX load did not work');
+                }
+            });
+        });
+</script> 
+
     </script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 @endsection

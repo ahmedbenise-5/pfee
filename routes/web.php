@@ -68,7 +68,8 @@ Route::group(['namespace'=>'niveauxdetudes'],function(){
   //------------------Etudiants---------------
 
   Route::group(['namespace'=>'Etudiants'],function(){
-    Route::resource('etudiants', EtudiantsController::class);
+    Route::resource('etudiants', 'EtudiantsController');
+    Route::get('/getclasses/{id}','EtudiantsController@getclasses');
   });
 
 

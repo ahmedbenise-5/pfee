@@ -23,6 +23,12 @@ class EtudiantsController extends Controller
 
     public function index()
     {
+    /**public function  Get_genders();
+    public function  Get_Classes();
+    public function  Get_Sections();
+    public function  Get_Parentes();
+    public function  Get_Religion();
+    public function  Get_Nationalitie(); */
 
     }
 
@@ -30,64 +36,56 @@ class EtudiantsController extends Controller
     public function create()
     {
 
-        return $this->Etudiants->create_etudiant();
+
+        $list_genders = $this->Etudiants->Get_genders();
+        $list_niveauxdetudes = $this->Etudiants->Get_niveauxdetudes();
+        $list_classes = $this->Etudiants->Get_Classes();
+        $list_sections = $this->Etudiants->Get_Sections();
+        $list_parentes = $this->Etudiants->Get_Parentes();
+        $list_religions = $this->Etudiants->Get_Religion();
+        $list_nationalities = $this->Etudiants->Get_Nationalitie();
+
+        return view('Etudiants.craete', compact('list_genders', 'list_classes', 'list_niveauxdetudes',
+                                                'list_sections','list_parentes','list_religions','list_nationalities'));
+
+
+
+
+
 
 
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+
     public function store(Request $request)
     {
         //
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Etudiants  $etudiants
-     * @return \Illuminate\Http\Response
-     */
+
     public function show(Etudiants $etudiants)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Etudiants  $etudiants
-     * @return \Illuminate\Http\Response
-     */
+
     public function edit(Etudiants $etudiants)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Etudiants  $etudiants
-     * @return \Illuminate\Http\Response
-     */
+
     public function update(Request $request, Etudiants $etudiants)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Etudiants  $etudiants
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Etudiants $etudiants)
     {
         //
+    }
+
+    public function getclasses($id){
+    return $this->Etudiants->getclasses($id);
     }
 }
