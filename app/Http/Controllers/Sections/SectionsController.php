@@ -164,7 +164,16 @@ class SectionsController extends Controller
         $sections->classes_id = $request->classes_id;
         $sections->enseignant_id = json_encode($request->enseignant_id);
         $sections->statut = $status_id;
-        $sections->save();
+
+
+
+        // update pivot tABLE
+            if (isset($request->enseignant_id)) {
+                $sections->Enseignants()->sync($request->enseignant_id);
+                } else {
+                $sections->Enseignants()->sync(array());
+                }
+                    $sections->save();
         // dd($sections);
         toastr()->success('Data has been saved successfully!');
         return redirect()->back();
