@@ -81,7 +81,7 @@
                     </div>
                 @endif
 
-                <form action="{{ route('parentes.store') }}" enctype="multipart/form-data" method="POST"
+                <form action="{{ route('etudiants.store') }}" enctype="multipart/form-data" method="POST"
                     class="form d-flex flex-column flex-lg-row fv-plugins-bootstrap5 fv-plugins-framework">
                     @csrf
                     <!--begin::Aside column-->
@@ -133,11 +133,6 @@
                                                     <!--begin::Input-->
                                                     <input type="text" class="form-control mb-2" name="name"
                                                         value="">
-                                                    <!--end::Input-->
-                                                    <!--begin::Description-->
-                                                    <div class="text-muted fs-7">Set the product tax class.</div>
-                                                    <!--end::Description-->
-                                                    <div class="fv-plugins-message-container invalid-feedback"></div>
                                                 </div>
 
                                                 <!--begin::Input group-->
@@ -146,32 +141,25 @@
                                                     <label class="required form-label">Email</label>
                                                     <!--end::Label-->
                                                     <!--begin::Input-->
-                                                    <input type="email" class="form-control mb-2" name="Email"
+                                                    <input type="email" class="form-control mb-2" name="email"
                                                         value="">
-                                                    <!--end::Input-->
-                                                    <!--begin::Description-->
-                                                    <div class="text-muted fs-7">Set the product tax class.</div>
-                                                    <!--end::Description-->
-                                                    <div class="fv-plugins-message-container invalid-feedback"></div>
                                                 </div>
                                                 <!--end::Input group-->
                                                 <!--begin::Input group-->
+
+                                                <!--end::Input group-->
+                                            </div><br>
+                                            <!--end::Input group-->
+                                            <div class="d-flex flex-wrap gap-5">
+
                                                 <div class="fv-row w-100 flex-md-root">
                                                     <!--begin::Label-->
                                                     <label class="form-label required">Password</label>
                                                     <!--end::Label-->
                                                     <!--begin::Input-->
-                                                    <input type="password" name="Password" class="form-control mb-2"
+                                                    <input type="password" name="password" class="form-control mb-2"
                                                         value="">
-                                                    <!--end::Input-->
-                                                    <!--begin::Description-->
-                                                    <div class="text-muted fs-7">Set the product VAT about.</div>
-                                                    <!--end::Description-->
                                                 </div>
-                                                <!--end::Input group-->
-                                            </div>
-                                            <!--end::Input group-->
-                                            <div class="d-flex flex-wrap gap-5">
                                                 <!--begin::Input group-->
                                                 <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
                                                     <!--begin::Label-->
@@ -180,39 +168,34 @@
 
                                                     <input type="date" name="date_naissance" class="form-control mb-2"
                                                         value="">
-                                                    <!--begin::Description-->
-                                                    <div class="text-muted fs-7">Set the product tax class.</div>
-                                                    <!--end::Description-->
-                                                    <div class="fv-plugins-message-container invalid-feedback"></div>
                                                 </div>
                                                 <!--end::Input group-->
                                                 <!--begin::Input group-->
-                                                <div class="fv-row w-100 flex-md-root">
-                                                    <!--begin::Label-->
-                                                    <label class="form-label required">Annee Academique</label>
-                                                    <!--end::Label-->
-                                                    <!--begin::Input-->
-                                                    <select class="form-select" name="anne_acd" data-placeholder="Select an option">
-                                                        <option value="1">2023</option>
-                                                        <option value="2">2024</option>
-                                                        <option value="3">2025</option>
-                                                </select>
-                                                    <!--end::Input-->
-                                                    <!--begin::Description-->
-                                                    <div class="text-muted fs-7">Set the product VAT about.</div>
-                                                    <!--end::Description-->
+                                                <div class="col-md fv-row">
+                                                    <label class="required fs-6 fw-bold mb-2">Genre</label>
+                                                    <select class="form-select" name="id_gender" data-control="select"
+                                                        data-placeholder="Select an option">
+
+                                                        @foreach ($list_genders as $list_gender)
+                                                            <option value="{{ $list_gender->id }}">
+                                                                {{ $list_gender->Nom_g }}
+                                                            </option>
+                                                        @endforeach
+
+                                                    </select>
                                                 </div>
                                                 <!--end::Input group-->
-                                            </div>
-                                            <div class="row g-9 mb-12">
+                                            </div><br>
+                                            <div class="row g-9">
                                                 <!--begin::Col-->
                                                 <div class="col-md fv-row">
                                                     <label class="required fs-6 fw-bold mb-2">Nom Praent</label>
-                                                    <select class="form-select" name="nationalite_id"
-                                                        data-control="select2" data-placeholder="Select an option">
+                                                    <select class="form-select" name="id_parentes" data-control="select2"
+                                                        data-placeholder="Select an option">
 
                                                         @foreach ($list_parentes as $list_parente)
-                                                            <option value="{{ $list_parente->id }}">{{ $list_parente->NomPraent }}
+                                                            <option value="{{ $list_parente->id }}">
+                                                                {{ $list_parente->NomPraent }}
                                                             </option>
                                                         @endforeach
 
@@ -220,11 +203,12 @@
                                                 </div>
                                                 <div class="col-md fv-row">
                                                     <label class="required fs-6 fw-bold mb-2">nationalité</label>
-                                                    <select class="form-select" name="nationalite_id"
-                                                        data-control="select2" data-placeholder="Select an option">
+                                                    <select class="form-select" name="id_nationalities" data-control="select2"
+                                                        data-placeholder="Select an option">
 
                                                         @foreach ($list_nationalities as $list_nationalitie)
-                                                            <option value="{{ $list_nationalitie->id }}">{{ $list_nationalitie->Nom }}
+                                                            <option value="{{ $list_nationalitie->id }}">
+                                                                {{ $list_nationalitie->Nom }}
                                                             </option>
                                                         @endforeach
 
@@ -236,55 +220,61 @@
                                                         data-control="select2" data-placeholder="Select an option"
                                                         data-hide-search="flase">
                                                         @foreach ($list_religions as $list_religion)
-                                                            <option value="{{ $list_religion->id }}">{{ $list_religion->Nom }}
+                                                            <option value="{{ $list_religion->id }}">
+                                                                {{ $list_religion->Nom }}
                                                             </option>
                                                         @endforeach
                                                     </select>
                                                 </div>
                                                 <!--end::Col-->
-                                            </div>
+                                            </div><br>
                                             <div class="row">
                                                 <!--begin::Col-->
                                                 <div class="col fv-row">
                                                     <label class="required fs-6 fw-bold mb-2">Niveauxdetudes</label>
                                                     <select class="form-select" name="id_niveauxdetudes"
-                                                        data-control="select2" data-placeholder="Select an option">
-
+                                                        data-control="select" data-placeholder="Select an option">
+                                                        <option disabled selected> choisir un parent</option>
                                                         @foreach ($list_niveauxdetudes as $list_niveauxdetude)
-                                                            <option value="{{ $list_niveauxdetude->id }}">{{ $list_niveauxdetude->Nom }}
+                                                            <option value="{{ $list_niveauxdetude->id }}">
+                                                                {{ $list_niveauxdetude->Nom }}
                                                             </option>
-                                                        @endforeach
-
-                                                    </select>
-                                                </div>
-                                                <div class="col fv-row">
-                                                    <label class="required fs-6 fw-bold mb-2">Niveauxdetudes</label>
-                                                    <select class="form-select" name="nationalite_id"
-                                                        data-control="select2" data-placeholder="Select an option">
-
-                                                        @foreach ($list_niveauxdetudes as $list_niveauxdetude)
-                                                           
                                                         @endforeach
 
                                                     </select>
                                                 </div>
                                                 <div class="col fv-row">
                                                     <label class="required fs-6 fw-bold mb-2">Classe</label>
-                                                    <select class="form-select " name="classes_id"
-                                                        data-control="select2" data-placeholder="Select an option"
-                                                        data-hide-search="flase">
-                                                        @foreach ($list_classes as $list_classe)
-                                                          
-                                                        @endforeach
+                                                    <select class="form-select " name="id_classes" data-control="select"
+                                                        data-placeholder="Select an option" data-hide-search="flase">
+
                                                     </select>
                                                 </div>
-                                                <!--end::Col-->
-                                                
+                                                <div class="col fv-row">
+                                                    <label class="required fs-6 fw-bold mb-2">Sections</label>
+                                                    <select class="form-select" name="id_sections" data-control="select"
+                                                        data-placeholder="Select an option">
+
+                                                    </select>
+                                                </div>
+                                                <div class="fv-row w-100 flex-md-root">
+                                                    <!--begin::Label-->
+                                                    <label class="form-label required">Annee Academique</label>
+                                                    <!--end::Label-->
+                                                    <!--begin::Input-->
+                                                    <select class="form-select" name="annee_academique"
+                                                        data-placeholder="Select an option">
+                                                        <option value="2023">2023</option>
+                                                        <option value="2024">2024</option>
+                                                    </select>
+                                                </div>
+
+
                                             </div>
 
                                             <div class="d-flex flex-column mb-8 mt-8 fv-row fv-plugins-icon-container">
                                                 <label class="fs-6 fw-bold mb-2 required">Adresse</label>
-                                                <textarea class="form-control form-control-solid" rows="4" name="adresse"
+                                                <textarea class="form-control form-control-solid" rows="4" name="adresss"
                                                     placeholder="Type your ticket description" style="height: 137px;"></textarea>
                                                 <div class="fv-plugins-message-container invalid-feedback"></div>
                                             </div>
@@ -376,19 +366,24 @@
 
 
     <script>
-        $(document).ready(function () {
-            $('select[name="id_niveauxdetudes"]').on('change', function () {
+        $(document).ready(function() {
+            $('select[name="id_niveauxdetudes"]').on('change', function() {
                 var id_niveauxdetudes = $(this).val();
                 // alert(Niveauxdetudes_id);
                 if (id_niveauxdetudes) {
                     $.ajax({
-                        url: "{{ URL::to('getclasses') }}/" +id_niveauxdetudes,
+                        url: "{{ URL::to('getclasses') }}/" + id_niveauxdetudes,
                         type: "GET",
                         dataType: "json",
-                        success: function (data) {
-                            $('select[name="classes_id"]').empty();
-                            $.each(data, function (key, value) {
-                                $('select[name="classes_id"]').append('<option value="' + key + '">' + value + '</option>');
+                        success: function(data) {
+                            $('select[name="id_classes"]').empty();
+                            $.each(data, function(key, value) {
+                                console.log(data);
+                                $('select[name="id_classes"]').append(
+                                    '<option selected disabled >aziz</option>');
+                                $('select[name="id_classes"]').append(
+                                    '<option value="' + key + '">' + value +
+                                    '</option>');
                             });
                         },
                     });
@@ -397,7 +392,35 @@
                 }
             });
         });
-</script> 
+    </script>
+
+
+    <script>
+        $(document).ready(function() {
+            $('select[name="id_classes"]').on('change', function() {
+                var id_classes = $(this).val();
+                // alert(Niveauxdetudes_id);
+                if (id_classes) {
+                    $.ajax({
+                        url: "{{ URL::to('getsections') }}/" + id_classes,
+                        type: "GET",
+                        dataType: "json",
+                        success: function(data) {
+                            $('select[name="id_sections"]').empty();
+                            $.each(data, function(key, value) {
+                                console.log(data);
+                                $('select[name="id_sections"]').append(
+                                    '<option value="' + key + '">' + value +
+                                    '</option>');
+                            });
+                        },
+                    });
+                } else {
+                    console.log('AJAX load did not work');
+                }
+            });
+        });
+    </script>
 
     </script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>

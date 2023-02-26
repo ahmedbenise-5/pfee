@@ -59,7 +59,8 @@ class EtudiantsController extends Controller
 
     public function store(Request $request)
     {
-        //
+        
+        return $this->Etudiants->Add_Etudiants($request);
     }
 
 
@@ -87,5 +88,9 @@ class EtudiantsController extends Controller
 
     public function getclasses($id){
     return $this->Etudiants->getclasses($id);
+    }
+
+    public function getsections($id){
+        return $this->Etudiants->getsections($id);
     }
 }

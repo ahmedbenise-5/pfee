@@ -70,6 +70,7 @@ Route::group(['namespace'=>'niveauxdetudes'],function(){
   Route::group(['namespace'=>'Etudiants'],function(){
     Route::resource('etudiants', 'EtudiantsController');
     Route::get('/getclasses/{id}','EtudiantsController@getclasses');
+    Route::get('/getsections/{id}','EtudiantsController@getsections');
   });
 
 

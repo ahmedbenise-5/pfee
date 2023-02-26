@@ -3,7 +3,7 @@
 
 namespace App\Repositories;
 
-
+use GuzzleHttp\Psr7\Request;
 
 interface  EtudiantsRepositoryInterface {
 
@@ -19,6 +19,9 @@ interface  EtudiantsRepositoryInterface {
     public function  Get_niveauxdetudes();
 
     public function getclasses($id);
+    public function getsections($id);
+
+    public function Add_Etudiants($request);
 
     // public function create_etudiant();
 
