@@ -62,9 +62,22 @@ class EtudiantsController extends Controller
     }
 
 
-    public function edit(Etudiants $etudiants)
+    public function edit($id)
     {
-        //
+
+        $list_genders = $this->Etudiants->Get_genders();
+        $list_niveauxdetudes = $this->Etudiants->Get_niveauxdetudes();
+        $list_classes = $this->Etudiants->Get_Classes();
+        $list_sections = $this->Etudiants->Get_Sections();
+        $list_parentes = $this->Etudiants->Get_Parentes();
+        $list_religions = $this->Etudiants->Get_Religion();
+        $list_nationalities = $this->Etudiants->Get_Nationalitie();
+
+        $Etudiants = Etudiants::findOrFail($id);
+
+
+        return view('Etudiants.edit', compact('Etudiants','list_genders', 'list_classes', 'list_niveauxdetudes',
+                                                'list_sections','list_parentes','list_religions','list_nationalities'));
     }
 
 

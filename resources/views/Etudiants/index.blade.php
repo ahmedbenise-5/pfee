@@ -285,8 +285,7 @@
 
                                                 <td>
                                                     <div class="d-flex justify-content flex-shrink-0">
-                                                        <a href="#" data-bs-toggle="modal"
-                                                            data-bs-target="#update{{ $Etudiant->id }}"
+                                                        <a  href="{{route('etudiants.edit' ,$Etudiant->id)}}"
                                                             class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                                             <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                                             <span class="svg-icon svg-icon-3">
@@ -359,7 +358,7 @@
                                                                 <label
                                                                     class="d-flex align-items-center fs-6 fw-bold mb-2">
                                                                     <span class="required">voulez-vous
-                                                                        supprimer un  Etudiants </span>
+                                                                        supprimer une  Etudiants </span>
                                                                     <code>{{ $Etudiant->name }}</code>
                                                                     <input type="hidden" id="id" name="id"
                                                                         value="{{ $Etudiant->id }}">
