@@ -23,7 +23,11 @@ interface  EtudiantsRepositoryInterface {
 
     public function Add_Etudiants($request);
 
-    // public function create_etudiant();
+    //
+    public function index();
+    //
+    public function Delete_Etudiants($request);
+
 
 
 

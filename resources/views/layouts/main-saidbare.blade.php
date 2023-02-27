@@ -173,7 +173,20 @@
                         <span class="menu-title">Etudiants</span>
                         <span class="menu-arrow"></span>
                     </span>
+
+
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
+                        <div class="menu-item">
+                            <a class="menu-link" href="{{URL::route('etudiants.index')}}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title"> List Etudiants</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    {{-- <div class="menu-sub menu-sub-accordion menu-active-bg">
                         <div class="menu-item">
                             <a class="menu-link" href="{{URL::route('etudiants.create')}}">
                                 <span class="menu-bullet">
@@ -182,7 +195,7 @@
                                 <span class="menu-title"> Ajouter Etudiants</span>
                             </a>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
 
 

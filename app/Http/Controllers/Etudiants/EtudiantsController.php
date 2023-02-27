@@ -23,12 +23,10 @@ class EtudiantsController extends Controller
 
     public function index()
     {
-    /**public function  Get_genders();
-    public function  Get_Classes();
-    public function  Get_Sections();
-    public function  Get_Parentes();
-    public function  Get_Religion();
-    public function  Get_Nationalitie(); */
+
+        return $this->Etudiants->index();
+
+
 
     }
 
@@ -48,18 +46,12 @@ class EtudiantsController extends Controller
         return view('Etudiants.craete', compact('list_genders', 'list_classes', 'list_niveauxdetudes',
                                                 'list_sections','list_parentes','list_religions','list_nationalities'));
 
-
-
-
-
-
-
     }
 
 
     public function store(Request $request)
     {
-        
+
         return $this->Etudiants->Add_Etudiants($request);
     }
 
@@ -81,9 +73,10 @@ class EtudiantsController extends Controller
         //
     }
 
-    public function destroy(Etudiants $etudiants)
+    public function destroy(Request $request)
     {
-        //
+        return $this->Etudiants->Delete_Etudiants($request);
+
     }
 
     public function getclasses($id){

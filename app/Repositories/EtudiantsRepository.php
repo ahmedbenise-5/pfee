@@ -21,41 +21,41 @@ class  EtudiantsRepository implements EtudiantsRepositoryInterface
     public function Get_genders(){
 
        return genders::all();
-        
+
     }
- 
+
     public function Get_niveauxdetudes(){
 
        return niveauxdetudes::all();
-        
+
     }
 
     public function Get_Classes(){
 
        return Classes::all();
-        
+
     }
     public function Get_Sections(){
 
        return Sections::all();
-        
+
     }
- 
+
     public function Get_Parentes(){
 
        return Parentes::all();
-        
+
     }
- 
+
     public function Get_Religion(){
 
        return Religion::all();
-        
+
     }
     public function Get_Nationalitie(){
 
        return Nationalitie::all();
-        
+
     }
 
     public function getclasses($id){
@@ -64,12 +64,20 @@ class  EtudiantsRepository implements EtudiantsRepositoryInterface
         return $list_classes;
     }
 
-
     public function getsections($id){
 
       $list_sections = Sections::where('classes_id',$id)->pluck('nom_section','id');
       return $list_sections;
     }
+
+
+    public function index(){
+
+        $Etudiants = Etudiants::all();
+        return view('Etudiants.index',compact('Etudiants'));
+
+    }
+
 
 
     public function Add_Etudiants($request){
@@ -111,18 +119,30 @@ class  EtudiantsRepository implements EtudiantsRepositoryInterface
      $Etudiants->religion_id=$request->religion_id;
      $Etudiants->id_niveauxdetudes=$request->id_niveauxdetudes;
      $Etudiants->id_parentes=$request->id_parentes;
-   //   dd($Etudiants);
      $Etudiants->save();
-
      toastr()->success('Data has been saved successfully!');
      return redirect()->back();
 
 
 
     }
- 
 
-   
+    public function Delete_Etudiants($request){
+
+        Etudiants::findOrFail($request->id)->delete();
+        toastr()->error('Etudiants ont été supprimées avec succès !');
+        return redirect()->back();
+    }
+
+
+
+
+
+
+
+
+
+
 
 
 
