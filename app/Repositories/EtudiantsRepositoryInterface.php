@@ -21,10 +21,13 @@ interface  EtudiantsRepositoryInterface {
     public function getclasses($id);
     public function getsections($id);
 
-    public function Add_Etudiants($request);
 
     //
     public function index();
+    //
+    public function Add_Etudiants($request);
+    //
+    public function Update_Etudiants($request);
     //
     public function Delete_Etudiants($request);
 

@@ -81,9 +81,10 @@ class EtudiantsController extends Controller
     }
 
 
-    public function update(Request $request, Etudiants $etudiants)
+    public function update(Request $request)
     {
-        //
+
+       return $this->Etudiants->Update_Etudiants($request);
     }
 
     public function destroy(Request $request)

@@ -380,7 +380,7 @@
                             $.each(data, function(key, value) {
                                 console.log(data);
                                 $('select[name="id_classes"]').append(
-                                    '<option selected disabled >aziz</option>');
+                                    '<option selected disabled >choisir un Classe</option>');
                                 $('select[name="id_classes"]').append(
                                     '<option value="' + key + '">' + value +
                                     '</option>');

@@ -81,9 +81,10 @@
                     </div>
                 @endif
 
-                <form action="{{ route('etudiants.store') }}" enctype="multipart/form-data" method="POST"
+                <form action="{{ route('etudiants.update','update') }}" enctype="multipart/form-data" method="POST"
                     class="form d-flex flex-column flex-lg-row fv-plugins-bootstrap5 fv-plugins-framework">
                     @csrf
+                    @method('PATCH')
                     <!--begin::Aside column-->
 
                     <!--end::Aside column-->
@@ -133,6 +134,8 @@
                                                     <!--begin::Input-->
                                                     <input type="text" class="form-control mb-2" name="name"
                                                         value="{{ $Etudiants->name }}">
+                                                    <input type="hidden" class="form-control mb-2" name="id"
+                                                        value="{{ $Etudiants->id }}">
                                                 </div>
 
                                                 <!--begin::Input group-->
@@ -167,7 +170,7 @@
                                                     <!--end::Label-->
 
                                                     <input type="date" name="date_naissance" class="form-control mb-2"
-                                                    value="{{ $Etudiants->name }}">
+                                                    value="{{ $Etudiants->date_naissance }}">
                                                 </div>
                                                 <!--end::Input group-->
                                                 <!--begin::Input group-->
@@ -177,7 +180,9 @@
                                                         data-placeholder="Select an option">
 
                                                         @foreach ($list_genders as $list_gender)
-                                                            <option value="{{ $list_gender->id }}">
+                                                            <option value="{{ $list_gender->id }}"
+                                                                {{ $list_gender->id == old('id_gender', $Etudiants->id_gender) ? 'selected' : '' }}
+                                                                >
                                                                 {{ $list_gender->Nom_g }}
                                                             </option>
                                                         @endforeach
@@ -194,7 +199,9 @@
                                                         data-placeholder="Select an option">
 
                                                         @foreach ($list_parentes as $list_parente)
-                                                            <option value="{{ $list_parente->id }}">
+                                                            <option value="{{ $list_parente->id }}"
+                                                                {{ $list_parente->id == old('id_parentes', $Etudiants->id_parentes) ? 'selected' : '' }}
+                                                                >
                                                                 {{ $list_parente->NomPraent }}
                                                             </option>
                                                         @endforeach
@@ -207,7 +214,9 @@
                                                         data-placeholder="Select an option">
 
                                                         @foreach ($list_nationalities as $list_nationalitie)
-                                                            <option value="{{ $list_nationalitie->id }}">
+                                                            <option value="{{ $list_nationalitie->id }}"
+                                                                {{ $list_nationalitie->id == old('id_nationalities', $Etudiants->id_nationalities) ? 'selected' : '' }}
+                                                                >
                                                                 {{ $list_nationalitie->Nom }}
                                                             </option>
                                                         @endforeach
@@ -236,7 +245,9 @@
                                                         data-control="select" data-placeholder="Select an option">
                                                         <option disabled selected> choisir un parent</option>
                                                         @foreach ($list_niveauxdetudes as $list_niveauxdetude)
-                                                            <option value="{{ $list_niveauxdetude->id }}">
+                                                            <option value="{{ $list_niveauxdetude->id }}"
+                                                                {{ $list_niveauxdetude->id == old('id_niveauxdetudes', $Etudiants->id_niveauxdetudes) ? 'selected' : '' }}
+                                                                >
                                                                 {{ $list_niveauxdetude->Nom }}
                                                             </option>
                                                         @endforeach
@@ -247,14 +258,26 @@
                                                     <label class="required fs-6 fw-bold mb-2">Classe</label>
                                                     <select class="form-select " name="id_classes" data-control="select"
                                                         data-placeholder="Select an option" data-hide-search="flase">
-
+                                                        @foreach ($list_classes as $list_classe)
+                                                        <option value="{{ $list_classe->id }}"
+                                                            {{ $list_classe->id == old('id_classes', $Etudiants->id_classes) ? 'selected' : '' }}
+                                                            >
+                                                            {{ $list_classe->Nom_Classe }}
+                                                        </option>
+                                                    @endforeach
                                                     </select>
                                                 </div>
                                                 <div class="col fv-row">
                                                     <label class="required fs-6 fw-bold mb-2">Sections</label>
                                                     <select class="form-select" name="id_sections" data-control="select"
                                                         data-placeholder="Select an option">
-
+                                                        @foreach ($list_sections as $list_section)
+                                                        <option value="{{ $list_section->id }}"
+                                                            {{ $list_section->id == old('id_sections', $Etudiants->id_sections) ? 'selected' : '' }}
+                                                            >
+                                                            {{ $list_section->nom_section }}
+                                                        </option>
+                                                    @endforeach
                                                     </select>
                                                 </div>
                                                 <div class="fv-row w-100 flex-md-root">
@@ -264,8 +287,13 @@
                                                     <!--begin::Input-->
                                                     <select class="form-select" name="annee_academique"
                                                         data-placeholder="Select an option">
-                                                        <option value="2023">2023</option>
-                                                        <option value="2024">2024</option>
+                                                        <option value="2023"
+                                                        {{ "2023" ==  $Etudiants->annee_academique ? 'selected' : '' }}
+
+                                                        >2023</option>
+                                                        <option value="2024"
+                                                        {{ "2024" ==  $Etudiants->annee_academique ? 'selected' : '' }}
+                                                        >2024</option>
                                                     </select>
                                                 </div>
 
@@ -339,7 +367,7 @@
                             <!--end::Button-->
                             <!--begin::Button-->
                             <button type="submit" id="kt_ecommerce_add_product_submit" class="btn btn-primary">
-                                <span class="indicator-label">Ajouter</span>
+                                <span class="indicator-label">Update</span>
                                 <span class="indicator-progress">Please wait...
                                     <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                             </button>
@@ -377,10 +405,11 @@
                         dataType: "json",
                         success: function(data) {
                             $('select[name="id_classes"]').empty();
+                            $('select[name="id_sections"]').empty();
                             $.each(data, function(key, value) {
                                 console.log(data);
                                 $('select[name="id_classes"]').append(
-                                    '<option selected disabled >aziz</option>');
+                                    '<option selected disabled >choisir un Classe</option>');
                                 $('select[name="id_classes"]').append(
                                     '<option value="' + key + '">' + value +
                                     '</option>');
