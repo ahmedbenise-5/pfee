@@ -40,7 +40,7 @@
         <!--begin::Post-->
         <div class="post d-flex flex-column-fluid" id="kt_post">
             <!--begin::Container-->
-            <div id="kt_content_container" class="container-fluid">
+            <div id="kt_content_container" class="container-xxl">
                 @if (count($errors) > 0)
                     {{-- <div class="alert alert-danger">
                         <ul>
@@ -175,13 +175,10 @@
                                                     data-kt-check-target=".widget-9-check" />
                                             </div>
                                         </th>
-                                        <th class="min-w-150px">Nom de Etudiants</th>
-                                        <th class="min-w-150px">E-mail</th>
-                                        <th class="min-w-150px">Genre</th>
+                                        <th class="min-w-150px">Nom </th>
                                         <th class="min-w-150px">Section</th>
                                         <th class="min-w-150px">Classes </th>
                                         <th class="min-w-150px">Niveaux de etudes</th>
-                                        <th class="min-w-150px">Année académique </th>
                                         <th class="min-w-140px ">Actions</th>
                                     </tr>
                                 </thead>
@@ -209,31 +206,7 @@
                                                         </div>
                                                     </div>
                                                 </td>
-
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <div
-                                                            class="d-flex justify-content-start flex-column">
-                                                            <a href="#"
-                                                                class="text-dark fw-bolder text-hover-primary fs-6">
-                                                                {{ $Etudiant->email ? $Etudiant->email : ' aucun email  ' }}
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <div
-                                                            class="d-flex justify-content-start flex-column">
-                                                            <a href="#"
-                                                                class="text-dark fw-bolder text-hover-primary fs-6">
-                                                                {{ $Etudiant->genders->Nom_g ? $Etudiant->genders->Nom_g : ' aucun sections  ' }}
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-
+                                              
                                                 <td>
                                                     <div class="d-flex align-items-center">
                                                         <div
@@ -269,19 +242,6 @@
                                                         </div>
                                                     </div>
                                                 </td>
-
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <div
-                                                            class="d-flex justify-content-start flex-column">
-                                                            <a href="#"
-                                                                class="text-dark fw-bolder text-hover-primary fs-6">
-                                                                {{ $Etudiant->annee_academique ? $Etudiant->annee_academique : ' aucun annee academique  ' }}
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-
 
                                                 <td>
                                                     <div class="d-flex justify-content flex-shrink-0">

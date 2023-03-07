@@ -301,7 +301,7 @@
                                                     <div class="dz-message needsclick">
                                                         <!--begin::Icon-->
                                                         <i class="bi bi-file-earmark-arrow-up text-primary fs-3x">
-                                                            <input type="file" name="file">
+                                                            <input type="file" name="file[]"  accept="image/*,application/pdf" multiple>
                                                         </i>
 
                                                         <!--end::Icon-->

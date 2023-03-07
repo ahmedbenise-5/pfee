@@ -33,6 +33,11 @@ class Etudiants extends Model
         return $this->belongsTo('App\Models\Classes','id_classes');
     }
 
+
+    public function images(){
+        return $this->morphMany('App\Models\Image','imageable');
+    }
+
     
 
 }

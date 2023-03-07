@@ -26,7 +26,11 @@ interface  EtudiantsRepositoryInterface {
     //
     public function index();
     //
+    public function update($request);
+    //
+
     public function Delete_Etudiants($request);
+
 
 
 

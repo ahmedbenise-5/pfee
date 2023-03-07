@@ -243,7 +243,6 @@
 
                                                     </a>
                                                 </td>
-
                                                 <td>
                                                     <div class="d-flex align-items-center">
                                                         <div class="d-flex justify-content-start flex-column">
