@@ -301,7 +301,7 @@
                                                     <div class="dz-message needsclick">
                                                         <!--begin::Icon-->
                                                         <i class="bi bi-file-earmark-arrow-up text-primary fs-3x">
-                                                            <input type="file" name="file">
+                                                            <input type="file" name="files[]"  accept="image/*,application/pdf" multiple>
                                                         </i>
 
                                                         <!--end::Icon-->
@@ -377,6 +377,7 @@
                         dataType: "json",
                         success: function(data) {
                             $('select[name="id_classes"]').empty();
+                            $('select[name="id_sections"]').empty();
                             $.each(data, function(key, value) {
                                 console.log(data);
                                 $('select[name="id_classes"]').append(
