@@ -30,6 +30,8 @@ interface  EtudiantsRepositoryInterface {
     public function Update_Etudiants($request);
     //
     public function Delete_Etudiants($request);
+    //
+    public function Show_Etudaints($id);
 
 
 

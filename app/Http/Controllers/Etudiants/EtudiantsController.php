@@ -56,9 +56,10 @@ class EtudiantsController extends Controller
     }
 
 
-    public function show(Etudiants $etudiants)
+    public function show($id)
     {
-        //
+
+      return $this->Etudiants->Show_Etudaints($id);
     }
 
 
@@ -79,6 +80,8 @@ class EtudiantsController extends Controller
         return view('Etudiants.edit', compact('Etudiants','list_genders', 'list_classes', 'list_niveauxdetudes',
                                                 'list_sections','list_parentes','list_religions','list_nationalities'));
     }
+
+
 
 
     public function update(Request $request)

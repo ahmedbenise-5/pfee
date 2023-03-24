@@ -135,12 +135,7 @@
                                                     <!--begin::Input-->
                                                     <input type="text" class="form-control mb-2" name="name"
                                                         value="{{ $Etudiants->name }}">
-<<<<<<< HEAD
-                                                    <input type="hidden" class="form-control mb-2" name="id"
-                                                        value="{{ $Etudiants->id }}">
-=======
                                                         <input type="hidden" name="id" id="id" value="{{$Etudiants->id}}">
->>>>>>> fc5cd0384fcf6cfa106cb4eda34a1950ba84cac5
                                                 </div>
 
                                                 <!--begin::Input group-->
@@ -174,11 +169,7 @@
                                                     <label class="required form-label">Date naissance</label>
                                                     <!--end::Label-->
 
-<<<<<<< HEAD
-                                                    <input type="date" name="date_naissance" class="form-control mb-2"
-=======
                                                     <input type="date" name="date_naissance" class="form-control m"
->>>>>>> fc5cd0384fcf6cfa106cb4eda34a1950ba84cac5
                                                     value="{{ $Etudiants->date_naissance }}">
                                                 </div>
                                                 <!--end::Input group-->
@@ -190,12 +181,7 @@
 
                                                         @foreach ($list_genders as $list_gender)
                                                             <option value="{{ $list_gender->id }}"
-<<<<<<< HEAD
-                                                                {{ $list_gender->id == old('id_gender', $Etudiants->id_gender) ? 'selected' : '' }}
-                                                                >
-=======
                                                                 {{ $list_gender->id == old('id_gender', $Etudiants->id_gender) ? 'selected' : '' }}>
->>>>>>> fc5cd0384fcf6cfa106cb4eda34a1950ba84cac5
                                                                 {{ $list_gender->Nom_g }}
                                                             </option>
                                                         @endforeach
@@ -228,13 +214,8 @@
 
                                                         @foreach ($list_nationalities as $list_nationalitie)
                                                             <option value="{{ $list_nationalitie->id }}"
-<<<<<<< HEAD
-                                                                {{ $list_nationalitie->id == old('id_nationalities', $Etudiants->id_nationalities) ? 'selected' : '' }}
-                                                                >
-=======
                                                                 {{ $list_nationalitie->id == old('id_nationalities', $Etudiants->id_nationalities) ? 'selected' : '' }}>
-                                                                
->>>>>>> fc5cd0384fcf6cfa106cb4eda34a1950ba84cac5
+
                                                                 {{ $list_nationalitie->Nom }}
                                                             </option>
                                                         @endforeach
@@ -250,7 +231,7 @@
                                                             <option value="{{ $list_religion->id }}"
                                                                 {{ $list_religion->id == old('religion_id', $Etudiants->religion_id) ? 'selected' : '' }}>
 
-                                                                
+
                                                                 {{ $list_religion->Nom }}
                                                             </option>
                                                         @endforeach
@@ -267,13 +248,8 @@
                                                         <option disabled selected> choisir un parent</option>
                                                         @foreach ($list_niveauxdetudes as $list_niveauxdetude)
                                                             <option value="{{ $list_niveauxdetude->id }}"
-<<<<<<< HEAD
-                                                                {{ $list_niveauxdetude->id == old('id_niveauxdetudes', $Etudiants->id_niveauxdetudes) ? 'selected' : '' }}
-                                                                >
-=======
                                                                 {{ $list_niveauxdetude->id == old('id_niveauxdetudes', $Etudiants->id_niveauxdetudes) ? 'selected' : '' }}>
-                                                                
->>>>>>> fc5cd0384fcf6cfa106cb4eda34a1950ba84cac5
+
                                                                 {{ $list_niveauxdetude->Nom }}
                                                             </option>
                                                         @endforeach
@@ -284,24 +260,14 @@
                                                     <label class="required fs-6 fw-bold mb-2">Classe</label>
                                                     <select class="form-select " name="id_classes" data-control="select"
                                                         data-placeholder="Select an option" data-hide-search="flase">
-<<<<<<< HEAD
-                                                        @foreach ($list_classes as $list_classe)
-                                                        <option value="{{ $list_classe->id }}"
-                                                            {{ $list_classe->id == old('id_classes', $Etudiants->id_classes) ? 'selected' : '' }}
-                                                            >
-                                                            {{ $list_classe->Nom_Classe }}
-                                                        </option>
-                                                    @endforeach
-=======
 
                                                         @foreach ($list_classes as $list_classe)
                                                             <option value="{{ $list_classe->id }}"
                                                                 {{ $list_classe->id == old('id_classes', $Etudiants->id_niveauxdetudes) ? 'selected' : '' }}>
-                                                                
+
                                                                 {{ $list_classe->Nom_Classe }}
                                                             </option>
                                                         @endforeach
->>>>>>> fc5cd0384fcf6cfa106cb4eda34a1950ba84cac5
                                                     </select>
                                                 </div>
                                                 <div class="col fv-row">
@@ -310,13 +276,8 @@
                                                         data-placeholder="Select an option">
                                                         @foreach ($list_sections as $list_section)
                                                         <option value="{{ $list_section->id }}"
-<<<<<<< HEAD
-                                                            {{ $list_section->id == old('id_sections', $Etudiants->id_sections) ? 'selected' : '' }}
-                                                            >
-=======
                                                             {{ $list_section->id == old('id_sections', $Etudiants->id_sections) ? 'selected' : '' }}>
-                                                            
->>>>>>> fc5cd0384fcf6cfa106cb4eda34a1950ba84cac5
+
                                                             {{ $list_section->nom_section }}
                                                         </option>
                                                     @endforeach
@@ -451,11 +412,7 @@
                             $.each(data, function(key, value) {
                                 console.log(data);
                                 $('select[name="id_classes"]').append(
-<<<<<<< HEAD
-                                    '<option selected disabled >choisir un Classe</option>');
-=======
                                     '<option selected disabled > choisir un Classes</option>');
->>>>>>> fc5cd0384fcf6cfa106cb4eda34a1950ba84cac5
                                 $('select[name="id_classes"]').append(
                                     '<option value="' + key + '">' + value +
                                     '</option>');
