@@ -38,6 +38,10 @@ class Etudiants extends Model
         return $this->morphMany('App\Models\Image','imageable');
     }
 
-    
+    public function nationalities(){
+        return $this->belongsTo('App\Models\Nationalitie','id_nationalities');
+    }
+
+
 
 }

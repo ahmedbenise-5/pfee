@@ -180,7 +180,7 @@
                                 <div class="d-flex flex-column">
                                     <!--begin::Name-->
                                     <div class="d-flex align-items-center mb-2">
-                                        <a href="#" class="text-gray-900 text-hover-primary fs-2 fw-bolder me-1">Max Smith</a>
+                                        <a href="#" class="text-gray-900 text-hover-primary fs-2 fw-bolder me-1">{{$Etudiants->name }}</a>
                                         <a href="#">
                                             <!--begin::Svg Icon | path: icons/duotune/general/gen026.svg-->
                                             <span class="svg-icon svg-icon-1 svg-icon-primary">
@@ -204,7 +204,7 @@
                                                 <path d="M12 22C14.6 22 17 21 18.7 19.4C17.9 16.9 15.2 15 12 15C8.8 15 6.09999 16.9 5.29999 19.4C6.99999 21 9.4 22 12 22Z" fill="currentColor" />
                                             </svg>
                                         </span>
-                                        <!--end::Svg Icon-->Developer</a>
+                                        <!--end::Svg Icon-->{{ $Etudiants->niveauxdetudes->Nom.' - '.$Etudiants->Classes->Nom_Classe.' - '.$Etudiants->Sections->nom_section }}</a>
                                         <a href="#" class="d-flex align-items-center text-gray-400 text-hover-primary me-5 mb-2">
                                         <!--begin::Svg Icon | path: icons/duotune/general/gen018.svg-->
                                         <span class="svg-icon svg-icon-4 me-1">
@@ -213,7 +213,7 @@
                                                 <path d="M12.0624 13.0453C13.7193 13.0453 15.0624 11.7022 15.0624 10.0453C15.0624 8.38849 13.7193 7.04535 12.0624 7.04535C10.4056 7.04535 9.06241 8.38849 9.06241 10.0453C9.06241 11.7022 10.4056 13.0453 12.0624 13.0453Z" fill="currentColor" />
                                             </svg>
                                         </span>
-                                        <!--end::Svg Icon-->SF, Bay Area</a>
+                                        <!--end::Svg Icon-->{{ $Etudiants->adresss }}</a>
                                         <a href="#" class="d-flex align-items-center text-gray-400 text-hover-primary mb-2">
                                         <!--begin::Svg Icon | path: icons/duotune/communication/com011.svg-->
                                         <span class="svg-icon svg-icon-4 me-1">
@@ -222,7 +222,7 @@
                                                 <path d="M21 5H2.99999C2.69999 5 2.49999 5.10005 2.29999 5.30005L11.2 13.3C11.7 13.7 12.4 13.7 12.8 13.3L21.7 5.30005C21.5 5.10005 21.3 5 21 5Z" fill="currentColor" />
                                             </svg>
                                         </span>
-                                        <!--end::Svg Icon-->max@kt.com</a>
+                                        <!--end::Svg Icon-->{{ $Etudiants->email }}</a>
                                     </div>
                                     <!--end::Info-->
                                 </div>
@@ -433,7 +433,7 @@
                         <div class="card-header card-header-stretch">
                             <!--begin::Title-->
                             <div class="card-title">
-                                <h3 class="m-0 text-gray-900">Security Summary</h3>
+                                <h3 class="m-0 text-gray-900">les information Etudiant</h3>
                             </div>
                             <!--end::Title-->
                             <!--begin::Toolbar-->
@@ -468,7 +468,7 @@
                                                 <!--end::Label-->
                                                 <!--begin::Col-->
                                                 <div class="col-lg-8">
-                                                    <span class="fw-bolder fs-6 text-gray-800">Max Smith</span>
+                                                    <span class="fw-bolder fs-6 text-gray-800">{{ $Etudiants->name }}</span>
                                                 </div>
                                                 <!--end::Col-->
                                             </div>
@@ -476,37 +476,58 @@
                                             <!--begin::Input group-->
                                             <div class="row mb-7">
                                                 <!--begin::Label-->
-                                                <label class="col-lg-4 fw-bold text-muted">Company</label>
+                                                <label class="col-lg-4 fw-bold text-muted">Gender
+                                                </label>
                                                 <!--end::Label-->
                                                 <!--begin::Col-->
                                                 <div class="col-lg-8 fv-row">
-                                                    <span class="fw-bold text-gray-800 fs-6">Keenthemes</span>
+
+                                                    <span class="fw-bold text-gray-800 fs-6">{{ $Etudiants->genders->Nom_g }}</span>
+
                                                 </div>
                                                 <!--end::Col-->
                                             </div>
-                                            <!--end::Input group-->
-                                            <!--begin::Input group-->
                                             <div class="row mb-7">
                                                 <!--begin::Label-->
-                                                <label class="col-lg-4 fw-bold text-muted">Contact Phone
-                                                <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Phone number must be active"></i></label>
+                                                <label class="col-lg-4 fw-bold text-muted">Email
+                                                </label>
                                                 <!--end::Label-->
                                                 <!--begin::Col-->
-                                                <div class="col-lg-8 d-flex align-items-center">
-                                                    <span class="fw-bolder fs-6 text-gray-800 me-2">044 3276 454 935</span>
-                                                    <span class="badge badge-success">Verified</span>
+                                                <div class="col-lg-8 fv-row">
+                                                    <span class="fw-bold text-gray-800 fs-6">{{ $Etudiants->email }}</span>
                                                 </div>
                                                 <!--end::Col-->
                                             </div>
-                                            <!--end::Input group-->
-                                            <!--begin::Input group-->
                                             <div class="row mb-7">
                                                 <!--begin::Label-->
-                                                <label class="col-lg-4 fw-bold text-muted">Company Site</label>
+                                                <label class="col-lg-4 fw-bold text-muted">Date Naissance
+                                                </label>
+                                                <!--end::Label-->
+                                                <!--begin::Col-->
+                                                <div class="col-lg-8 fv-row">
+                                                    <span class="fw-bold text-gray-800 fs-6">{{ $Etudiants->date_naissance }}</span>
+                                                </div>
+                                                <!--end::Col-->
+                                            </div>
+                                            <div class="row mb-7">
+                                                <!--begin::Label-->
+                                                <label class="col-lg-4 fw-bold text-muted">Nationalities
+                                                </label>
+                                                <!--end::Label-->
+                                                <!--begin::Col-->
+                                                <div class="col-lg-8 fv-row">
+                                                    <span class="fw-bold text-gray-800 fs-6">{{ $Etudiants->nationalities->Nom }}</span>
+                                                </div>
+                                                <!--end::Col-->
+                                            </div>
+
+                                            <div class="row mb-7">
+                                                <!--begin::Label-->
+                                                <label class="col-lg-4 fw-bold text-muted">Adresss</label>
                                                 <!--end::Label-->
                                                 <!--begin::Col-->
                                                 <div class="col-lg-8">
-                                                    <a href="#" class="fw-bold fs-6 text-gray-800 text-hover-primary">keenthemes.com</a>
+                                                    <a href="#" class="fw-bold fs-6 text-gray-800 text-hover-primary">{{ $Etudiants->adresss }}</a>
                                                 </div>
                                                 <!--end::Col-->
                                             </div>
@@ -514,12 +535,12 @@
                                             <!--begin::Input group-->
                                             <div class="row mb-7">
                                                 <!--begin::Label-->
-                                                <label class="col-lg-4 fw-bold text-muted">Country
+                                                <label class="col-lg-4 fw-bold text-muted">Annee Academique
                                                 <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" title="Country of origination"></i></label>
                                                 <!--end::Label-->
                                                 <!--begin::Col-->
                                                 <div class="col-lg-8">
-                                                    <span class="fw-bolder fs-6 text-gray-800">Germany</span>
+                                                    <span class="fw-bolder fs-6 text-gray-800">{{ $Etudiants->annee_academique }}</span>
                                                 </div>
                                                 <!--end::Col-->
                                             </div>
@@ -527,11 +548,11 @@
                                             <!--begin::Input group-->
                                             <div class="row mb-7">
                                                 <!--begin::Label-->
-                                                <label class="col-lg-4 fw-bold text-muted">Communication</label>
+                                                <label class="col-lg-4 fw-bold text-muted">Niveauxdetudes</label>
                                                 <!--end::Label-->
                                                 <!--begin::Col-->
                                                 <div class="col-lg-8">
-                                                    <span class="fw-bolder fs-6 text-gray-800">Email, Phone</span>
+                                                    <span class="fw-bolder fs-6 text-gray-800">{{ $Etudiants->niveauxdetudes->Nom }}</span>
                                                 </div>
                                                 <!--end::Col-->
                                             </div>

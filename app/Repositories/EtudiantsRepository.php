@@ -221,7 +221,10 @@ class  EtudiantsRepository implements EtudiantsRepositoryInterface
 
     public function Show_Etudaints($id){
 
-        return view('Etudiants.show');
+        $Etudiants = Etudiants::findorfail($id);
+
+        return view('Etudiants.show',compact('Etudiants'));
+
 
     }
 
