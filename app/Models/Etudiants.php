@@ -41,6 +41,9 @@ class Etudiants extends Model
     public function nationalities(){
         return $this->belongsTo('App\Models\Nationalitie','id_nationalities');
     }
+    public function parentes(){
+        return $this->belongsTo('App\Models\Parentes','id_parentes');
+    }
 
 
 
