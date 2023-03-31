@@ -103,4 +103,10 @@ class EtudiantsController extends Controller
     public function getsections($id){
         return $this->Etudiants->getsections($id);
     }
+
+    public function upload_picesjoint(Request $request){
+
+       return $this->Etudiants->upload_picesjoint($request);
+
+    }
 }

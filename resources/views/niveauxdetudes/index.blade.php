@@ -58,7 +58,7 @@
                       @endforeach
                    </ul>
                 </div>
-             @endif 
+             @endif
                 <!--begin::Row-->
                 <!--begin::Card-->
                 <div class="card">
@@ -73,7 +73,7 @@
                             </div>
                         @endif --}}
                         <!--begin::Header-->
-                        
+
                         <div class="card-header border-0 pt-5">
                             <h3 class="card-title align-items-start flex-column">
                                 <span class="card-label fw-bolder fs-3 mb-1">Members Statistics</span>
@@ -99,7 +99,7 @@
                         <!--end::Header-->
                         <!--begin::Body-->
                         <div class="card-body py-3">
-                         
+
                             <!--begin::Table container-->
                             <div class="table-responsive">
                                 <!--begin::Table-->
@@ -154,7 +154,7 @@
                                                         <a href="#"
                                                             class="text-dark fw-bolder text-hover-primary d-block fs-6">
                                                             {{  $niveauxdetude->created_at->format('d-m-Y')? $niveauxdetude->created_at->format('d-m-Y') : ' aucun Description ' }}
-                                                            
+
                                                         </a>
                                                     </td>
                                                     <td>
@@ -175,7 +175,7 @@
                                                                 </span>
                                                                 <!--end::Svg Icon-->
                                                             </a>
-                                                            <a data-bs-toggle="modal" data-bs-target="#delete{{$niveauxdetude->id}}" 
+                                                            <a data-bs-toggle="modal" data-bs-target="#delete{{$niveauxdetude->id}}"
                                                             class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
                                                                 <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                                                                 <span class="svg-icon svg-icon-3">
@@ -396,7 +396,7 @@
                     </form>
 
                 -->
-                
+
 
 @endsection
 

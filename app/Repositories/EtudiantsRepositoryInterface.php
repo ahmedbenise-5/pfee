@@ -32,6 +32,8 @@ interface  EtudiantsRepositoryInterface {
     public function Delete_Etudiants($request);
     //
     public function Show_Etudaints($id);
+    //
+    public function upload_picesjoint($request);
 
 
 

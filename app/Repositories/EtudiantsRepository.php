@@ -13,6 +13,7 @@ use App\Models\Nationalitie;
 use App\Models\niveauxdetudes;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use PhpParser\Node\Expr\FuncCall;
 use Symfony\Component\HttpFoundation\Request;
 
 class  EtudiantsRepository implements EtudiantsRepositoryInterface
@@ -140,7 +141,7 @@ class  EtudiantsRepository implements EtudiantsRepositoryInterface
 
                        $images = new Images();
                        $images->Nom_image = $name_files;
-                       $images->imageable_id = $Etudiants->id0;
+                       $images->imageable_id = $Etudiants->id;
                        $images->imageable_type = 'App\models\Etudiants';
                        $images->save();
                    }
@@ -228,6 +229,36 @@ class  EtudiantsRepository implements EtudiantsRepositoryInterface
 
     }
 
+
+    public function upload_picesjoint($request)
+    {
+
+        if($request->hasfile('files'))
+        {
+
+            foreach($request->file('files') as $file)
+            {
+
+                // insert image ina local
+
+                $name_files= $file->getclientoriginalname();
+                $file->storeAs('Piece_De_jointe/Etudiants/'.$request->Etudiants_nom,$name_files,'upload_PieceDejointe');
+
+                // insert images for iamges_table
+
+                $images = new Images();
+                $images->Nom_image = $name_files;
+                $images->imageable_id = $request->Etudiants_id;
+                $images->imageable_type = 'App\models\Etudiants';
+                $images->save();
+            }
+
+
+        }
+
+        toastr()->success('Les données ont été sauvegardées avec succès');
+        return redirect()->back();
+    }
 
 
 

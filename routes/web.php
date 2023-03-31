@@ -71,6 +71,7 @@ Route::group(['namespace'=>'niveauxdetudes'],function(){
     Route::resource('etudiants', 'EtudiantsController');
     Route::get('/getclasses/{id}','EtudiantsController@getclasses');
     Route::get('/getsections/{id}','EtudiantsController@getsections');
+    Route::post('upload_picesjoint','EtudiantsController@upload_picesjoint')->name('upload_picesjoint');
   });
 
 
