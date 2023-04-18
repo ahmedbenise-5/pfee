@@ -2,8 +2,8 @@
     <!--begin::Brand-->
     <div class="aside-logo flex-column-auto" id="kt_aside_logo">
         <!--begin::Logo-->
-        <a href="/metronic8/demo1/../demo1/index.html">
-            <img alt="Logo" src="/metronic8/demo1/assets/media/logos/logo-1-dark.svg" class="h-25px logo">
+        <a href="{{URL('/')}}">
+            <img alt="az" src="{{asset('assets/media/logos/archi1.png')}}" class="h-60px logo">
         </a>
         <!--end::Logo-->
         <!--begin::Aside toggler-->

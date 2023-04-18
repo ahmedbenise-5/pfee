@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Etudiants\EtudiantsController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -72,10 +73,11 @@ Route::group(['namespace'=>'niveauxdetudes'],function(){
     Route::get('/getclasses/{id}','EtudiantsController@getclasses');
     Route::get('/getsections/{id}','EtudiantsController@getsections');
     Route::post('upload_picesjoint','EtudiantsController@upload_picesjoint')->name('upload_picesjoint');
-  });
+    Route::get('telecharge_picesjoint/{Nom_etudiant}/{Nom_pices}','EtudiantsController@telecharge_picesjoint')->name('telecharge_picesjoint');  
+    Route::post('delete_picesjoint','EtudiantsController@delete_picesjoint')->name('delete_picesjoint');
+});
 
 
 
 
  });
-

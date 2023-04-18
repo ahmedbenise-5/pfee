@@ -223,8 +223,9 @@ class  EtudiantsRepository implements EtudiantsRepositoryInterface
     public function Show_Etudaints($id){
 
         $Etudiants = Etudiants::findorfail($id);
+        $images   =Images::all();
 
-        return view('Etudiants.show',compact('Etudiants'));
+        return view('Etudiants.show',compact('Etudiants','images'));
 
 
     }
@@ -258,6 +259,20 @@ class  EtudiantsRepository implements EtudiantsRepositoryInterface
 
         toastr()->success('Les données ont été sauvegardées avec succès');
         return redirect()->back();
+    }
+
+
+
+    public function telecharge_picesjoint($Nom_etudiant,$Nom_pices){
+
+        return response()->download(public_path('Piece_De_jointe/Etudiants/'.$Nom_etudiant.'/'.$Nom_pices));
+
+    }
+
+    public function delete_picesjoint($request){
+
+        return $request;
+
     }
 
 

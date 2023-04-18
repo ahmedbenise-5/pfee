@@ -109,4 +109,14 @@ class EtudiantsController extends Controller
        return $this->Etudiants->upload_picesjoint($request);
 
     }
+
+
+    public function telecharge_picesjoint ($Nom_etudiant,$Nom_pices){
+        return $this->Etudiants->telecharge_picesjoint($Nom_etudiant,$Nom_pices);
+    }
+
+    public function delete_picesjoint(Request $request){
+        $this->Etudiants->delete_picesjoint($request);
+        
+    }
 }

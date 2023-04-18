@@ -177,14 +177,7 @@
                         <!--begin::Details-->
                         <div class="d-flex flex-wrap flex-sm-nowrap mb-3">
                             <!--begin: Pic-->
-                            <div class="me-7 mb-4">
-                                <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
-                                    <img src="assets/media/avatars/300-1.jpg" alt="image" />
-                                    <div
-                                        class="position-absolute translate-middle bottom-0 start-100 mb-6 bg-success rounded-circle border border-4 border-white h-20px w-20px">
-                                    </div>
-                                </div>
-                            </div>
+
                             <!--end::Pic-->
                             <!--begin::Info-->
                             <div class="flex-grow-1">
@@ -273,29 +266,9 @@
                                     <!--end::User-->
                                     <!--begin::Actions-->
                                     <div class="d-flex my-4">
-                                        <a href="#" class="btn btn-sm btn-light me-2" id="kt_user_follow_button">
-                                            <!--begin::Svg Icon | path: icons/duotune/arrows/arr012.svg-->
-                                            <span class="svg-icon svg-icon-3 d-none">
-                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                    viewBox="0 0 24 24" fill="none">
-                                                    <path opacity="0.3"
-                                                        d="M10 18C9.7 18 9.5 17.9 9.3 17.7L2.3 10.7C1.9 10.3 1.9 9.7 2.3 9.3C2.7 8.9 3.29999 8.9 3.69999 9.3L10.7 16.3C11.1 16.7 11.1 17.3 10.7 17.7C10.5 17.9 10.3 18 10 18Z"
-                                                        fill="currentColor" />
-                                                    <path
-                                                        d="M10 18C9.7 18 9.5 17.9 9.3 17.7C8.9 17.3 8.9 16.7 9.3 16.3L20.3 5.3C20.7 4.9 21.3 4.9 21.7 5.3C22.1 5.7 22.1 6.30002 21.7 6.70002L10.7 17.7C10.5 17.9 10.3 18 10 18Z"
-                                                        fill="currentColor" />
-                                                </svg>
-                                            </span>
-                                            <!--end::Svg Icon-->
-                                            <!--begin::Indicator-->
-                                            <span class="indicator-label">Follow</span>
-                                            <span class="indicator-progress">Please wait...
-                                                <span
-                                                    class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-                                            <!--end::Indicator-->
-                                        </a>
-                                        <a href="#" class="btn btn-sm btn-primary me-2" data-bs-toggle="modal"
-                                            data-bs-target="#kt_modal_offer_a_deal">Hire Me</a>
+
+                                        <a href="{{ route('etudiants.edit', $Etudiants->id) }}"
+                                            class="btn btn-sm btn-primary me-2">Modifier etudiant</a>
                                         <!--begin::Menu-->
                                         <div class="me-0">
                                             <button class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary"
@@ -534,7 +507,7 @@
                                                         <rect opacity="0.3" x="8" y="3"
                                                             width="8" height="8" rx="4"
                                                             fill="currentColor" />
-                                                    </svg></span>  les information Etudiant
+                                                    </svg></span> les information Etudiant
                                                 <!--end::Svg Icon-->
                                             </a>
                                         </li>
@@ -793,17 +766,21 @@
                                                 <!--begin::Toolbar-->
                                                 <div class="card-toolbar">
 
-                                                        <div class="card-toolbar" data-bs-toggle="tooltip" data-bs-placement="top"
-                                                        data-bs-trigger="hover" title="Click  a ajoute une  piece jointe">
-                                                        <a href="#" class="btn btn-sm btn-primary " data-bs-toggle="modal"
-                                                            data-bs-target="#kt_modal_new_target">
+                                                    <div class="card-toolbar" data-bs-toggle="tooltip"
+                                                        data-bs-placement="top" data-bs-trigger="hover"
+                                                        title="Click  a ajoute une  piece jointe">
+                                                        <a href="#" class="btn btn-sm btn-primary "
+                                                            data-bs-toggle="modal" data-bs-target="#kt_modal_new_target">
                                                             <!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
                                                             <span class="svg-icon svg-icon-3">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                                                    fill="none">
-                                                                    <rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1"
-                                                                        transform="rotate(-90 11.364 20.364)" fill="black" />
-                                                                    <rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="black" />
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                    height="24" viewBox="0 0 24 24" fill="none">
+                                                                    <rect opacity="0.5" x="11.364" y="20.364"
+                                                                        width="16" height="2" rx="1"
+                                                                        transform="rotate(-90 11.364 20.364)"
+                                                                        fill="black" />
+                                                                    <rect x="4.36396" y="11.364" width="16"
+                                                                        height="2" rx="1" fill="black" />
                                                                 </svg>
                                                             </span>
                                                             <!--end::Svg Icon-->upload piece jointe
@@ -826,24 +803,135 @@
                                                             <tr>
                                                                 <th class="ps-9">le nom du fichier </th>
                                                                 <th class="ps-9">Date Ajouter</th>
+                                                                <th class="ps-9">Action</th>
                                                             </tr>
                                                         </thead>
                                                         <!--end::Thead-->
                                                         <!--begin::Tbody-->
                                                         <tbody class="fw-6 fw-bold text-gray-600">
-                                                            <tr>
-                                                                <td class="ps-9">
-                                                                    <a href=""
-                                                                    class="text-hover-primary text-gray-600">DSI:
-                                                                    Workstation 2</a>
-                                                                </td>
-                                                                <td class="ps-9">
-                                                                    <a href=""
-                                                                        class="text-hover-primary text-gray-600">DSI:
-                                                                        Workstation 2</a>
-                                                                </td>
+                                                            @foreach ($images as $image)
+                                                                <tr>
+                                                                    <td class="ps-9">
+                                                                        <a href=""
+                                                                            class="text-hover-primary text-gray-600">
+                                                                            {{ $image->Nom_image }}</a>
+                                                                    </td>
+                                                                    <td class="ps-9">
+                                                                        <a href=""
+                                                                            class="text-hover-primary text-gray-600">
+                                                                            {{ $image->created_at }}</a>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="d-flex justify-content flex-shrink-0">
+                                                                            <a
+                                                                             href="{{URL('telecharge_picesjoint')}}/{{ $Etudiants->name }}/{{ $image->Nom_image }}"
+                                                                                class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                                                <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
+                                                                                <!--begin::Svg Icon | path: assets/media/icons/duotune/files/fil021.svg-->
+                                                                                <span
+                                                                                    class="svg-icon svg-icon-muted svg-icon-3">
+                                                                                    <span class="svg-icon svg-icon-3">
 
-                                                            </tr>
+                                                                                    <svg
+                                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                                        width="24" height="24"
+                                                                                        viewBox="0 0 24 24"
+                                                                                        fill="none">
+                                                                                        <path opacity="0.3"
+                                                                                            d="M19 15C20.7 15 22 13.7 22 12C22 10.3 20.7 9 19 9C18.9 9 18.9 9 18.8 9C18.9 8.7 19 8.3 19 8C19 6.3 17.7 5 16 5C15.4 5 14.8 5.2 14.3 5.5C13.4 4 11.8 3 10 3C7.2 3 5 5.2 5 8C5 8.3 5 8.7 5.1 9H5C3.3 9 2 10.3 2 12C2 13.7 3.3 15 5 15H19Z"
+                                                                                            fill="black" />
+                                                                                        <path
+                                                                                            d="M13 17.4V12C13 11.4 12.6 11 12 11C11.4 11 11 11.4 11 12V17.4H13Z"
+                                                                                            fill="black" />
+                                                                                        <path opacity="0.3"
+                                                                                            d="M8 17.4H16L12.7 20.7C12.3 21.1 11.7 21.1 11.3 20.7L8 17.4Z"
+                                                                                            fill="black" />
+                                                                                    </svg></span>
+                                                                                <!--end::Svg Icon-->
+                                                                                <!--end::Svg Icon-->
+                                                                            </a>
+                                                                            <a data-bs-toggle="modal" 
+                                                                            data-bs-target="#delete{{ $image->id }}"
+                                                                                class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                                                <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
+                                                                                <span class="svg-icon svg-icon-3">
+                                                                                    <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                        width="24" height="24"
+                                                                                        viewBox="0 0 24 24"
+                                                                                        fill="none">
+                                                                                        <path
+                                                                                            d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z"
+                                                                                            fill="black" />
+                                                                                        <path opacity="0.5"
+                                                                                            d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z"
+                                                                                            fill="black" />
+                                                                                        <path opacity="0.5"
+                                                                                            d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z"
+                                                                                            fill="black" />
+                                                                                    </svg>
+                                                                                </span>
+                                                                                <!--end::Svg Icon-->
+                                                                            </a>
+
+
+                                                                        </div>
+                                                                    </td>
+
+                                                                </tr>
+
+
+                                                                <div class="modal fade" tabindex="-1" id="delete{{ $image->id }}">
+                                                                    <div class="modal-dialog mw-650px">
+                                                                        <div class="modal-content">
+                                                                            <div class="modal-body">
+                                                                                <form action="{{ URL::route('etudiants.destroy', 'delete') }}"
+                                                                                    method="POST" id="kt_modal_new_target_form"
+                                                                                    class="form">
+                                                                                    @method('delete')
+                                                                                    @csrf
+                                                                                    <!--begin::Heading-->
+                                                                                    <div class="mb-13 text-center">
+                                                                                        <!--begin::Title-->
+                                                                                        <h1 class="mb-3">Set First Target</h1>
+                                                                                        <!--end::Title-->
+                                                                                        <!--begin::Description-->
+                                                                                        <div class="text-muted fw-bold fs-5">If you need
+                                                                                            more info, please check
+                                                                                            <a href="#"
+                                                                                                class="fw-bolder link-primary">Project
+                                                                                                Guidelines</a>.
+                                                                                        </div>
+                                                                                        <!--end::Description-->
+                                                                                    </div>
+                                                                                    <!--end::Heading-->
+                                                                                    <!--begin::Input group-->
+                                                                                    <div class="d-flex flex-column mb-8 fv-row">
+                                                                                        <!--begin::Label-->
+                                                                                        <label
+                                                                                            class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                                                                            <span class="required">voulez-vous
+                                                                                                supprimer une  piece de jointe </span>
+                                                                                            <code>{{ $image->Nom_image }}</code>
+                                                                                            <input type="hidden" id="id" name="id"
+                                                                                                value="{{ $image->id }}">
+                                                                                            <input type="hidden" id="Nom_pices" name="Nom_pices"
+                                                                                                value="{{ $image->Nom_image }}">
+                                                                                            <input type="hidden" id="Nom_etudiant" name="Nom_etudiant"
+                                                                                                value="{{ $image->imageable->name }}">
+                                                                                        </label>
+                                                                                    </div>
+                                                                                    <div class="modal-footer">
+                                                                                        <button type="button" class="btn btn-light"
+                                                                                            data-bs-dismiss="modal">Fermer</button>
+                                                                                        <button type="submit" class="btn btn-primary">Sauvegarder les modifications</button>
+                                                                                    </div>
+                                                                                </form>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            @endforeach
+
                                                         </tbody>
                                                         <!--end::Tbody-->
                                                     </table>
@@ -860,66 +948,80 @@
 
 
                                     <!-- Modal -->
-                            <div class="modal fade" tabindex="-1" id="kt_modal_new_target">
-                                <div class="modal-dialog mw-650px">
-                                    <div class="modal-content">
-                                        <div class="modal-body">
-                                            <form action="{{ route('upload_picesjoint') }}" method="POST" id="kt_modal_new_target_form"
-                                                class="form" action="#"  enctype="multipart/form-data">
-                                                @csrf
-                                                <!--begin::Heading-->
-                                                <div class="mb-13 text-center">
-                                                    <!--begin::Title-->
-                                                    <h1 class="mb-3">Set First Target</h1>
-                                                    <!--end::Title-->
-                                                    <!--begin::Description-->
-                                                    <div class="text-muted fw-bold fs-5">If you need more info, please check
-                                                        <a href="#" class="fw-bolder link-primary">Project Guidelines</a>.
-                                                    </div>
-                                                    <!--end::Description-->
-                                                </div>
-                                                <!--end::Heading-->
-                                                <!--begin::Input group-->
-                                                <div class="card-body pt-0">
-                                                    <!--begin::Input group-->
-                                                    <div class="fv-row mb-2">
-                                                        <!--begin::Dropzone-->
-                                                        <div class="dropzone dz-clickable" id="kt_ecommerce_add_product_media">
-                                                            <!--begin::Message-->
-                                                            <div class="dz-message needsclick">
-                                                                <!--begin::Icon-->
-                                                                <i class="bi bi-file-earmark-arrow-up text-primary fs-3x">
-                                                                </i>
-                                                                <input type="file" name="files[]" accept="image/*,application/pdf" multiple="">
-                                                                <input type="hidden" value="{{ $Etudiants->id }}" id="Etudiants_id" name="Etudiants_id">
-                                                                <input type="hidden" value="{{ $Etudiants->name }}" id="Etudiants_nom" name="Etudiants_nom">
-
-
-                                                                <!--end::Icon-->
-                                                                <!--begin::Info-->
-
-                                                                <!--end::Info-->
+                                    <div class="modal fade" tabindex="-1" id="kt_modal_new_target">
+                                        <div class="modal-dialog mw-650px">
+                                            <div class="modal-content">
+                                                <div class="modal-body">
+                                                    <form action="{{ route('upload_picesjoint') }}" method="POST"
+                                                        id="kt_modal_new_target_form" class="form" action="#"
+                                                        enctype="multipart/form-data">
+                                                        @csrf
+                                                        <!--begin::Heading-->
+                                                        <div class="mb-13 text-center">
+                                                            <!--begin::Title-->
+                                                            <h1 class="mb-3">Set First Target</h1>
+                                                            <!--end::Title-->
+                                                            <!--begin::Description-->
+                                                            <div class="text-muted fw-bold fs-5">If you need more info,
+                                                                please check
+                                                                <a href="#" class="fw-bolder link-primary">Project
+                                                                    Guidelines</a>.
                                                             </div>
+                                                            <!--end::Description-->
                                                         </div>
-                                                        <!--end::Dropzone-->
+                                                        <!--end::Heading-->
+                                                        <!--begin::Input group-->
+                                                        <div class="card-body pt-0">
+                                                            <!--begin::Input group-->
+                                                            <div class="fv-row mb-2">
+                                                                <!--begin::Dropzone-->
+                                                                <div class="dropzone dz-clickable"
+                                                                    id="kt_ecommerce_add_product_media">
+                                                                    <!--begin::Message-->
+                                                                    <div class="dz-message needsclick">
+                                                                        <!--begin::Icon-->
+                                                                        <i
+                                                                            class="bi bi-file-earmark-arrow-up text-primary fs-3x">
+                                                                        </i>
+                                                                        <input type="file" name="files[]"
+                                                                            accept="image/*,application/pdf"
+                                                                            multiple="">
+                                                                        <input type="hidden"
+                                                                            value="{{ $Etudiants->id }}"
+                                                                            id="Etudiants_id" name="Etudiants_id">
+                                                                        <input type="hidden"
+                                                                            value="{{ $Etudiants->name }}"
+                                                                            id="Etudiants_nom" name="Etudiants_nom">
 
-                                                    </div>
-                                                    <!--end::Input group-->
-                                                    <!--begin::Description-->
-                                                    <div class="text-muted fs-7">Set the product media gallery.</div>
-                                                    <!--end::Description-->
+
+                                                                        <!--end::Icon-->
+                                                                        <!--begin::Info-->
+
+                                                                        <!--end::Info-->
+                                                                    </div>
+                                                                </div>
+                                                                <!--end::Dropzone-->
+
+                                                            </div>
+                                                            <!--end::Input group-->
+                                                            <!--begin::Description-->
+                                                            <div class="text-muted fs-7">Set the product media gallery.
+                                                            </div>
+                                                            <!--end::Description-->
+                                                        </div>
+                                                        <!--end::Input group-->
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-light"
+                                                                data-bs-dismiss="modal">ferme</button>
+                                                            <button type="submit"
+                                                                class="btn btn-primary">Ajouter</button>
+                                                        </div>
+                                                    </form>
                                                 </div>
-                                                <!--end::Input group-->
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-light" data-bs-dismiss="modal">ferme</button>
-                                                    <button type="submit" class="btn btn-primary">Ajouter</button>
-                                                </div>
-                                            </form>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                            <!--end::Modal -->
+                                    <!--end::Modal -->
                                     <!--end::Tab panel-->
                                 </div>
                                 <!--end::Tab content-->
