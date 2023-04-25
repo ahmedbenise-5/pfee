@@ -40,6 +40,7 @@ return array(
     'App\\Models\\Enseignants' => $baseDir . '/app/Models/Enseignants.php',
     'App\\Models\\Etudiants' => $baseDir . '/app/Models/Etudiants.php',
     'App\\Models\\FileParentes' => $baseDir . '/app/Models/FileParentes.php',
+    'App\\Models\\Frais' => $baseDir . '/app/Models/Frais.php',
     'App\\Models\\Images' => $baseDir . '/app/Models/Images.php',
     'App\\Models\\Nationalitie' => $baseDir . '/app/Models/Nationalitie.php',
     'App\\Models\\Parentes' => $baseDir . '/app/Models/Parentes.php',

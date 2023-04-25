@@ -78,6 +78,15 @@ Route::group(['namespace'=>'niveauxdetudes'],function(){
 });
 
 
+//---------------Comptes
+
+Route::group(['namespace'=>'Frais'],function(){
+    Route::resource('frais', 'FraisController');
+    
+});
+
+
+
 
 
  });

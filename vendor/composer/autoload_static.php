@@ -555,6 +555,7 @@ class ComposerStaticInitc99e77493771d4ad9d17b2de87271012
         'App\\Models\\Enseignants' => __DIR__ . '/../..' . '/app/Models/Enseignants.php',
         'App\\Models\\Etudiants' => __DIR__ . '/../..' . '/app/Models/Etudiants.php',
         'App\\Models\\FileParentes' => __DIR__ . '/../..' . '/app/Models/FileParentes.php',
+        'App\\Models\\Frais' => __DIR__ . '/../..' . '/app/Models/Frais.php',
         'App\\Models\\Images' => __DIR__ . '/../..' . '/app/Models/Images.php',
         'App\\Models\\Nationalitie' => __DIR__ . '/../..' . '/app/Models/Nationalitie.php',
         'App\\Models\\Parentes' => __DIR__ . '/../..' . '/app/Models/Parentes.php',

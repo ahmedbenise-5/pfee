@@ -884,10 +884,9 @@
                                                                     <div class="modal-dialog mw-650px">
                                                                         <div class="modal-content">
                                                                             <div class="modal-body">
-                                                                                <form action="{{ URL::route('etudiants.destroy', 'delete') }}"
-                                                                                    method="POST" id="kt_modal_new_target_form"
-                                                                                    class="form">
-                                                                                    @method('delete')
+                                                                                <form action="{{route('delete_picesjoint')}}"
+                                                                                    method="post" 
+                                                                                   >
                                                                                     @csrf
                                                                                     <!--begin::Heading-->
                                                                                     <div class="mb-13 text-center">
@@ -918,6 +917,11 @@
                                                                                                 value="{{ $image->Nom_image }}">
                                                                                             <input type="hidden" id="Nom_etudiant" name="Nom_etudiant"
                                                                                                 value="{{ $image->imageable->name }}">
+                                                                                            <input type="hidden" id="Etudiants_id" name="Etudiants_id"
+                                                                                                value="{{ $image->imageable->id }}">
+
+
+                                                                                                
                                                                                         </label>
                                                                                     </div>
                                                                                     <div class="modal-footer">

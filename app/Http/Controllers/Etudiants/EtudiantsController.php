@@ -116,7 +116,7 @@ class EtudiantsController extends Controller
     }
 
     public function delete_picesjoint(Request $request){
-        $this->Etudiants->delete_picesjoint($request);
+        return  $this->Etudiants->delete_picesjoint($request);
         
     }
 }

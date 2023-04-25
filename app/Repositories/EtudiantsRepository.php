@@ -12,6 +12,7 @@ use App\Models\Etudiants;
 use App\Models\Nationalitie;
 use App\Models\niveauxdetudes;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use PhpParser\Node\Expr\FuncCall;
 use Symfony\Component\HttpFoundation\Request;
@@ -271,9 +272,24 @@ class  EtudiantsRepository implements EtudiantsRepositoryInterface
 
     public function delete_picesjoint($request){
 
-        return $request;
+           // dd($request->Etudiants_id);
+    // delete for disk
+    Storage::disk('upload_PieceDejointe')->delete('Piece_De_jointe/Etudiants/'.$request->Nom_etudiant.'/'.$request->Nom_pices);
 
+    Images::where('id',$request->id)->where('Nom_image',$request->Nom_pices)->delete();
+
+     toastr()->success('Images supprimer avec succes');
+   
+    return redirect()->back();
     }
+
+        
+    // return redirect()->route('etudiants.show' ,$request->Etudiants_id);
+
+
+     
+
+ 
 
 
 

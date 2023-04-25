@@ -200,6 +200,42 @@
 
 
             </div>
+              <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="#kt_aside_menu" data-kt-menu="true" data-kt-menu-expand="false">
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                    <span class="menu-link">
+                        <span class="menu-icon">
+                            <i class="bi bi-grid fs-3"></i>
+                        </span>
+                        <span class="menu-title">Comptes Financiers</span>
+                        <span class="menu-arrow"></span>
+                    </span>
+
+
+                    <div class="menu-sub menu-sub-accordion menu-active-bg">
+                        <div class="menu-item">
+                            <a class="menu-link" href="{{URL::route('frais.index')}}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title"> Frais de scolarité</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    {{-- <div class="menu-sub menu-sub-accordion menu-active-bg">
+                        <div class="menu-item">
+                            <a class="menu-link" href="{{URL::route('etudiants.create')}}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title"> Ajouter Etudiants</span>
+                            </a>
+                        </div>
+                    </div> --}}
+                </div>
+
+
+            </div>
             <!--end::Menu-->
         </div>
         <!--end::Aside Menu-->

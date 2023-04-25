@@ -70,6 +70,14 @@ EnseignantsRepositoryInterface
 1--- php artisan make:model Etudiants -mcr
 
 
+// Frais
+
+php artisan make:model Frais -mcr
+
+FraisRepository 
+FraisRepositoryInterface
+
+
 
 
 
