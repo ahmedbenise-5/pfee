@@ -175,18 +175,19 @@
                                                     data-kt-check-target=".widget-9-check" />
                                             </div>
                                         </th>
-                                        <th class="min-w-150px">Nom </th>
-                                        <th class="min-w-150px">Section</th>
-                                        <th class="min-w-150px">Classes </th>
-                                        <th class="min-w-150px">Niveaux de etudes</th>
+                                        <th class="min-w-150px">Titer </th>
+                                        <th class="min-w-150px">Montante</th>
+                                        <th class="min-w-150px">Niveaux de etudes </th>
+                                        <th class="min-w-150px">classes</th>
+                                        <th class="min-w-140px ">Description</th>
                                         <th class="min-w-140px ">Actions</th>
                                     </tr>
                                 </thead>
                                 <!--end::Table head-->
                                 <!--begin::Table body-->
                                 <tbody>
-                                    @if (isset($Etudiants))
-                                        @foreach ($Etudiants as $Etudiant)
+                                    @if (isset($Frais))
+                                        @foreach ($Frais as $Fraiss)
                                             <tr>
                                                 <td>
                                                     <div
@@ -201,7 +202,7 @@
                                                             class="d-flex justify-content-start flex-column">
                                                             <a href="#"
                                                                 class="text-dark fw-bolder text-hover-primary fs-6">
-                                                                {{ $Etudiant->name ? $Etudiant->name : ' aucun name  ' }}
+                                                                {{ $Fraiss->titer ? $Fraiss->titer : ' aucun name  ' }}
                                                             </a>
                                                         </div>
                                                     </div>
@@ -213,7 +214,33 @@
                                                             class="d-flex justify-content-start flex-column">
                                                             <a href="#"
                                                                 class="text-dark fw-bolder text-hover-primary fs-6">
-                                                                {{ $Etudiant->Sections->nom_section ? $Etudiant->Sections->nom_section : ' aucun sections  ' }}
+                                                                {{ $Fraiss->montante ? $Fraiss->montante.' MAD' : ' aucun name  ' }}
+
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+
+
+
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div
+                                                            class="d-flex justify-content-start flex-column">
+                                                            <a href="#"
+                                                                class="text-dark fw-bolder text-hover-primary fs-6">
+                                                                {{ $Fraiss->niveauxdetudes->Nom ? $Fraiss->niveauxdetudes->Nom : ' aucun niveauxdetudes  ' }}
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div
+                                                            class="d-flex justify-content-start flex-column">
+                                                            <a href="#"
+                                                                class="text-dark fw-bolder text-hover-primary fs-6">
+                                                                {{ $Fraiss->Classes->Nom_Classe ? $Fraiss->Classes->Nom_Classe : ' aucun classes  ' }}
                                                             </a>
                                                         </div>
                                                     </div>
@@ -225,27 +252,16 @@
                                                             class="d-flex justify-content-start flex-column">
                                                             <a href="#"
                                                                 class="text-dark fw-bolder text-hover-primary fs-6">
-                                                                {{ $Etudiant->Classes->Nom_Classe ? $Etudiant->Classes->Nom_Classe : ' aucun classes  ' }}
+                                                                {{ $Fraiss->description ? $Fraiss->description : ' aucun name  ' }}
+
                                                             </a>
                                                         </div>
                                                     </div>
                                                 </td>
-
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <div
-                                                            class="d-flex justify-content-start flex-column">
-                                                            <a href="#"
-                                                                class="text-dark fw-bolder text-hover-primary fs-6">
-                                                                {{ $Etudiant->niveauxdetudes->Nom ? $Etudiant->niveauxdetudes->Nom : ' aucun niveauxdetudes  ' }}
-                                                            </a>
-                                                        </div>
-                                                    </div>
-                                                </td>
-
                                                 <td>
                                                     <div class="d-flex justify-content flex-shrink-0">
-                                                        <a  href="{{route('etudiants.edit' ,$Etudiant->id)}}"
+                                                        <a
+                                                        href="{{route('frais.edit' ,$Fraiss->id)}}"
                                                             class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                                             <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                                             <span class="svg-icon svg-icon-3">
@@ -263,7 +279,7 @@
                                                             <!--end::Svg Icon-->
                                                         </a>
                                                         <a data-bs-toggle="modal"
-                                                            data-bs-target="#delete{{ $Etudiant->id }}"
+                                                            data-bs-target="#delete{{ $Fraiss->id }}"
                                                             class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                                             <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                                                             <span class="svg-icon svg-icon-3">
@@ -284,7 +300,8 @@
                                                             <!--end::Svg Icon-->
                                                         </a>
 
-                                                        <a href="{{route('etudiants.show' ,$Etudiant->id)}}"
+                                                        <a
+                                                        {{-- href="{{route('Frais.show' ,$Fraiss->id)}}" --}}
                                                             class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                                             <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                                                             <span class="svg-icon svg-icon-3">
@@ -303,11 +320,11 @@
                                             </tr>
 
                                           <!-- modul delte -->
-                                          <div class="modal fade" tabindex="-1" id="delete{{ $Etudiant->id }}">
+                                          <div class="modal fade" tabindex="-1" id="delete{{ $Fraiss->id }}">
                                             <div class="modal-dialog mw-650px">
                                                 <div class="modal-content">
                                                     <div class="modal-body">
-                                                        <form action="{{ URL::route('etudiants.destroy', 'delete') }}"
+                                                        <form action="{{ URL::route('frais.destroy', 'delete') }}"
                                                             method="POST" id="kt_modal_new_target_form"
                                                             class="form">
                                                             @method('delete')
@@ -333,10 +350,10 @@
                                                                 <label
                                                                     class="d-flex align-items-center fs-6 fw-bold mb-2">
                                                                     <span class="required">voulez-vous
-                                                                        supprimer une  Etudiants </span>
-                                                                    <code>{{ $Etudiant->name }}</code>
+                                                                        supprimer une  Frais </span>
+                                                                    <code>{{ $Fraiss->name }}</code>
                                                                     <input type="hidden" id="id" name="id"
-                                                                        value="{{ $Etudiant->id }}">
+                                                                        value="{{ $Fraiss->id }}">
                                                                 </label>
                                                             </div>
                                                             <div class="modal-footer">

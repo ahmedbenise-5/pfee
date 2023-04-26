@@ -127,7 +127,7 @@ Ajouter une Frais
                                                     <!--end::Label-->
                                                     <!--begin::Input-->
                                                     <input type="text" class="form-control mb-2" name="titer"
-                                                        value="">
+                                                        value="{{ $Frais->titer }}">
                                                 </div>
 
                                                 <!--begin::Input group-->
@@ -137,7 +137,7 @@ Ajouter une Frais
                                                     <!--end::Label-->
                                                     <!--begin::Input-->
                                                     <input type="text" class="form-control mb-2" name="montante"
-                                                        value="">
+                                                    value="{{ $Frais->montante }}">
                                                 </div>
                                                 <!--end::Input group-->
                                                 <!--begin::Input group-->
@@ -155,7 +155,9 @@ Ajouter une Frais
                                                         data-control="select" data-placeholder="Select an option">
                                                         <option disabled selected> choisir un parent</option>
                                                         @foreach ($list_niveauxdetudes as $list_niveauxdetude)
-                                                            <option value="{{ $list_niveauxdetude->id }}">
+                                                            <option value="{{ $list_niveauxdetude->id }}"
+                                                                {{ $list_niveauxdetude->id == old('id_niveauxdetudes', $Frais->id_niveauxdetudes) ? 'selected' : '' }}>
+
                                                                 {{ $list_niveauxdetude->Nom }}
                                                             </option>
                                                         @endforeach
@@ -167,6 +169,13 @@ Ajouter une Frais
                                                     <select class="form-select " name="id_classes" data-control="select"
                                                         data-placeholder="Select an option" data-hide-search="flase">
 
+                                                        {{-- @foreach ($list_classes as $list_classe)
+                                                            <option value="{{ $list_classe->id }}"
+                                                                {{ $list_classe->id == old('id_classes', $Frais->id_niveauxdetudes) ? 'selected' : '' }}>
+
+                                                                {{ $list_classe->Nom_Classe }}
+                                                            </option>
+                                                        @endforeach --}}
                                                     </select>
                                                 </div>
                                                 <div class="fv-row w-100 flex-md-root">

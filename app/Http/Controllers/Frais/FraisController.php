@@ -11,7 +11,7 @@ use App\Repositories\FraisRepositoryInterface;
 
 class FraisController extends Controller
 {
-    
+
 
 
     protected $Frais;
@@ -22,7 +22,7 @@ class FraisController extends Controller
     }
 
 
-    
+
     public function index()
     {
 
@@ -41,7 +41,7 @@ class FraisController extends Controller
 
     public function store(Request $request)
     {
-    
+
         return $this->Frais->store($request);
     }
 
@@ -52,9 +52,10 @@ class FraisController extends Controller
     }
 
 
-    public function edit(Frais $frais)
+    public function edit($id)
     {
-        //
+        return $this->Frais->edit($id);
+
     }
 
 

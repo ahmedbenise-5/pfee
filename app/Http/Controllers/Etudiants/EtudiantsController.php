@@ -76,7 +76,6 @@ class EtudiantsController extends Controller
 
         $Etudiants = Etudiants::findOrFail($id);
 
-
         return view('Etudiants.edit', compact('Etudiants','list_genders', 'list_classes', 'list_niveauxdetudes',
                                                 'list_sections','list_parentes','list_religions','list_nationalities'));
     }
@@ -117,6 +116,6 @@ class EtudiantsController extends Controller
 
     public function delete_picesjoint(Request $request){
         return  $this->Etudiants->delete_picesjoint($request);
-        
+
     }
 }
