@@ -14,7 +14,7 @@ interface  FraisRepositoryInterface {
 
     public function edit($id);
 
-    // public function update();
+    public function update($request ,$id);
 
-    // public function destroy();
+    public function destroy($request);
 }

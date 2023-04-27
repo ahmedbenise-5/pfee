@@ -59,14 +59,16 @@ class FraisController extends Controller
     }
 
 
-    public function update(Request $request, Frais $frais)
+    public function update(Request $request , $id)
     {
-        //
+        return $this->Frais->update($request ,$id);
     }
 
 
-    public function destroy(Frais $frais)
+    public function destroy(Request $request)
     {
-        //
+
+        return  $this->Frais->destroy($request);
+
     }
 }

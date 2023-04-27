@@ -81,9 +81,10 @@ Ajouter une Frais
                     </div>
                 @endif
 
-                <form action="{{ route('frais.store') }}" enctype="multipart/form-data" method="POST"
+                <form action="{{ route('frais.update',$Frais->id) }}" enctype="multipart/form-data" method="POST"
                     class="form d-flex flex-column flex-lg-row fv-plugins-bootstrap5 fv-plugins-framework">
                     @csrf
+                    @method('PATCH')
                     <!--begin::Aside column-->
 
                     <!--end::Aside column-->
@@ -169,13 +170,13 @@ Ajouter une Frais
                                                     <select class="form-select " name="id_classes" data-control="select"
                                                         data-placeholder="Select an option" data-hide-search="flase">
 
-                                                        {{-- @foreach ($list_classes as $list_classe)
+                                                        @foreach ($list_classes as $list_classe)
                                                             <option value="{{ $list_classe->id }}"
-                                                                {{ $list_classe->id == old('id_classes', $Frais->id_niveauxdetudes) ? 'selected' : '' }}>
+                                                                {{ $list_classe->id == old('id_classes', $Frais->id_classes) ? 'selected' : '' }}>
 
                                                                 {{ $list_classe->Nom_Classe }}
                                                             </option>
-                                                        @endforeach --}}
+                                                        @endforeach
                                                     </select>
                                                 </div>
                                                 <div class="fv-row w-100 flex-md-root">
@@ -183,11 +184,21 @@ Ajouter une Frais
                                                     <label class="form-label required">Annee Academique</label>
                                                     <!--end::Label-->
                                                     <!--begin::Input-->
-                                                    <select class="form-select" name="annee"
+                                                    {{-- <select class="form-select" name="annee"
                                                         data-placeholder="Select an option">
                                                         <option value="2023">2023</option>
                                                         <option value="2024">2024</option>
-                                                    </select>
+                                                    </select> --}}
+                                                    <select class="form-select" name="annee"
+                                                    data-placeholder="Select an option">
+                                                    <option value="2023"
+                                                    {{ "2023" ==  $Frais->annee ? 'selected' : '' }}
+
+                                                    >2023</option>
+                                                    <option value="2024"
+                                                    {{ "2024" ==  $Frais->annee ? 'selected' : '' }}
+                                                    >2024</option>
+                                                </select>
                                                 </div>
 
 
@@ -196,7 +207,7 @@ Ajouter une Frais
                                             <div class="d-flex flex-column mb-8 mt-8 fv-row fv-plugins-icon-container">
                                                 <label class="fs-6 fw-bold mb-2 required">Description</label>
                                                 <textarea class="form-control form-control-solid" rows="4" name="description" id="description"
-                                                    placeholder="Type your ticket description" style="height: 137px;"></textarea>
+                                                    placeholder="Type your ticket description" style="height: 137px;">{{ $Frais->description }}</textarea>
                                                 <div class="fv-plugins-message-container invalid-feedback"></div>
                                             </div>
                                         </div>

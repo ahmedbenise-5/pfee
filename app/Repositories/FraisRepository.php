@@ -3,9 +3,10 @@
 
 namespace App\Repositories;
 
-use App\Models\Classes;
 use App\Models\Frais;
+use App\Models\Classes;
 use App\Models\niveauxdetudes;
+use Illuminate\Support\Facades\Validator;
 
 
 
@@ -45,6 +46,21 @@ class  FraisRepository implements FraisRepositoryInterface {
 
     public function store($request){
 
+
+        $validator = Validator::make($request->all(), [
+            'titer' => 'required',
+            'montante' => 'required',
+            'id_niveauxdetudes' => 'required',
+            'id_classes' => 'required',
+            'annee' => 'required',
+        ], []);
+        if ($validator->fails()) {
+            return redirect()
+                ->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
        $Frais = new Frais();
        $Frais->titer = $request->titer;
        $Frais->montante = $request->montante;
@@ -53,9 +69,59 @@ class  FraisRepository implements FraisRepositoryInterface {
        $Frais->description = $request->description;
        $Frais->annee = $request->annee;
        $Frais->save();
-       toastr()->success('Data has been update successfully!');
+       toastr()->success('Data has been save successfully!');
        return redirect()->back();
     }
+
+
+
+
+    public function update($request, $id){
+
+        $validator = Validator::make($request->all(), [
+            'titer' => 'required',
+            'montante' => 'required',
+            'id_niveauxdetudes' => 'required',
+            'id_classes' => 'required',
+            'annee' => 'required',
+        ], []);
+        if ($validator->fails()) {
+            return redirect()
+                ->back()
+                ->withErrors($validator)
+                ->withInput();
+        }
+
+        $Frais = Frais::findOrFail($id);
+        $Frais->titer = $request->titer;
+        $Frais->montante = $request->montante;
+        $Frais->id_niveauxdetudes = $request->id_niveauxdetudes;
+        $Frais->id_classes = $request->id_classes;
+        $Frais->description = $request->description;
+        $Frais->annee = $request->annee;
+        $Frais->save();
+        toastr()->success('Data has been update successfully!');
+        return redirect()->back();
+
+    }
+
+
+    public function destroy($request)
+    {
+
+        Frais::where('id',$request->id)->delete();
+        toastr()->success('Data has been delete successfully!');
+        return redirect()->back();
+
+
+
+    }
+
+
+
+
+
+
 
 
 
