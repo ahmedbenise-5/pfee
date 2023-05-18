@@ -68,6 +68,7 @@ class  FraisRepository implements FraisRepositoryInterface {
        $Frais->id_classes = $request->id_classes;
        $Frais->description = $request->description;
        $Frais->annee = $request->annee;
+       $Frais->type_frais = $request->type_frais;
        $Frais->save();
        toastr()->success('Data has been save successfully!');
        return redirect()->back();
@@ -97,6 +98,7 @@ class  FraisRepository implements FraisRepositoryInterface {
         $Frais->montante = $request->montante;
         $Frais->id_niveauxdetudes = $request->id_niveauxdetudes;
         $Frais->id_classes = $request->id_classes;
+        $Frais->type_frais = $request->type_frais;
         $Frais->description = $request->description;
         $Frais->annee = $request->annee;
         $Frais->save();

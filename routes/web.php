@@ -25,7 +25,9 @@ Route::group(['middleware'=>['guest']],function(){
 
 Route::group(['middleware' => ['auth']], function() {
 
-    Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    // Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+    Route::get('home',[App\Http\Controllers\AccueilController::class, 'index'])->name('home');
+    // Route::get('home','EtudiantsController@index')->name('home');
     Route::get('/logoutUser', 'LogoutController@logoutUser')->name('logoutUser');
 
 //------------------niveauxdetudes -----------------
@@ -73,7 +75,7 @@ Route::group(['namespace'=>'niveauxdetudes'],function(){
     Route::get('/getclasses/{id}','EtudiantsController@getclasses');
     Route::get('/getsections/{id}','EtudiantsController@getsections');
     Route::post('upload_picesjoint','EtudiantsController@upload_picesjoint')->name('upload_picesjoint');
-    Route::get('telecharge_picesjoint/{Nom_etudiant}/{Nom_pices}','EtudiantsController@telecharge_picesjoint')->name('telecharge_picesjoint');  
+    Route::get('telecharge_picesjoint/{Nom_etudiant}/{Nom_pices}','EtudiantsController@telecharge_picesjoint')->name('telecharge_picesjoint');
     Route::post('delete_picesjoint','EtudiantsController@delete_picesjoint')->name('delete_picesjoint');
 });
 
@@ -82,7 +84,24 @@ Route::group(['namespace'=>'niveauxdetudes'],function(){
 
 Route::group(['namespace'=>'Frais'],function(){
     Route::resource('frais', 'FraisController');
-    
+});
+
+//---------------Facture
+
+Route::group(['namespace'=>'Facture'],function(){
+    Route::resource('facture', 'FactureController');
+    Route::get('craete_facture/{id}','FactureController@show')->name('craete_facture');
+    // Route::get('edit/{id}','FactureController@edit')->name('edit');
+    Route::get('/getmontante/{id}','FactureController@getmontante');
+
+});
+
+
+
+//----------------Recu_Etudaint
+
+Route::group(['namespace'=>'RecuEtudaint'],function(){
+    Route::resource('RecuEtudaint','RecuEtudiantController');
 });
 
 

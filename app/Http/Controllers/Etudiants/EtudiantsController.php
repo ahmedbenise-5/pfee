@@ -7,6 +7,7 @@ namespace App\Http\Controllers\Etudiants;
 use App\Models\Etudiants;
 use Illuminate\Http\Request;
 use App\Repositories\EtudiantsRepositoryInterface;
+use App\Repositories\EtudiantsRepository;
 use App\Http\Controllers\Controller;
 
 class EtudiantsController extends Controller
@@ -59,7 +60,7 @@ class EtudiantsController extends Controller
     public function show($id)
     {
 
-      return $this->Etudiants->Show_Etudaints($id);
+      return $this->Etudiants->Show_Etudiants($id);
     }
 
 

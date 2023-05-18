@@ -143,6 +143,24 @@ Ajouter une Frais
                                                 <!--end::Input group-->
                                                 <!--begin::Input group-->
 
+                                                <div class="fv-row w-100 flex-md-root">
+                                                    <!--begin::Label-->
+                                                    <label class="form-label required">Type Frais</label>
+                                                    <!--end::Label-->
+                                                    <!--begin::Input-->
+                                                    <select class="form-select" name="type_frais"
+                                                        data-placeholder="Select an option">
+
+
+                                                        <option value="frais scolaire"
+                                                        {{ "frais scolaire" ==  $Frais->type_frais ? 'selected' : '' }}
+
+                                                        >frais scolaire</option>
+                                                        <option value="frais transport"
+                                                        {{ "frais transport" ==  $Frais->type_frais ? 'selected' : '' }}
+                                                        >frais transport</option>
+                                                    </select>
+                                                </div>
                                                 <!--end::Input group-->
                                             </div><br>
                                             <!--end::Input group-->

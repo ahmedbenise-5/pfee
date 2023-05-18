@@ -84,7 +84,7 @@ class  EtudiantsRepository implements EtudiantsRepositoryInterface
     public function Add_Etudiants($request){
 
 
-        DB::beginTransaction();
+        // DB::beginTransaction();
 
         try {
             $validator = Validator::make($request->all(), [
@@ -154,10 +154,10 @@ class  EtudiantsRepository implements EtudiantsRepositoryInterface
                return redirect()->back();
 
 
-            DB::commit();
+            // DB::commit();
             // all good
         } catch (\Exception $e) {
-            DB::rollback();
+            // DB::rollback();
             return redirect()->back()->withErrors(['error'=>$e->getMessage()]);
         }
         //
@@ -221,7 +221,7 @@ class  EtudiantsRepository implements EtudiantsRepositoryInterface
         return redirect()->back();
     }
 
-    public function Show_Etudaints($id){
+    public function Show_Etudiants($id){
 
         $Etudiants = Etudiants::findorfail($id);
         $images   =Images::all();
@@ -279,17 +279,17 @@ class  EtudiantsRepository implements EtudiantsRepositoryInterface
     Images::where('id',$request->id)->where('Nom_image',$request->Nom_pices)->delete();
 
      toastr()->success('Images supprimer avec succes');
-   
+
     return redirect()->back();
     }
 
-        
+
     // return redirect()->route('etudiants.show' ,$request->Etudiants_id);
 
 
-     
 
- 
+
+
 
 
 

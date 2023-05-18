@@ -31,7 +31,7 @@
                         <span class="menu-icon">
                             <i class="bi bi-grid fs-3"></i>
                         </span>
-                        <span class="menu-title">Niveaux de etudes</span>
+                        <span class="menu-title">Niveaux des études</span>
                         <span class="menu-arrow"></span>
                     </span>
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
@@ -40,7 +40,7 @@
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title"> lits Niveaux de etudes</span>
+                                <span class="menu-title"> lits Niveaux des études</span>
                             </a>
                         </div>
                     </div>
@@ -65,7 +65,7 @@
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title"> List de Classe</span>
+                                <span class="menu-title"> Liste des Classes</span>
                             </a>
                         </div>
                     </div>
@@ -79,7 +79,7 @@
                         <span class="menu-icon">
                             <i class="bi bi-grid fs-3"></i>
                         </span>
-                        <span class="menu-title">Parenetes</span>
+                        <span class="menu-title">Parents</span>
                         <span class="menu-arrow"></span>
                     </span>
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
@@ -88,7 +88,7 @@
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title"> List des  Parenetes</span>
+                                <span class="menu-title"> Liste des Parents</span>
                             </a>
                         </div>
                     </div>
@@ -111,7 +111,7 @@
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
-                                    <span class="menu-title"> List des  Enseignants</span>
+                                    <span class="menu-title"> Liste des Enseignants</span>
                                 </a>
                             </div>
                         </div>
@@ -134,7 +134,7 @@
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title"> Primiare</span>
+                                <span class="menu-title"> Primaire</span>
                             </a>
                         </div>
                     </div>
@@ -144,7 +144,7 @@
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title"> Lycee</span>
+                                <span class="menu-title"> Lycée</span>
                             </a>
                         </div>
                     </div>
@@ -154,7 +154,7 @@
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title"> College</span>
+                                <span class="menu-title"> Collége</span>
                             </a>
                         </div>
                     </div>
@@ -170,7 +170,7 @@
                         <span class="menu-icon">
                             <i class="bi bi-grid fs-3"></i>
                         </span>
-                        <span class="menu-title">Etudiants</span>
+                        <span class="menu-title">Etudaints</span>
                         <span class="menu-arrow"></span>
                     </span>
 
@@ -181,7 +181,7 @@
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title"> List Etudiants</span>
+                                <span class="menu-title"> Liste des Etudaints</span>
                             </a>
                         </div>
                     </div>
@@ -192,7 +192,7 @@
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title"> Ajouter Etudiants</span>
+                                <span class="menu-title"> Ajouter Etudaints</span>
                             </a>
                         </div>
                     </div> --}}
@@ -222,13 +222,24 @@
                         </div>
                     </div>
 
+                    <div class="menu-sub menu-sub-accordion menu-active-bg">
+                        <div class="menu-item">
+                            <a class="menu-link" href="{{URL::route('facture.index')}}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title"> Liste des Factures</span>
+                            </a>
+                        </div>
+                    </div>
+
                     {{-- <div class="menu-sub menu-sub-accordion menu-active-bg">
                         <div class="menu-item">
                             <a class="menu-link" href="{{URL::route('etudiants.create')}}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title"> Ajouter Etudiants</span>
+                                <span class="menu-title"> Ajouter Etudaints</span>
                             </a>
                         </div>
                     </div> --}}
@@ -242,22 +253,7 @@
     </div>
     <!--end::Aside menu-->
     <!--begin::Footer-->
-    <div class="aside-footer flex-column-auto pt-5 pb-7 px-5" id="kt_aside_footer">
-        <a href="/metronic8/demo1/../demo1/documentation/getting-started.html" class="btn btn-custom btn-primary w-100" data-bs-toggle="tooltip" data-bs-trigger="hover" data-bs-dismiss-="click" title="" data-bs-original-title="200+ in-house components and 3rd-party plugins">
-            <span class="btn-label">Docs &amp; Components</span>
-            <!--begin::Svg Icon | path: icons/duotune/general/gen005.svg-->
-            <span class="svg-icon btn-icon svg-icon-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path opacity="0.3" d="M19 22H5C4.4 22 4 21.6 4 21V3C4 2.4 4.4 2 5 2H14L20 8V21C20 21.6 19.6 22 19 22ZM12.5 18C12.5 17.4 12.6 17.5 12 17.5H8.5C7.9 17.5 8 17.4 8 18C8 18.6 7.9 18.5 8.5 18.5L12 18C12.6 18 12.5 18.6 12.5 18ZM16.5 13C16.5 12.4 16.6 12.5 16 12.5H8.5C7.9 12.5 8 12.4 8 13C8 13.6 7.9 13.5 8.5 13.5H15.5C16.1 13.5 16.5 13.6 16.5 13ZM12.5 8C12.5 7.4 12.6 7.5 12 7.5H8C7.4 7.5 7.5 7.4 7.5 8C7.5 8.6 7.4 8.5 8 8.5H12C12.6 8.5 12.5 8.6 12.5 8Z" fill="black"></path>
-                    <rect x="7" y="17" width="6" height="2" rx="1" fill="black"></rect>
-                    <rect x="7" y="12" width="10" height="2" rx="1" fill="black"></rect>
-                    <rect x="7" y="7" width="6" height="2" rx="1" fill="black"></rect>
-                    <path d="M15 8H20L14 2V7C14 7.6 14.4 8 15 8Z" fill="black"></path>
-                </svg>
-            </span>
-            <!--end::Svg Icon-->
-        </a>
-    </div>
+    
     <!--end::Footer-->
 </div>
 

@@ -6,7 +6,6 @@
 
 @section('css')
     @toastr_css
-
 @endsection
 
 
@@ -27,7 +26,7 @@
                         <span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
                         <!--end::Separator-->
                         <!--begin::Description-->
-                        <small class="text-muted fs-7 fw-bold my-1 ms-1">Etudiants</small>
+                        <small class="text-muted fs-7 fw-bold my-1 ms-1">Etudaints</small>
                         <!--end::Description-->
                     </h1>
                     <!--end::Title-->
@@ -54,20 +53,27 @@
                     <div class="alert alert-danger d-flex align-items-center p-5 mb-10">
                         <!--begin::Svg Icon | path: icons/duotune/general/gen048.svg-->
                         <span class="svg-icon svg-icon-2hx svg-icon-danger me-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path opacity="0.3" d="M20.5543 4.37824L12.1798 2.02473C12.0626 1.99176 11.9376 1.99176 11.8203 2.02473L3.44572 4.37824C3.18118 4.45258 3 4.6807 3 4.93945V13.569C3 14.6914 3.48509 15.8404 4.4417 16.984C5.17231 17.8575 6.18314 18.7345 7.446 19.5909C9.56752 21.0295 11.6566 21.912 11.7445 21.9488C11.8258 21.9829 11.9129 22 12.0001 22C12.0872 22 12.1744 21.983 12.2557 21.9488C12.3435 21.912 14.4326 21.0295 16.5541 19.5909C17.8169 18.7345 18.8277 17.8575 19.5584 16.984C20.515 15.8404 21 14.6914 21 13.569V4.93945C21 4.6807 20.8189 4.45258 20.5543 4.37824Z" fill="black"></path>
-                                <path d="M10.5606 11.3042L9.57283 10.3018C9.28174 10.0065 8.80522 10.0065 8.51412 10.3018C8.22897 10.5912 8.22897 11.0559 8.51412 11.3452L10.4182 13.2773C10.8099 13.6747 11.451 13.6747 11.8427 13.2773L15.4859 9.58051C15.771 9.29117 15.771 8.82648 15.4859 8.53714C15.1948 8.24176 14.7183 8.24176 14.4272 8.53714L11.7002 11.3042C11.3869 11.6221 10.874 11.6221 10.5606 11.3042Z" fill="black"></path>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none">
+                                <path opacity="0.3"
+                                    d="M20.5543 4.37824L12.1798 2.02473C12.0626 1.99176 11.9376 1.99176 11.8203 2.02473L3.44572 4.37824C3.18118 4.45258 3 4.6807 3 4.93945V13.569C3 14.6914 3.48509 15.8404 4.4417 16.984C5.17231 17.8575 6.18314 18.7345 7.446 19.5909C9.56752 21.0295 11.6566 21.912 11.7445 21.9488C11.8258 21.9829 11.9129 22 12.0001 22C12.0872 22 12.1744 21.983 12.2557 21.9488C12.3435 21.912 14.4326 21.0295 16.5541 19.5909C17.8169 18.7345 18.8277 17.8575 19.5584 16.984C20.515 15.8404 21 14.6914 21 13.569V4.93945C21 4.6807 20.8189 4.45258 20.5543 4.37824Z"
+                                    fill="black"></path>
+                                <path
+                                    d="M10.5606 11.3042L9.57283 10.3018C9.28174 10.0065 8.80522 10.0065 8.51412 10.3018C8.22897 10.5912 8.22897 11.0559 8.51412 11.3452L10.4182 13.2773C10.8099 13.6747 11.451 13.6747 11.8427 13.2773L15.4859 9.58051C15.771 9.29117 15.771 8.82648 15.4859 8.53714C15.1948 8.24176 14.7183 8.24176 14.4272 8.53714L11.7002 11.3042C11.3869 11.6221 10.874 11.6221 10.5606 11.3042Z"
+                                    fill="black"></path>
                             </svg>
                         </span>
                         <!--end::Svg Icon-->
                         <div class="d-flex flex-column">
                             <h4 class="mb-1 text-danger">This is an alert</h4>
                             @foreach ($errors->all() as $error)
-                            <span>{{ $error }}</span>
+                                <span>{{ $error }}</span>
                             @endforeach
                         </div>
-                         <!--begin::Close-->
-                        <button type="button" class="position-absolute position-sm-relative m-2 m-sm-0 top-0 end-0 btn btn-icon ms-sm-auto" data-bs-dismiss="alert">
+                        <!--begin::Close-->
+                        <button type="button"
+                            class="position-absolute position-sm-relative m-2 m-sm-0 top-0 end-0 btn btn-icon ms-sm-auto"
+                            data-bs-dismiss="alert">
                             <i class="bi bi-x fs-1 text-primary"></i>
                         </button>
                     </div>
@@ -88,26 +94,32 @@
 
                                 <div class="me-4">
                                     <!--begin::Menu-->
-                                    <button type="button" class="btn btn-light-primary me-3" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+                                    <button type="button" class="btn btn-light-primary me-3" data-kt-menu-trigger="click"
+                                        data-kt-menu-placement="bottom-end">
                                         <!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
                                         <span class="svg-icon svg-icon-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                                <path d="M19.0759 3H4.72777C3.95892 3 3.47768 3.83148 3.86067 4.49814L8.56967 12.6949C9.17923 13.7559 9.5 14.9582 9.5 16.1819V19.5072C9.5 20.2189 10.2223 20.7028 10.8805 20.432L13.8805 19.1977C14.2553 19.0435 14.5 18.6783 14.5 18.273V13.8372C14.5 12.8089 14.8171 11.8056 15.408 10.964L19.8943 4.57465C20.3596 3.912 19.8856 3 19.0759 3Z" fill="black"></path>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <path
+                                                    d="M19.0759 3H4.72777C3.95892 3 3.47768 3.83148 3.86067 4.49814L8.56967 12.6949C9.17923 13.7559 9.5 14.9582 9.5 16.1819V19.5072C9.5 20.2189 10.2223 20.7028 10.8805 20.432L13.8805 19.1977C14.2553 19.0435 14.5 18.6783 14.5 18.273V13.8372C14.5 12.8089 14.8171 11.8056 15.408 10.964L19.8943 4.57465C20.3596 3.912 19.8856 3 19.0759 3Z"
+                                                    fill="black"></path>
                                             </svg>
                                         </span>
-                                        <!--end::Svg Icon-->Filter</button>
-                                        <!--begin::Menu 1-->
-                                        <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" id="kt_menu_621214a8b8f66">
-                                            <!--begin::Header-->
-                                            <div class="px-7 py-5">
-                                                <div class="fs-5 text-dark fw-bolder">Filter Options</div>
-                                            </div>
-                                            <!--end::Header-->
-                                            <!--begin::Menu separator-->
-                                            <div class="separator border-gray-200"></div>
-                                            <!--end::Menu separator-->
-                                            <!--begin::Form-->
-                                            <form  action="{{URL::route('primaire')}}"  method="get">
+                                        <!--end::Svg Icon-->Filter
+                                    </button>
+                                    <!--begin::Menu 1-->
+                                    <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true"
+                                        id="kt_menu_621214a8b8f66">
+                                        <!--begin::Header-->
+                                        <div class="px-7 py-5">
+                                            <div class="fs-5 text-dark fw-bolder">Filter Options</div>
+                                        </div>
+                                        <!--end::Header-->
+                                        <!--begin::Menu separator-->
+                                        <div class="separator border-gray-200"></div>
+                                        <!--end::Menu separator-->
+                                        <!--begin::Form-->
+                                        <form action="{{ URL::route('primaire') }}" method="get">
                                             @csrf
                                             <div class="px-7 py-5">
                                                 <!--begin::Input group-->
@@ -115,44 +127,49 @@
                                                     <!--begin::Label-->
                                                     <label class="form-label fw-bold">Parent:</label>
                                                     <!--end::Label-->
-                                                        <!--begin::Input-->
-                                            <div>
-                                                <select class="form-select form-select-solid" data-control="select2"  name="Statut" data-placeholder="Select an option" data-allow-clear="true">
-                                                    <option  disabled selected> statuts </option>
-                                                 <option value="10">tous</option>
-                                                 <option value="1">Active</option>
-                                                 <option value="0">desactive</option>
-                                                </select>
-                                              </div>
-                                            <!--end::Input-->
+                                                    <!--begin::Input-->
+                                                    <div>
+                                                        <select class="form-select form-select-solid" data-control="select2"
+                                                            name="Statut" data-placeholder="Select an option"
+                                                            data-allow-clear="true">
+                                                            <option disabled selected> statuts </option>
+                                                            <option value="10">tous</option>
+                                                            <option value="1">Active</option>
+                                                            <option value="0">desactive</option>
+                                                        </select>
+                                                    </div>
+                                                    <!--end::Input-->
                                                 </div>
                                                 <!--end::Input group-->
                                                 <!--begin::Actions-->
                                                 <div class="d-flex justify-content-end">
-                                                    <button type="reset" class="btn btn-sm btn-light btn-active-light-primary me-2">Reset</button>
+                                                    <button type="reset"
+                                                        class="btn btn-sm btn-light btn-active-light-primary me-2">Reset</button>
                                                     <button type="submit" class="btn btn-sm btn-primary">Apply</button>
                                                 </div>
                                                 <!--end::Actions-->
                                             </div>
-                                            </form>
-                                            <!--end::Form-->
-                                        </div>
-                                        <!--end::Menu 1-->
+                                        </form>
+                                        <!--end::Form-->
+                                    </div>
+                                    <!--end::Menu 1-->
                                     <!--end::Menu-->
                                 </div>
                                 <!--end::Wrapper-->
 
-                                <a href="{{ URL::route('etudiants.create') }}" class="btn btn-sm btn-light btn-active-primary" >
+                                <a href="{{ URL::route('etudiants.create') }}"
+                                    class="btn btn-sm btn-light btn-active-primary">
                                     <!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
                                     <span class="svg-icon svg-icon-3">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                            fill="none">
-                                            <rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1"
-                                                transform="rotate(-90 11.364 20.364)" fill="black" />
-                                            <rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="black" />
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none">
+                                            <rect opacity="0.5" x="11.364" y="20.364" width="16" height="2"
+                                                rx="1" transform="rotate(-90 11.364 20.364)" fill="black" />
+                                            <rect x="4.36396" y="11.364" width="16" height="2"
+                                                rx="1" fill="black" />
                                         </svg>
                                     </span>
-                                    <!--end::Svg Icon-->Ajouter une Etudiants
+                                    <!--end::Svg Icon-->Ajouter une Etudaints
                                 </a>
 
                             </div>
@@ -162,17 +179,16 @@
                         <!--begin::Body-->
                         <div class="card-body py-3">
                             <!--begin::Accordion-->
-                           <!--begin::Table-->
-                           <table id="kt_datatable_example_5"  class="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4">
-                              <!--begin::Table head-->
+                            <!--begin::Table-->
+                            <table id="kt_datatable_example_5"
+                                class="table table-row-dashed table-row-gray-300 align-middle gs-0 gy-4">
+                                <!--begin::Table head-->
                                 <thead>
                                     <tr class="fw-bolder text-muted">
                                         <th class="w-25px">
-                                            <div
-                                                class="form-check form-check-sm form-check-custom form-check-solid">
+                                            <div class="form-check form-check-sm form-check-custom form-check-solid">
                                                 <input class="form-check-input" type="checkbox" value="1"
-                                                    data-kt-check="true"
-                                                    data-kt-check-target=".widget-9-check" />
+                                                    data-kt-check="true" data-kt-check-target=".widget-9-check" />
                                             </div>
                                         </th>
                                         <th class="min-w-150px">Nom </th>
@@ -191,14 +207,13 @@
                                                 <td>
                                                     <div
                                                         class="form-check form-check-sm form-check-custom form-check-solid">
-                                                        <input class="form-check-input widget-9-check"
-                                                            type="checkbox" value="1" />
+                                                        <input class="form-check-input widget-9-check" type="checkbox"
+                                                            value="1" />
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="d-flex align-items-center">
-                                                        <div
-                                                            class="d-flex justify-content-start flex-column">
+                                                        <div class="d-flex justify-content-start flex-column">
                                                             <a href="#"
                                                                 class="text-dark fw-bolder text-hover-primary fs-6">
                                                                 {{ $Etudiant->name ? $Etudiant->name : ' aucun name  ' }}
@@ -209,8 +224,7 @@
 
                                                 <td>
                                                     <div class="d-flex align-items-center">
-                                                        <div
-                                                            class="d-flex justify-content-start flex-column">
+                                                        <div class="d-flex justify-content-start flex-column">
                                                             <a href="#"
                                                                 class="text-dark fw-bolder text-hover-primary fs-6">
                                                                 {{ $Etudiant->Sections->nom_section ? $Etudiant->Sections->nom_section : ' aucun sections  ' }}
@@ -221,8 +235,7 @@
 
                                                 <td>
                                                     <div class="d-flex align-items-center">
-                                                        <div
-                                                            class="d-flex justify-content-start flex-column">
+                                                        <div class="d-flex justify-content-start flex-column">
                                                             <a href="#"
                                                                 class="text-dark fw-bolder text-hover-primary fs-6">
                                                                 {{ $Etudiant->Classes->Nom_Classe ? $Etudiant->Classes->Nom_Classe : ' aucun classes  ' }}
@@ -233,8 +246,7 @@
 
                                                 <td>
                                                     <div class="d-flex align-items-center">
-                                                        <div
-                                                            class="d-flex justify-content-start flex-column">
+                                                        <div class="d-flex justify-content-start flex-column">
                                                             <a href="#"
                                                                 class="text-dark fw-bolder text-hover-primary fs-6">
                                                                 {{ $Etudiant->niveauxdetudes->Nom ? $Etudiant->niveauxdetudes->Nom : ' aucun niveauxdetudes  ' }}
@@ -245,13 +257,12 @@
 
                                                 <td>
                                                     <div class="d-flex justify-content flex-shrink-0">
-                                                        <a  href="{{route('etudiants.edit' ,$Etudiant->id)}}"
+                                                        <a href="{{ route('etudiants.edit', $Etudiant->id) }}"
                                                             class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                                             <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                                             <span class="svg-icon svg-icon-3">
-                                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                                    width="24" height="24"
-                                                                    viewBox="0 0 24 24" fill="none">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                    height="24" viewBox="0 0 24 24" fill="none">
                                                                     <path opacity="0.3"
                                                                         d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z"
                                                                         fill="black" />
@@ -267,9 +278,8 @@
                                                             class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                                             <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                                                             <span class="svg-icon svg-icon-3">
-                                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                                    width="24" height="24"
-                                                                    viewBox="0 0 24 24" fill="none">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                    height="24" viewBox="0 0 24 24" fill="none">
                                                                     <path
                                                                         d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z"
                                                                         fill="black" />
@@ -284,79 +294,197 @@
                                                             <!--end::Svg Icon-->
                                                         </a>
 
-                                                        <a href="{{route('etudiants.show' ,$Etudiant->id)}}"
+                                                        <a href="{{ route('etudiants.show', $Etudiant->id) }}"
                                                             class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                                             <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                                                             <span class="svg-icon svg-icon-3">
-                                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                                    width="24" height="24"
-                                                                    viewBox="0 0 24 24" fill="none">
-                                                                    <path opacity="0.3" d="M10 4H21C21.6 4 22 4.4 22 5V7H10V4Z" fill="currentColor"/>
-                                                                    <path opacity="0.3" d="M10.3 15.3L11 14.6L8.70002 12.3C8.30002 11.9 7.7 11.9 7.3 12.3C6.9 12.7 6.9 13.3 7.3 13.7L10.3 16.7C9.9 16.3 9.9 15.7 10.3 15.3Z" fill="currentColor"/>
-                                                                    <path d="M10.4 3.60001L12 6H21C21.6 6 22 6.4 22 7V19C22 19.6 21.6 20 21 20H3C2.4 20 2 19.6 2 19V4C2 3.4 2.4 3 3 3H9.20001C9.70001 3 10.2 3.20001 10.4 3.60001ZM11.7 16.7L16.7 11.7C17.1 11.3 17.1 10.7 16.7 10.3C16.3 9.89999 15.7 9.89999 15.3 10.3L11 14.6L8.70001 12.3C8.30001 11.9 7.69999 11.9 7.29999 12.3C6.89999 12.7 6.89999 13.3 7.29999 13.7L10.3 16.7C10.5 16.9 10.8 17 11 17C11.2 17 11.5 16.9 11.7 16.7Z" fill="currentColor"/>
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                    height="24" viewBox="0 0 24 24" fill="none">
+                                                                    <path opacity="0.3"
+                                                                        d="M10 4H21C21.6 4 22 4.4 22 5V7H10V4Z"
+                                                                        fill="currentColor" />
+                                                                    <path opacity="0.3"
+                                                                        d="M10.3 15.3L11 14.6L8.70002 12.3C8.30002 11.9 7.7 11.9 7.3 12.3C6.9 12.7 6.9 13.3 7.3 13.7L10.3 16.7C9.9 16.3 9.9 15.7 10.3 15.3Z"
+                                                                        fill="currentColor" />
+                                                                    <path
+                                                                        d="M10.4 3.60001L12 6H21C21.6 6 22 6.4 22 7V19C22 19.6 21.6 20 21 20H3C2.4 20 2 19.6 2 19V4C2 3.4 2.4 3 3 3H9.20001C9.70001 3 10.2 3.20001 10.4 3.60001ZM11.7 16.7L16.7 11.7C17.1 11.3 17.1 10.7 16.7 10.3C16.3 9.89999 15.7 9.89999 15.3 10.3L11 14.6L8.70001 12.3C8.30001 11.9 7.69999 11.9 7.29999 12.3C6.89999 12.7 6.89999 13.3 7.29999 13.7L10.3 16.7C10.5 16.9 10.8 17 11 17C11.2 17 11.5 16.9 11.7 16.7Z"
+                                                                        fill="currentColor" />
                                                                 </svg>
                                                             </span>
                                                             <!--end::Svg Icon-->
                                                         </a>
+                                                        <div class="me-0">
+                                                            <button
+                                                                class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary"
+                                                                data-kt-menu-trigger="click"
+                                                                data-kt-menu-placement="bottom-end">
+                                                                <!--begin::Svg Icon | path: assets/media/icons/duotune/finance/fin007.svg-->
+                                                                <span class="svg-icon svg-icon-3">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                        height="24" viewBox="0 0 24 24"
+                                                                        fill="none">
+                                                                        <path opacity="0.3" d="M3 3V17H7V21H15V9H20V3H3Z"
+                                                                            fill="black" />
+                                                                        <path
+                                                                            d="M20 22H3C2.4 22 2 21.6 2 21V3C2 2.4 2.4 2 3 2H20C20.6 2 21 2.4 21 3V21C21 21.6 20.6 22 20 22ZM19 4H4V8H19V4ZM6 18H4V20H6V18ZM6 14H4V16H6V14ZM6 10H4V12H6V10ZM10 18H8V20H10V18ZM10 14H8V16H10V14ZM10 10H8V12H10V10ZM14 18H12V20H14V18ZM14 14H12V16H14V14ZM14 10H12V12H14V10ZM19 14H17V20H19V14ZM19 10H17V12H19V10Z"
+                                                                            fill="black" />
+                                                                    </svg></span>
+                                                                <!--end::Svg Icon-->
+                                                            </button>
+                                                            <!--begin::Menu 3-->
+                                                            <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-bold w-200px py-3"
+                                                                data-kt-menu="true" style="">
+                                                                <!--begin::Heading-->
+                                                                <div class="menu-item px-3">
+                                                                    <div
+                                                                        class="menu-content text-muted pb-2 px-3 fs-7 text-uppercase">
+                                                                        Paiements</div>
+                                                                </div>
+                                                                <!--end::Heading-->
+                                                                <!--begin::Menu item-->
+                                                                <div class="menu-item px-3">
+                                                                    <a  href="{{ route('craete_facture', $Etudiant->id) }}" class="menu-link px-3">Ajouter une Facture
+                                                                    </a>
+                                                                </div>
+                                                                <!--end::Menu item-->
+                                                                <!--begin::Menu item-->
+                                                                <div class="menu-item px-3">
+                                                                    <a href="{{route('RecuEtudaint.show',$Etudiant->id)}}"
+                                                                        class="menu-link flex-stack px-3">Créer un paiement
+                                                                       </a>
+                                                                </div>
+                                                                <!--end::Menu item-->
+                                                                <!--begin::Menu item-->
+                                                                <div class="menu-item px-3">
+                                                                    <a href="#" class="menu-link px-3">Generate
+                                                                        Bill</a>
+                                                                </div>
+                                                                <!--end::Menu item-->
+                                                                <!--begin::Menu item-->
+                                                                <div class="menu-item px-3" data-kt-menu-trigger="hover"
+                                                                    data-kt-menu-placement="right-end">
+                                                                    <a href="#" class="menu-link px-3">
+                                                                        <span class="menu-title">Subscription</span>
+                                                                        <span class="menu-arrow"></span>
+                                                                    </a>
+                                                                    <!--begin::Menu sub-->
+                                                                    <div class="menu-sub menu-sub-dropdown w-175px py-4"
+                                                                        style="">
+                                                                        <!--begin::Menu item-->
+                                                                        <div class="menu-item px-3">
+                                                                            <a href="#"
+                                                                                class="menu-link px-3">Plans</a>
+                                                                        </div>
+                                                                        <!--end::Menu item-->
+                                                                        <!--begin::Menu item-->
+                                                                        <div class="menu-item px-3">
+                                                                            <a href="#"
+                                                                                class="menu-link px-3">Billing</a>
+                                                                        </div>
+                                                                        <!--end::Menu item-->
+                                                                        <!--begin::Menu item-->
+                                                                        <div class="menu-item px-3">
+                                                                            <a href="#"
+                                                                                class="menu-link px-3">Statements</a>
+                                                                        </div>
+                                                                        <!--end::Menu item-->
+                                                                        <!--begin::Menu separator-->
+                                                                        <div class="separator my-2"></div>
+                                                                        <!--end::Menu separator-->
+                                                                        <!--begin::Menu item-->
+                                                                        <div class="menu-item px-3">
+                                                                            <div class="menu-content px-3">
+                                                                                <!--begin::Switch-->
+                                                                                <label
+                                                                                    class="form-check form-switch form-check-custom form-check-solid">
+                                                                                    <!--begin::Input-->
+                                                                                    <input
+                                                                                        class="form-check-input w-30px h-20px"
+                                                                                        type="checkbox" value="1"
+                                                                                        checked="checked"
+                                                                                        name="notifications">
+                                                                                    <!--end::Input-->
+                                                                                    <!--end::Label-->
+                                                                                    <span
+                                                                                        class="form-check-label text-muted fs-6">Recuring</span>
+                                                                                    <!--end::Label-->
+                                                                                </label>
+                                                                                <!--end::Switch-->
+                                                                            </div>
+                                                                        </div>
+                                                                        <!--end::Menu item-->
+                                                                    </div>
+                                                                    <!--end::Menu sub-->
+                                                                </div>
+                                                                <!--end::Menu item-->
+                                                                <!--begin::Menu item-->
+                                                                <div class="menu-item px-3 my-1">
+                                                                    <a href="#" class="menu-link px-3">Settings</a>
+                                                                </div>
+                                                                <!--end::Menu item-->
+                                                            </div>
+                                                            <!--end::Menu 3-->
+                                                        </div>
+                                                    
                                                     </div>
                                                 </td>
                                             </tr>
 
-                                          <!-- modul delte -->
-                                          <div class="modal fade" tabindex="-1" id="delete{{ $Etudiant->id }}">
-                                            <div class="modal-dialog mw-650px">
-                                                <div class="modal-content">
-                                                    <div class="modal-body">
-                                                        <form action="{{ URL::route('etudiants.destroy', 'delete') }}"
-                                                            method="POST" id="kt_modal_new_target_form"
-                                                            class="form">
-                                                            @method('delete')
-                                                            @csrf
-                                                            <!--begin::Heading-->
-                                                            <div class="mb-13 text-center">
-                                                                <!--begin::Title-->
-                                                                <h1 class="mb-3">Set First Target</h1>
-                                                                <!--end::Title-->
-                                                                <!--begin::Description-->
-                                                                <div class="text-muted fw-bold fs-5">If you need
-                                                                    more info, please check
-                                                                    <a href="#"
-                                                                        class="fw-bolder link-primary">Project
-                                                                        Guidelines</a>.
+                                            <!-- modul delte -->
+                                            <div class="modal fade" tabindex="-1" id="delete{{ $Etudiant->id }}">
+                                                <div class="modal-dialog mw-650px">
+                                                    <div class="modal-content">
+                                                        <div class="modal-body">
+                                                            <form action="{{ URL::route('etudiants.destroy', 'delete') }}"
+                                                                method="POST" id="kt_modal_new_target_form"
+                                                                class="form">
+                                                                @method('delete')
+                                                                @csrf
+                                                                <!--begin::Heading-->
+                                                                <div class="mb-13 text-center">
+                                                                    <!--begin::Title-->
+                                                                    <h1 class="mb-3">Set First Target</h1>
+                                                                    <!--end::Title-->
+                                                                    <!--begin::Description-->
+                                                                    <div class="text-muted fw-bold fs-5">If you need
+                                                                        more info, please check
+                                                                        <a href="#"
+                                                                            class="fw-bolder link-primary">Project
+                                                                            Guidelines</a>.
+                                                                    </div>
+                                                                    <!--end::Description-->
                                                                 </div>
-                                                                <!--end::Description-->
-                                                            </div>
-                                                            <!--end::Heading-->
-                                                            <!--begin::Input group-->
-                                                            <div class="d-flex flex-column mb-8 fv-row">
-                                                                <!--begin::Label-->
-                                                                <label
-                                                                    class="d-flex align-items-center fs-6 fw-bold mb-2">
-                                                                    <span class="required">voulez-vous
-                                                                        supprimer une  Etudiants </span>
-                                                                    <code>{{ $Etudiant->name }}</code>
-                                                                    <input type="hidden" id="id" name="id"
-                                                                        value="{{ $Etudiant->id }}">
-                                                                </label>
-                                                            </div>
-                                                            <div class="modal-footer">
-                                                                <button type="button" class="btn btn-light"
-                                                                    data-bs-dismiss="modal">Close</button>
-                                                                <button type="submit" class="btn btn-primary">Save
-                                                                    changes</button>
-                                                            </div>
-                                                        </form>
+                                                                <!--end::Heading-->
+                                                                <!--begin::Input group-->
+                                                                <div class="d-flex flex-column mb-8 fv-row">
+                                                                    <!--begin::Label-->
+                                                                    <label
+                                                                        class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                                                        <span class="required">voulez-vous
+                                                                            supprimer une Etudaints </span>
+                                                                        <code>{{ $Etudiant->name }}</code>
+                                                                        <input type="hidden" id="id"
+                                                                            name="id" value="{{ $Etudiant->id }}">
+                                                                    </label>
+                                                                </div>
+                                                                <div class="modal-footer">
+                                                                    <button type="button" class="btn btn-light"
+                                                                        data-bs-dismiss="modal">Close</button>
+                                                                    <button type="submit" class="btn btn-primary">Save
+                                                                        changes</button>
+                                                                </div>
+                                                            </form>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <!-- end modal delete -->
+                                            <!-- end modal delete -->
                                         @endforeach
                                     @endif
                                 </tbody>
                                 <!--end::Table body-->
-                           </table>
-                       <!--end::Table-->
+                            </table>
+                            <!--end::Table-->
 
                         </div>
                     </div>

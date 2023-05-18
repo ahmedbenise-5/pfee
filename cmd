@@ -65,18 +65,93 @@ EnseignantsRepository
 EnseignantsRepositoryInterface
 
 
-// Etudiants
+// Etudaints
 
-1--- php artisan make:model Etudiants -mcr
+1--- php artisan make:model Etudaints -mcr
 
 
 // Frais
 
 php artisan make:model Frais -mcr
 
-FraisRepository 
+FraisRepository
 FraisRepositoryInterface
 
+// facture
+php artisan make:model facture -mcr
+
+// facture
+php artisan make:model CompteEtudiant -mcr
+*
+
+/// HomeController
+
+php artisan make:model Accueil -mcr
+
+EnseignantsRepository
+EnseignantsRepositoryInterface
+
+
+
+// Reçu Étudiant
+
+php artisan make:model RecuEtudiant -mcr
+
+RecuEtudiantRepository
+RecuEtudiantRepositoryInterface
+
+
+// compte financier
+
+php artisan make:model Comptefinancier -m
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+أنا بتعلم باك اند بقالي سنتين متواصل يومياً عملت خلالهم بتاع  ٢٥ ريبو علي جت هب  ما بين PHP, Laravel 7, Laravel 9 و استخدمت تكنولوجيز و لغات  زي 
+- Livewire
+- Design patterns
+- Solid principles
+- Js And Ajax
+- bootstrap
+-apis with postman 
+- Blade Engine 
+و المشاريع اللي عملتها ف لارافيل استخدمت حاجات زي 
+-Crud operations
+- Localization 
+- Integration with Google, Facebook, .. El
+-Integration with PayPal
+-Integration Sms Notifications 
+-Integration with Zoom
+- Multi guarded
+- Validation
+- Relationships 
+- Real Time With Pusher 
+-Emails 
+- file systems
+- Authorization
+- Eloquent and DB
+و حاجات تانية ممكن اكون مش فاكرها 
+فأنا عايز شغل و مش مهم المرتب يكون كبير بقدر مانا عايز اكتسب خبرة من الشغل 
+للعلم 
+انا لسه طالب و هخلص امتحاناتي ف ٥-٦  الجاي فعايز اشتغل اول ما اخلص الإمتحانات كمان بعد ٣ اسابيع 
+اللي عايز الcv يقولي ف التعليقات و انا هبعتله ....
+ودا رابط الجت هب
 
 
 
