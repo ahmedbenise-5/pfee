@@ -93,6 +93,11 @@ EnseignantsRepositoryInterface
 
 
 
+
+
+
+
+
 // Reçu Étudiant
 
 php artisan make:model RecuEtudiant -mcr
@@ -104,6 +109,14 @@ RecuEtudiantRepositoryInterface
 // compte financier
 
 php artisan make:model Comptefinancier -m
+
+
+
+//Frais de traitement
+
+FraisTraitementRepository
+FraisTraitementRepositoryInterface
+php artisan make:model FraisTraitement -mcr
 
 
 

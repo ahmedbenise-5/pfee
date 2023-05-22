@@ -24,7 +24,7 @@ class RecuEtudiantController extends Controller
    
     public function index()
     {
-        //
+       return $this->RecuEtudiant->index();
     }
 
 
@@ -37,7 +37,7 @@ class RecuEtudiantController extends Controller
     public function store(Request $request)
     {
 
-        $this->RecuEtudiant->store($request);
+       return  $this->RecuEtudiant->store($request);
     }
 
     
@@ -47,20 +47,22 @@ class RecuEtudiantController extends Controller
     }
 
     
-    public function edit(RecuEtudiant $recuEtudiant)
+    public function edit($id)
     {
-        //
+
+        return $this->RecuEtudiant->edit($id);
+       
     }
 
     
-    public function update(Request $request, RecuEtudiant $recuEtudiant)
+    public function update(Request $request)
     {
-        //
+        return $this->RecuEtudiant->update($request);
     }
 
     
-    public function destroy(RecuEtudiant $recuEtudiant)
+    public function destroy(Request $request)
     {
-        //
+        return $this->RecuEtudiant->destroy($request);
     }
 }

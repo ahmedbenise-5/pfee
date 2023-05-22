@@ -353,75 +353,16 @@
                                                                         class="menu-link flex-stack px-3">Créer un paiement
                                                                        </a>
                                                                 </div>
-                                                                <!--end::Menu item-->
-                                                                <!--begin::Menu item-->
                                                                 <div class="menu-item px-3">
-                                                                    <a href="#" class="menu-link px-3">Generate
-                                                                        Bill</a>
+                                                                    <a href="{{route('FraisTraitement.show',$Etudiant->id)}}"
+                                                                        class="menu-link flex-stack px-3">Créer un Frais Traitement
+                                                                       </a>
                                                                 </div>
                                                                 <!--end::Menu item-->
                                                                 <!--begin::Menu item-->
-                                                                <div class="menu-item px-3" data-kt-menu-trigger="hover"
-                                                                    data-kt-menu-placement="right-end">
-                                                                    <a href="#" class="menu-link px-3">
-                                                                        <span class="menu-title">Subscription</span>
-                                                                        <span class="menu-arrow"></span>
-                                                                    </a>
-                                                                    <!--begin::Menu sub-->
-                                                                    <div class="menu-sub menu-sub-dropdown w-175px py-4"
-                                                                        style="">
-                                                                        <!--begin::Menu item-->
-                                                                        <div class="menu-item px-3">
-                                                                            <a href="#"
-                                                                                class="menu-link px-3">Plans</a>
-                                                                        </div>
-                                                                        <!--end::Menu item-->
-                                                                        <!--begin::Menu item-->
-                                                                        <div class="menu-item px-3">
-                                                                            <a href="#"
-                                                                                class="menu-link px-3">Billing</a>
-                                                                        </div>
-                                                                        <!--end::Menu item-->
-                                                                        <!--begin::Menu item-->
-                                                                        <div class="menu-item px-3">
-                                                                            <a href="#"
-                                                                                class="menu-link px-3">Statements</a>
-                                                                        </div>
-                                                                        <!--end::Menu item-->
-                                                                        <!--begin::Menu separator-->
-                                                                        <div class="separator my-2"></div>
-                                                                        <!--end::Menu separator-->
-                                                                        <!--begin::Menu item-->
-                                                                        <div class="menu-item px-3">
-                                                                            <div class="menu-content px-3">
-                                                                                <!--begin::Switch-->
-                                                                                <label
-                                                                                    class="form-check form-switch form-check-custom form-check-solid">
-                                                                                    <!--begin::Input-->
-                                                                                    <input
-                                                                                        class="form-check-input w-30px h-20px"
-                                                                                        type="checkbox" value="1"
-                                                                                        checked="checked"
-                                                                                        name="notifications">
-                                                                                    <!--end::Input-->
-                                                                                    <!--end::Label-->
-                                                                                    <span
-                                                                                        class="form-check-label text-muted fs-6">Recuring</span>
-                                                                                    <!--end::Label-->
-                                                                                </label>
-                                                                                <!--end::Switch-->
-                                                                            </div>
-                                                                        </div>
-                                                                        <!--end::Menu item-->
-                                                                    </div>
-                                                                    <!--end::Menu sub-->
-                                                                </div>
+                                                               
                                                                 <!--end::Menu item-->
-                                                                <!--begin::Menu item-->
-                                                                <div class="menu-item px-3 my-1">
-                                                                    <a href="#" class="menu-link px-3">Settings</a>
-                                                                </div>
-                                                                <!--end::Menu item-->
+                                                               
                                                             </div>
                                                             <!--end::Menu 3-->
                                                         </div>

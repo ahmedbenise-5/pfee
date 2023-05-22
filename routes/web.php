@@ -105,6 +105,15 @@ Route::group(['namespace'=>'RecuEtudaint'],function(){
 });
 
 
+//Frais de traitement
+
+
+Route::group(['namespace'=>'FraisTraitement'],function(){
+    Route::resource('FraisTraitement','FraisTraitementController');
+});
+
+
+
 
 
 
