@@ -121,6 +121,16 @@ php artisan make:model FraisTraitement -mcr
 
 
 
+/// RecuDeEchange
+
+php artisan make:model RecuDeEchange -mcr
+
+RecuDeEchangeRepository
+RecuDeEchangeRepositoryInterface
+
+
+
+
 
 
 

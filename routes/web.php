@@ -1,7 +1,10 @@
 <?php
 
-use App\Http\Controllers\Etudiants\EtudiantsController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AccueilController;
+use App\Http\Controllers\Etudiants\EtudiantsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -113,6 +116,12 @@ Route::group(['namespace'=>'FraisTraitement'],function(){
 });
 
 
+// RecuDeEchange
+
+Route::group(['namespace'=>'RecuDeEchange'],function(){
+
+    Route::resource('RecuDeEchange','RecuDeEchangeController');
+});
 
 
 

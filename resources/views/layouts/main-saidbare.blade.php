@@ -243,6 +243,26 @@
                             </a>
                         </div>
                     </div>
+                    <div class="menu-sub menu-sub-accordion menu-active-bg">
+                        <div class="menu-item">
+                            <a class="menu-link" href="{{URL::route('FraisTraitement.index')}}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Liste des Frais Traitements </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="menu-sub menu-sub-accordion menu-active-bg">
+                        <div class="menu-item">
+                            <a class="menu-link" href="{{URL::route('RecuDeEchange.index')}}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Liste des Recu de echanges </span>
+                            </a>
+                        </div>
+                    </div>
 
                     {{-- <div class="menu-sub menu-sub-accordion menu-active-bg">
                         <div class="menu-item">

@@ -22,6 +22,8 @@ class CreateCompteEtudiantsTable extends Migration
             $table->bigInteger('facture_id')->nullable()->unsigned();
             $table->bigInteger('id_recuEtudaint')->nullable()->unsigned();
             $table->bigInteger('id_fraistraitements')->nullable()->unsigned();
+            $table->bigInteger('id_recuechanges')->nullable()->unsigned();
+            $table->foreign('id_recuechanges')->references('id')->on('recu_de_echanges')->onDelete('cascade');
             $table->foreign('id_fraistraitements')->references('id')->on('frais_traitements')->onDelete('cascade');
             $table->foreign('id_recuEtudaint')->references('id')->on('recu_etudiants')->onDelete('cascade');
             $table->foreign('facture_id')->references('id')->on('factures')->onDelete('cascade');

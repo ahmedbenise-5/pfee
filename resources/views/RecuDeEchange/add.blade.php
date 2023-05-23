@@ -36,7 +36,7 @@
             <!--begin::Navbar-->
             
             <!--begin::Form-->
-            <form class="form" action="{{route('FraisTraitement.store')}}" method="POST"> 
+            <form class="form" action="{{route('RecuDeEchange.store')}}" method="POST"> 
                 @csrf
                                 <div class="card">
                     <!--begin::Card header-->

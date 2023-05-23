@@ -15,6 +15,8 @@ use App\Repositories\RecuEtudiantRepositoryInterface;
 use App\Repositories\RecuEtudiantRepository;
 use App\Repositories\FraisTraitementRepositoryInterface;
 use App\Repositories\FraisTraitementRepository;
+use App\Repositories\RecuDeEchangeRepositoryInterface;
+use App\Repositories\RecuDeEchangeRepository;
 
 
 
@@ -34,6 +36,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(FactureRepositoryInterface::class, FactureRepository::class);
         $this->app->bind(RecuEtudiantRepositoryInterface::class, RecuEtudiantRepository::class);
         $this->app->bind(FraisTraitementRepositoryInterface::class, FraisTraitementRepository::class);
+        $this->app->bind(RecuDeEchangeRepositoryInterface::class, RecuDeEchangeRepository::class);
 
     }
 

@@ -46,5 +46,10 @@ class Etudiants extends Model
     }
 
 
+    public function CompteEtudiants(){
+        return $this->hasMany('App\Models\CompteEtudiant','id_etudiant');
+    }
+
+
 
 }

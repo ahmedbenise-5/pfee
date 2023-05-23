@@ -36,13 +36,14 @@
             <!--begin::Navbar-->
             
             <!--begin::Form-->
-            <form class="form" action="{{route('FraisTraitement.store')}}" method="POST"> 
+            <form class="form" action="{{route('RecuDeEchange.update','update')}}" method="POST"> 
                 @csrf
+                @method('PATCH')
                                 <div class="card">
                     <!--begin::Card header-->
                     <div class="card-header">
                         <!--begin::Card header-->
-                        <div class="card-title fs-3 fw-bolder"> Traitement Frais  un Etudaint :  <code>{{$Etudiants->name}}</code></div>
+                        <div class="card-title fs-3 fw-bolder"> Traitement Frais  un Etudaint :  <code>{{$RecuDeEchange->etudaint->name}}</code></div>
                         <!--end::Card header-->
                     </div>
                     <!--end::Card header-->
@@ -59,27 +60,9 @@
                             <div class="col-xl-9">
                                 <!--begin::Progress-->
                                 <div class="d-flex flex-column">
-                                    <input type="number" class="form-control form-control-solid" placeholder="" name="montante">
-                                   <input type="hidden" name="id_etudiant" value="{{$Etudiants->id}}">
-                                </div>
-                                <!--end::Progress-->
-                            </div>
-                            <!--end::Col-->
-                        </div>
-                        <div class="row mb-8">
-                            <!--begin::Col-->
-                            <div class="col-xl-3">
-                                <div class="fs-6 fw-bold mt-2 mb-3">Crédit etudiant</div>
-                            </div>
-                            <!--end::Col-->
-                            <!--begin::Col-->
-                            <div class="col-xl-9">
-                                <!--begin::Progress-->
-                                <div class="d-flex flex-column">
-                                    <input type="text" class="form-control form-control-solid" 
-                                    value="{{number_format($Etudiants->CompteEtudiants->sum('Debit') - $Etudiants->CompteEtudiants->sum('credit'), 2) }}"
-                                     readonly >
-                                   
+                                    <input type="number" class="form-control form-control-solid" placeholder="" value="{{$RecuDeEchange->Debit}}" name="montante">
+                                   <input type="hidden" name="Etudaint_id" value="{{$RecuDeEchange->Etudaint_id}}">
+                                   <input type="hidden" name="id" value="{{$RecuDeEchange->id}}">
                                 </div>
                                 <!--end::Progress-->
                             </div>
@@ -98,7 +81,7 @@
                             <!--end::Col-->
                             <!--begin::Col-->
                             <div class="col-xl-9">
-                                <textarea name="description" class="form-control form-control-solid" rows="5"></textarea>
+                                <textarea name="description" class="form-control form-control-solid" rows="5"> {{$RecuDeEchange->description}}   </textarea>
                          </div>
                             <!--end::Col-->
                         </div>
