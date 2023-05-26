@@ -17,6 +17,8 @@ use App\Repositories\FraisTraitementRepositoryInterface;
 use App\Repositories\FraisTraitementRepository;
 use App\Repositories\RecuDeEchangeRepositoryInterface;
 use App\Repositories\RecuDeEchangeRepository;
+use App\Repositories\PresenceRepositoryInterface;
+use App\Repositories\PresenceRepository;
 
 
 
@@ -37,6 +39,7 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(RecuEtudiantRepositoryInterface::class, RecuEtudiantRepository::class);
         $this->app->bind(FraisTraitementRepositoryInterface::class, FraisTraitementRepository::class);
         $this->app->bind(RecuDeEchangeRepositoryInterface::class, RecuDeEchangeRepository::class);
+        $this->app->bind(PresenceRepositoryInterface::class, PresenceRepository::class);
 
     }
 

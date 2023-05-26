@@ -129,8 +129,9 @@ RecuDeEchangeRepository
 RecuDeEchangeRepositoryInterface
 
 
+//la présence 
 
-
+php artisan make:model Presence -mcr 
 
 
 
