@@ -203,6 +203,11 @@
                                 <tbody>
                                     @if (isset($Etudiants))
                                         @foreach ($Etudiants as $Etudiant)
+                                        @php
+                                            $enseignant = App\Models\Enseignants::where('user_id', auth()->user()->id)->first()->id ?? '';
+                                        @endphp
+                                        @if (auth()->user()->roles[0]->id == 3)
+                                            @if (in_array($enseignant, json_decode($Etudiant->Sections->enseignant_id)))
                                             <tr>
                                                 <td>
                                                     <div
@@ -313,6 +318,8 @@
                                                             </span>
                                                             <!--end::Svg Icon-->
                                                         </a>
+                                                        @can("paiment_etudiant")
+                                                            
                                                         <div class="me-0">
                                                             <button
                                                                 class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary"
@@ -371,10 +378,196 @@
                                                             </div>
                                                             <!--end::Menu 3-->
                                                         </div>
+
+                                                        @endcan
+
                                                     
                                                     </div>
                                                 </td>
                                             </tr>
+                                            @endif
+                                        @else
+                                            <tr>
+                                                <td>
+                                                    <div
+                                                        class="form-check form-check-sm form-check-custom form-check-solid">
+                                                        <input class="form-check-input widget-9-check" type="checkbox"
+                                                            value="1" />
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="d-flex justify-content-start flex-column">
+                                                            <a href="#"
+                                                                class="text-dark fw-bolder text-hover-primary fs-6">
+                                                                {{ $Etudiant->name ? $Etudiant->name : ' aucun name  ' }}
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="d-flex justify-content-start flex-column">
+                                                            <a href="#"
+                                                                class="text-dark fw-bolder text-hover-primary fs-6">
+                                                                {{ $Etudiant->Sections->nom_section ? $Etudiant->Sections->nom_section : ' aucun sections  ' }}
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="d-flex justify-content-start flex-column">
+                                                            <a href="#"
+                                                                class="text-dark fw-bolder text-hover-primary fs-6">
+                                                                {{ $Etudiant->Classes->Nom_Classe ? $Etudiant->Classes->Nom_Classe : ' aucun classes  ' }}
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="d-flex justify-content-start flex-column">
+                                                            <a href="#"
+                                                                class="text-dark fw-bolder text-hover-primary fs-6">
+                                                                {{ $Etudiant->niveauxdetudes->Nom ? $Etudiant->niveauxdetudes->Nom : ' aucun niveauxdetudes  ' }}
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                </td>
+
+                                                <td>
+                                                    <div class="d-flex justify-content flex-shrink-0">
+                                                        @can("modifier_etudiant")
+                                                        <a href="{{ route('etudiants.edit', $Etudiant->id) }}"
+                                                            class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                            <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
+                                                            <span class="svg-icon svg-icon-3">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                    height="24" viewBox="0 0 24 24" fill="none">
+                                                                    <path opacity="0.3"
+                                                                        d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z"
+                                                                        fill="black" />
+                                                                    <path
+                                                                        d="M5.574 21.3L3.692 21.928C3.46591 22.0032 3.22334 22.0141 2.99144 21.9594C2.75954 21.9046 2.54744 21.7864 2.3789 21.6179C2.21036 21.4495 2.09202 21.2375 2.03711 21.0056C1.9822 20.7737 1.99289 20.5312 2.06799 20.3051L2.696 18.422L5.574 21.3ZM4.13499 14.105L9.891 19.861L19.245 10.507L13.489 4.75098L4.13499 14.105Z"
+                                                                        fill="black" />
+                                                                </svg>
+                                                            </span>
+                                                            <!--end::Svg Icon-->
+                                                        </a>
+                                                        @endcan
+                                                        @can("delete_etudiant")
+                                                        <a data-bs-toggle="modal"
+                                                            data-bs-target="#delete{{ $Etudiant->id }}"
+                                                            class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                            <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
+                                                            <span class="svg-icon svg-icon-3">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                    height="24" viewBox="0 0 24 24" fill="none">
+                                                                    <path
+                                                                        d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z"
+                                                                        fill="black" />
+                                                                    <path opacity="0.5"
+                                                                        d="M5 5C5 4.44772 5.44772 4 6 4H18C18.5523 4 19 4.44772 19 5V5C19 5.55228 18.5523 6 18 6H6C5.44772 6 5 5.55228 5 5V5Z"
+                                                                        fill="black" />
+                                                                    <path opacity="0.5"
+                                                                        d="M9 4C9 3.44772 9.44772 3 10 3H14C14.5523 3 15 3.44772 15 4V4H9V4Z"
+                                                                        fill="black" />
+                                                                </svg>
+                                                            </span>
+                                                            <!--end::Svg Icon-->
+                                                        </a>
+                                                        @endcan
+
+                                                        <a href="{{ route('etudiants.show', $Etudiant->id) }}"
+                                                            class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                            <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
+                                                            <span class="svg-icon svg-icon-3">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                    height="24" viewBox="0 0 24 24" fill="none">
+                                                                    <path opacity="0.3"
+                                                                        d="M10 4H21C21.6 4 22 4.4 22 5V7H10V4Z"
+                                                                        fill="currentColor" />
+                                                                    <path opacity="0.3"
+                                                                        d="M10.3 15.3L11 14.6L8.70002 12.3C8.30002 11.9 7.7 11.9 7.3 12.3C6.9 12.7 6.9 13.3 7.3 13.7L10.3 16.7C9.9 16.3 9.9 15.7 10.3 15.3Z"
+                                                                        fill="currentColor" />
+                                                                    <path
+                                                                        d="M10.4 3.60001L12 6H21C21.6 6 22 6.4 22 7V19C22 19.6 21.6 20 21 20H3C2.4 20 2 19.6 2 19V4C2 3.4 2.4 3 3 3H9.20001C9.70001 3 10.2 3.20001 10.4 3.60001ZM11.7 16.7L16.7 11.7C17.1 11.3 17.1 10.7 16.7 10.3C16.3 9.89999 15.7 9.89999 15.3 10.3L11 14.6L8.70001 12.3C8.30001 11.9 7.69999 11.9 7.29999 12.3C6.89999 12.7 6.89999 13.3 7.29999 13.7L10.3 16.7C10.5 16.9 10.8 17 11 17C11.2 17 11.5 16.9 11.7 16.7Z"
+                                                                        fill="currentColor" />
+                                                                </svg>
+                                                            </span>
+                                                            <!--end::Svg Icon-->
+                                                        </a>
+
+                                                        @can("paiment_etudiant")
+                                                        <div class="me-0">
+                                                            <button
+                                                                class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary"
+                                                                data-kt-menu-trigger="click"
+                                                                data-kt-menu-placement="bottom-end">
+                                                                <!--begin::Svg Icon | path: assets/media/icons/duotune/finance/fin007.svg-->
+                                                                <span class="svg-icon svg-icon-3">
+                                                                    <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                        height="24" viewBox="0 0 24 24"
+                                                                        fill="none">
+                                                                        <path opacity="0.3" d="M3 3V17H7V21H15V9H20V3H3Z"
+                                                                            fill="black" />
+                                                                        <path
+                                                                            d="M20 22H3C2.4 22 2 21.6 2 21V3C2 2.4 2.4 2 3 2H20C20.6 2 21 2.4 21 3V21C21 21.6 20.6 22 20 22ZM19 4H4V8H19V4ZM6 18H4V20H6V18ZM6 14H4V16H6V14ZM6 10H4V12H6V10ZM10 18H8V20H10V18ZM10 14H8V16H10V14ZM10 10H8V12H10V10ZM14 18H12V20H14V18ZM14 14H12V16H14V14ZM14 10H12V12H14V10ZM19 14H17V20H19V14ZM19 10H17V12H19V10Z"
+                                                                            fill="black" />
+                                                                    </svg></span>
+                                                                <!--end::Svg Icon-->
+                                                            </button>
+                                                            <!--begin::Menu 3-->
+                                                            <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-bold w-200px py-3"
+                                                                data-kt-menu="true" style="">
+                                                                <!--begin::Heading-->
+                                                                <div class="menu-item px-3">
+                                                                    <div
+                                                                        class="menu-content text-muted pb-2 px-3 fs-7 text-uppercase">
+                                                                        Paiements</div>
+                                                                </div>
+                                                                <!--end::Heading-->
+                                                                <!--begin::Menu item-->
+                                                                <div class="menu-item px-3">
+                                                                    <a  href="{{ route('craete_facture', $Etudiant->id) }}" class="menu-link px-3">Ajouter une Facture
+                                                                    </a>
+                                                                </div>
+                                                                <!--end::Menu item-->
+                                                                <!--begin::Menu item-->
+                                                                <div class="menu-item px-3">
+                                                                    <a href="{{route('RecuEtudaint.show',$Etudiant->id)}}"
+                                                                        class="menu-link flex-stack px-3">Créer un paiement
+                                                                       </a>
+                                                                </div>
+                                                                <div class="menu-item px-3">
+                                                                    <a href="{{route('FraisTraitement.show',$Etudiant->id)}}"
+                                                                        class="menu-link flex-stack px-3">Créer un Frais Traitement
+                                                                       </a>
+                                                                </div>
+                                                                <div class="menu-item px-3">
+                                                                    <a href="{{route('RecuDeEchange.show',$Etudiant->id)}}"
+                                                                        class="menu-link flex-stack px-3">Créer un Recu De Echange
+                                                                       </a>
+                                                                </div>
+                                                                <!--end::Menu item-->
+                                                                <!--begin::Menu item-->
+                                                               
+                                                                <!--end::Menu item-->
+                                                               
+                                                            </div>
+                                                            <!--end::Menu 3-->
+                                                        </div>
+                                                                                                                    
+                                                        @endcan
+                                                    
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        @endif
 
                                             <!-- modul delte -->
                                             <div class="modal fade" tabindex="-1" id="delete{{ $Etudiant->id }}">

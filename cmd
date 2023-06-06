@@ -17,6 +17,7 @@
 
 ////------ controlller
 1--php artisan make:controller niveauxdetudesController --resource
+1--php artisan make:controller usersController --resource
 
 ////--- Classes
 1-- php artisan make:controller ClassesController  --resource
@@ -132,6 +133,16 @@ RecuDeEchangeRepositoryInterface
 //la présence 
 
 php artisan make:model Presence -mcr 
+
+
+// 
+php artisan make:seeder RolesSeeder
+
+
+// 
+php artisan help make:controller RolesController
+
+
 
 
 

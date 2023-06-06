@@ -2,9 +2,11 @@
 
 namespace App\Repositories;
 
+use App\Models\User;
 use App\Models\genders;
 use App\Models\Enseignants;
 use App\Models\specializations;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -67,8 +69,20 @@ class  EnseignantsRepository  implements EnseignantsRepositoryInterface
         $Enseignants->Statut = $request->Statut;
         $Enseignants->Adress = $request->Adress;
         $Enseignants->save();
+
+         // craetion users 
+         $users = new User();
+         $users->email=$request->email;
+         $users->password=bcrypt($request->password);
+         $users->name=$request->Nom_enseignants;
+         $users->assignRole(3);
+         $users->save();
+         $Enseignants->user_id=$users->id;
+         $Enseignants->save();
+
         toastr()->success('Data has been saved successfully!');
         return redirect()->back();
+
     }
 
 
@@ -109,6 +123,19 @@ class  EnseignantsRepository  implements EnseignantsRepositoryInterface
         $Enseignants->Statut = $request->Statut;
         $Enseignants->Adress = $request->Adress;
         $Enseignants->save();
+
+
+        $users = User::where('id',$Enseignants->user_id)->first();
+        $users->email=$request->email;
+        $users->password=bcrypt($request->password);
+        $users->name=$Enseignants->Nom_enseignants;
+        DB::table('model_has_roles')->where('model_id',$Enseignants->user_id)->delete();
+        $users->assignRole(3);
+        $users->save();
+
+        $Enseignants->user_id=$users->id;
+        $Enseignants->save();
+
         toastr()->success('Data has been update successfully!');
         return redirect()->back();
     }

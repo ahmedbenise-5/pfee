@@ -37,7 +37,7 @@
                         <span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
                         <!--end::Separator-->
                         <!--begin::Description-->
-                        <small class="text-muted fs-7 fw-bold my-1 ms-1">Etudaints</small>
+                        <small class="text-muted fs-7 fw-bold my-1 ms-1">Etudiants</small>
                         <!--end::Description-->
                     </h1>
                     <!--end::Title-->
@@ -134,8 +134,8 @@
                                                     <!--end::Label-->
                                                     <!--begin::Input-->
                                                     <input type="text" class="form-control mb-2" name="name"
-                                                        value="{{ $Etudaints->name }}">
-                                                        <input type="hidden" name="id" id="id" value="{{$Etudaints->id}}">
+                                                        value="{{ $Etudiants->name }}">
+                                                        <input type="hidden" name="id" id="id" value="{{$Etudiants->id}}">
                                                 </div>
 
                                                 <!--begin::Input group-->
@@ -145,7 +145,7 @@
                                                     <!--end::Label-->
                                                     <!--begin::Input-->
                                                     <input type="email" class="form-control mb-2" name="email"
-                                                    value="{{ $Etudaints->email }}">
+                                                    value="{{ $Etudiants->email }}">
                                                 </div>
                                                 <!--end::Input group-->
                                                 <!--begin::Input group-->
@@ -161,7 +161,7 @@
                                                     <!--end::Label-->
                                                     <!--begin::Input-->
                                                     <input type="password" name="password" class="form-control mb-2"
-                                                    value="{{ $Etudaints->password }}">
+                                                    value="{{ $Etudiants->password }}">
                                                 </div>
                                                 <!--begin::Input group-->
                                                 <div class="fv-row w-100 flex-md-root fv-plugins-icon-container">
@@ -170,7 +170,7 @@
                                                     <!--end::Label-->
 
                                                     <input type="date" name="date_naissance" class="form-control m"
-                                                    value="{{ $Etudaints->date_naissance }}">
+                                                    value="{{ $Etudiants->date_naissance }}">
                                                 </div>
                                                 <!--end::Input group-->
                                                 <!--begin::Input group-->
@@ -181,7 +181,7 @@
 
                                                         @foreach ($list_genders as $list_gender)
                                                             <option value="{{ $list_gender->id }}"
-                                                                {{ $list_gender->id == old('id_gender', $Etudaints->id_gender) ? 'selected' : '' }}>
+                                                                {{ $list_gender->id == old('id_gender', $Etudiants->id_gender) ? 'selected' : '' }}>
                                                                 {{ $list_gender->Nom_g }}
                                                             </option>
                                                         @endforeach
@@ -199,7 +199,7 @@
 
                                                         @foreach ($list_parentes as $list_parente)
                                                             <option value="{{ $list_parente->id }}"
-                                                                {{ $list_parente->id == old('id_parentes', $Etudaints->id_parentes) ? 'selected' : '' }}
+                                                                {{ $list_parente->id == old('id_parentes', $Etudiants->id_parentes) ? 'selected' : '' }}
                                                                 >
                                                                 {{ $list_parente->NomPraent }}
                                                             </option>
@@ -214,7 +214,7 @@
 
                                                         @foreach ($list_nationalities as $list_nationalitie)
                                                             <option value="{{ $list_nationalitie->id }}"
-                                                                {{ $list_nationalitie->id == old('id_nationalities', $Etudaints->id_nationalities) ? 'selected' : '' }}>
+                                                                {{ $list_nationalitie->id == old('id_nationalities', $Etudiants->id_nationalities) ? 'selected' : '' }}>
 
                                                                 {{ $list_nationalitie->Nom }}
                                                             </option>
@@ -229,7 +229,7 @@
                                                         data-hide-search="flase">
                                                         @foreach ($list_religions as $list_religion)
                                                             <option value="{{ $list_religion->id }}"
-                                                                {{ $list_religion->id == old('religion_id', $Etudaints->religion_id) ? 'selected' : '' }}>
+                                                                {{ $list_religion->id == old('religion_id', $Etudiants->religion_id) ? 'selected' : '' }}>
 
 
                                                                 {{ $list_religion->Nom }}
@@ -248,7 +248,7 @@
                                                         <option disabled selected> choisir un parent</option>
                                                         @foreach ($list_niveauxdetudes as $list_niveauxdetude)
                                                             <option value="{{ $list_niveauxdetude->id }}"
-                                                                {{ $list_niveauxdetude->id == old('id_niveauxdetudes', $Etudaints->id_niveauxdetudes) ? 'selected' : '' }}>
+                                                                {{ $list_niveauxdetude->id == old('id_niveauxdetudes', $Etudiants->id_niveauxdetudes) ? 'selected' : '' }}>
 
                                                                 {{ $list_niveauxdetude->Nom }}
                                                             </option>
@@ -263,7 +263,7 @@
 
                                                         @foreach ($list_classes as $list_classe)
                                                             <option value="{{ $list_classe->id }}"
-                                                                {{ $list_classe->id == old('id_classes', $Etudaints->id_niveauxdetudes) ? 'selected' : '' }}>
+                                                                {{ $list_classe->id == old('id_classes', $Etudiants->id_niveauxdetudes) ? 'selected' : '' }}>
 
                                                                 {{ $list_classe->Nom_Classe }}
                                                             </option>
@@ -276,7 +276,7 @@
                                                         data-placeholder="Select an option">
                                                         @foreach ($list_sections as $list_section)
                                                         <option value="{{ $list_section->id }}"
-                                                            {{ $list_section->id == old('id_sections', $Etudaints->id_sections) ? 'selected' : '' }}>
+                                                            {{ $list_section->id == old('id_sections', $Etudiants->id_sections) ? 'selected' : '' }}>
 
                                                             {{ $list_section->nom_section }}
                                                         </option>
@@ -291,11 +291,11 @@
                                                     <select class="form-select" name="annee_academique"
                                                         data-placeholder="Select an option">
                                                         <option value="2023"
-                                                        {{ "2023" ==  $Etudaints->annee_academique ? 'selected' : '' }}
+                                                        {{ "2023" ==  $Etudiants->annee_academique ? 'selected' : '' }}
 
                                                         >2023</option>
                                                         <option value="2024"
-                                                        {{ "2024" ==  $Etudaints->annee_academique ? 'selected' : '' }}
+                                                        {{ "2024" ==  $Etudiants->annee_academique ? 'selected' : '' }}
                                                         >2024</option>
                                                     </select>
                                                 </div>
@@ -306,7 +306,7 @@
                                             <div class="d-flex flex-column mb-8 mt-8 fv-row fv-plugins-icon-container">
                                                 <label class="fs-6 fw-bold mb-2 required">Adresse</label>
                                                 <textarea class="form-control form-control-solid" rows="4" name="adresss"
-                                                    placeholder="Type your ticket description" style="height: 137px;">{{ $Etudaints->name }}</textarea>
+                                                    placeholder="Type your ticket description" style="height: 137px;">{{ $Etudiants->name }}</textarea>
                                                 <div class="fv-plugins-message-container invalid-feedback"></div>
                                             </div>
                                         </div>

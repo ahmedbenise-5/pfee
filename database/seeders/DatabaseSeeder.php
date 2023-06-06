@@ -20,7 +20,8 @@ class DatabaseSeeder extends Seeder
             GenreTableSeeder::class,
             SpecialitesTableSeeder::class,
             NiveauxdetudeTableSeeder::class,
-            UsersTableSeeder::class
+            UsersTableSeeder::class,
+            PermissionTableSeeder::class
         ]);
     }
 }

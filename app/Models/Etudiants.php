@@ -50,6 +50,13 @@ class Etudiants extends Model
         return $this->hasMany('App\Models\CompteEtudiant','id_etudiant');
     }
 
-
-
+    
+  
+  
+    public function Presence()
+        {
+            return $this->hasMany('App\Models\Presence','id_etudiant');
+        }
+    
+  
 }

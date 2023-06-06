@@ -13,6 +13,9 @@ interface PresenceRepositoryInterface {
     public function update($request);
     public function store($request);
     public function destroy($request);
+    public function Primaire_index();
+    public function Lycee_index();
+    public function College_index();
 
     
 }

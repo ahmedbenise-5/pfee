@@ -32,8 +32,10 @@ class CreateEtudiantsTable extends Migration
             $table->bigInteger('id_sections')->unsigned();
             $table->bigInteger('religion_id')->unsigned();
             $table->bigInteger('id_parentes')->unsigned();
+            $table->bigInteger('user_id')->nullable()->unsigned();
 
 
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('id_gender')->references('id')->on('genders')->onDelete('cascade');
             $table->foreign('id_nationalities')->references('id')->on('nationalities')->onDelete('cascade');
             $table->foreign('id_niveauxdetudes')->references('id')->on('niveauxdetudes')->onDelete('cascade');

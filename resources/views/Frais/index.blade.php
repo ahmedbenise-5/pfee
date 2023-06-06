@@ -360,7 +360,6 @@
                                 <!--end::Table body-->
                            </table>
                        <!--end::Table-->
-
                         </div>
                     </div>
                 </div>

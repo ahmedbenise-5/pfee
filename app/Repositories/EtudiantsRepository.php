@@ -11,6 +11,7 @@ use App\Models\Sections;
 use App\Models\Etudiants;
 use App\Models\Nationalitie;
 use App\Models\niveauxdetudes;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
@@ -76,7 +77,31 @@ class  EtudiantsRepository implements EtudiantsRepositoryInterface
 
     public function index(){
 
-        $Etudiants = Etudiants::all();
+        // dd($user = auth()->user()->roles[0]->id);
+
+        $user = auth()->user()->roles[0]->id ?? '';
+        
+
+        if($user == 4) {
+            // $Etudiants = Parentes::join('etudiants', 'etudiants.id_parentes', 'parentes.id')
+            //                     ->join('users', 'users.id', 'parentes.user_id')
+            //                     ->join('sections', 'sections.id', 'etudiants.id_sections')
+            //                     ->join('classes', 'classes.id', 'etudiants.id_classes')
+            //                     ->select('etudiants.*', 'sections.nom_section', 'classes.Nom_Classe')
+            //                     ->where('users.id', auth()->user()->id)
+            //                     ->get();
+
+            $Etudiants = Etudiants::whereHas('parentes', function ($query) {
+                $query->where('user_id','=',auth()->user()->id);
+            })->with(['parentes', 'Classes', 'Sections'])->get();
+        } elseif($user == 2) {
+            $Etudiants = Etudiants::where("user_id",auth()->user()->id)->get();
+            // dd($Etudiants);
+        }else{
+            $Etudiants = Etudiants::all();
+
+        }
+
         return view('Etudiants.index',compact('Etudiants'));
 
     }
@@ -125,6 +150,8 @@ class  EtudiantsRepository implements EtudiantsRepositoryInterface
             $Etudiants->id_niveauxdetudes=$request->id_niveauxdetudes;
             $Etudiants->id_parentes=$request->id_parentes;
             $Etudiants->save();
+            
+
 
 
                if($request->hasfile('files'))
@@ -150,9 +177,19 @@ class  EtudiantsRepository implements EtudiantsRepositoryInterface
 
                }
 
-               toastr()->success('Data has been saved successfully!');
-               return redirect()->back();
+               // craetion users 
+               $users = new User();
+               $users->email=$request->email;
+               $users->password=bcrypt($request->password);
+               $users->name=$request->name;
+               $users->assignRole(2);
+               $users->save();
+               $Etudiants->user_id=$users->id;
+               $Etudiants->save();
 
+
+               toastr()->success('Data has been saved successfully!');
+               return redirect()->route('etudiants.index');
 
             // DB::commit();
             // all good
@@ -210,6 +247,20 @@ class  EtudiantsRepository implements EtudiantsRepositoryInterface
         $Etudiants->id_niveauxdetudes=$request->id_niveauxdetudes;
         $Etudiants->id_parentes=$request->id_parentes;
         $Etudiants->save();
+
+
+        $users = User::where('id',$Etudiants->user_id)->first();
+        $users->email=$request->email;
+        $users->password=bcrypt($request->password);
+        $users->name=$request->name;
+        DB::table('model_has_roles')->where('model_id',$Etudiants->user_id)->delete();
+        $users->assignRole(2);
+        $users->save();
+
+        $Etudiants->user_id=$users->id;
+        $Etudiants->save();
+
+
         toastr()->success('Data has been update successfully!');
         return redirect()->route('etudiants.index');
 

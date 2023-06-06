@@ -26,6 +26,8 @@ class CreateEnseignantsTable extends Migration
             $table->string('Adress');
             $table->timestamps();
 
+            $table->bigInteger('user_id')->nullable()->unsigned();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('Genders_id')->references('id')->on('genders')->onDelete('cascade');
             $table->foreign('specializations_id')->references('id')->on('specializations')->onDelete('cascade');
         });

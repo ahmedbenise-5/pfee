@@ -28,6 +28,7 @@ Route::group(['middleware'=>['guest']],function(){
 
 Route::group(['middleware' => ['auth']], function() {
 
+    
     // Route::get('home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     Route::get('home',[App\Http\Controllers\AccueilController::class, 'index'])->name('home');
     // Route::get('home','EtudiantsController@index')->name('home');
@@ -123,6 +124,19 @@ Route::group(['namespace'=>'RecuDeEchange'],function(){
     Route::resource('RecuDeEchange','RecuDeEchangeController');
 });
 
+
+// Presence
+Route::group(['namespace'=>'Presence'],function(){
+     Route::resource('Presence','PresenceController');
+     Route::get('Presence_Primaire','PresenceController@Presence_Primaire')->name('Presence_Primaire');
+     Route::get('Presence_Lycee','PresenceController@Presence_Lycee')->name('Presence_Lycee');
+     Route::get('Presence_College','PresenceController@Presence_College')->name('Presence_College');
+});
+// roles
+Route::resource('roles','RolesController');
+//users
+
+Route::resource('users','usersController');
 
 
 

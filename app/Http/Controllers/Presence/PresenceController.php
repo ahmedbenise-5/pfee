@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Http\Controllers\PresenceController;
+
+namespace App\Http\Controllers\Presence;
 
 use App\Models\Presence;
 use Illuminate\Http\Request;
@@ -16,8 +17,6 @@ class PresenceController extends Controller
     {
         $this->Presence = $PresenceRepository;
     }
-
-
     
     public function index()
     {
@@ -58,5 +57,23 @@ class PresenceController extends Controller
     public function destroy(Request $request)
     {
         return $this->Presence->destroy($request);
+    }
+
+    public function  Presence_Primaire()
+    {
+        return $this->Presence->Primaire_index();
+
+    }
+
+    public function  Presence_Lycee()
+    {
+        return $this->Presence->Lycee_index();
+
+    }
+
+    public function  Presence_College()
+    {
+        return $this->Presence->College_index();
+
     }
 }

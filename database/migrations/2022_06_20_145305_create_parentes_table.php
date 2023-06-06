@@ -26,7 +26,10 @@ class CreateParentesTable extends Migration
              $table->bigInteger('religion_id')->unsigned();
              $table->foreign('nationalite_id')->references('id')->on('nationalities')->onDelete('cascade');
              $table->foreign('religion_id')->references('id')->on('religions')->onDelete('cascade');
-            $table->timestamps();
+             $table->bigInteger('user_id')->nullable()->unsigned();
+             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+         
+             $table->timestamps();
         });
     }
 

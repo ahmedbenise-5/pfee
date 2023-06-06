@@ -5,11 +5,13 @@ namespace App\Http\Controllers\Parentes;
 
 
 use Validator;
+use App\Models\User;
 use App\Models\Parentes;
 use App\Models\Religion;
 use App\Models\FileParentes;
 use App\Models\Nationalitie;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Redirect;
@@ -111,6 +113,16 @@ class ParentesController extends Controller
 
         }
 
+         // craetion users 
+         $users = new User();
+         $users->email=$request->Email;
+         $users->password=bcrypt($request->Password);
+         $users->name=$request->NomPraent;
+         $users->assignRole(4);
+         $users->save();
+         $parentes->user_id=$users->id;
+         $parentes->save();
+
         toastr()->success('Data has been saved successfully!');
         return view('parentes.index ');
 
@@ -206,6 +218,17 @@ class ParentesController extends Controller
                     $file_name=$request->file->getClientOriginalName();
                     $request->file->move(public_path('parent_attachments/'.$Nom_parentes),$file_name);
             }
+            $users = User::where('id',$parentes->user_id)->first();
+            $users->email=$request->Email;
+            $users->password=bcrypt($request->Password);
+            $users->name=$request->NomPraent;
+            DB::table('model_has_roles')->where('model_id',$parentes->user_id)->delete();
+            $users->assignRole(4);
+            $users->save();
+    
+            $parentes->user_id=$users->id;
+            $parentes->save();
+
 
         toastr()->success('Data has been upadte successfully!');
         return redirect()->route('parentes.index');

@@ -267,8 +267,10 @@
                                     <!--begin::Actions-->
                                     <div class="d-flex my-4">
 
-                                        <a href="{{ route('etudiants.edit', $Etudiants->id) }}"
-                                            class="btn btn-sm btn-primary me-2">Modifier etudaint</a>
+                                        @can('modifier_etudiant')
+                                            <a href="{{ route('etudiants.edit', $Etudiants->id) }}"
+                                                class="btn btn-sm btn-primary me-2">Modifier etudaint</a>
+                                        @endcan
                                         <!--begin::Menu-->
                                         <div class="me-0">
                                             <button class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary"
@@ -823,8 +825,7 @@
                                                                     </td>
                                                                     <td>
                                                                         <div class="d-flex justify-content flex-shrink-0">
-                                                                            <a
-                                                                             href="{{URL('telecharge_picesjoint')}}/{{ $Etudiants->name }}/{{ $image->Nom_image }}"
+                                                                            <a href="{{ URL('telecharge_picesjoint') }}/{{ $Etudiants->name }}/{{ $image->Nom_image }}"
                                                                                 class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                                                                 <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                                                                 <!--begin::Svg Icon | path: assets/media/icons/duotune/files/fil021.svg-->
@@ -832,26 +833,25 @@
                                                                                     class="svg-icon svg-icon-muted svg-icon-3">
                                                                                     <span class="svg-icon svg-icon-3">
 
-                                                                                    <svg
-                                                                                        xmlns="http://www.w3.org/2000/svg"
-                                                                                        width="24" height="24"
-                                                                                        viewBox="0 0 24 24"
-                                                                                        fill="none">
-                                                                                        <path opacity="0.3"
-                                                                                            d="M19 15C20.7 15 22 13.7 22 12C22 10.3 20.7 9 19 9C18.9 9 18.9 9 18.8 9C18.9 8.7 19 8.3 19 8C19 6.3 17.7 5 16 5C15.4 5 14.8 5.2 14.3 5.5C13.4 4 11.8 3 10 3C7.2 3 5 5.2 5 8C5 8.3 5 8.7 5.1 9H5C3.3 9 2 10.3 2 12C2 13.7 3.3 15 5 15H19Z"
-                                                                                            fill="black" />
-                                                                                        <path
-                                                                                            d="M13 17.4V12C13 11.4 12.6 11 12 11C11.4 11 11 11.4 11 12V17.4H13Z"
-                                                                                            fill="black" />
-                                                                                        <path opacity="0.3"
-                                                                                            d="M8 17.4H16L12.7 20.7C12.3 21.1 11.7 21.1 11.3 20.7L8 17.4Z"
-                                                                                            fill="black" />
-                                                                                    </svg></span>
-                                                                                <!--end::Svg Icon-->
-                                                                                <!--end::Svg Icon-->
+                                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                            width="24" height="24"
+                                                                                            viewBox="0 0 24 24"
+                                                                                            fill="none">
+                                                                                            <path opacity="0.3"
+                                                                                                d="M19 15C20.7 15 22 13.7 22 12C22 10.3 20.7 9 19 9C18.9 9 18.9 9 18.8 9C18.9 8.7 19 8.3 19 8C19 6.3 17.7 5 16 5C15.4 5 14.8 5.2 14.3 5.5C13.4 4 11.8 3 10 3C7.2 3 5 5.2 5 8C5 8.3 5 8.7 5.1 9H5C3.3 9 2 10.3 2 12C2 13.7 3.3 15 5 15H19Z"
+                                                                                                fill="black" />
+                                                                                            <path
+                                                                                                d="M13 17.4V12C13 11.4 12.6 11 12 11C11.4 11 11 11.4 11 12V17.4H13Z"
+                                                                                                fill="black" />
+                                                                                            <path opacity="0.3"
+                                                                                                d="M8 17.4H16L12.7 20.7C12.3 21.1 11.7 21.1 11.3 20.7L8 17.4Z"
+                                                                                                fill="black" />
+                                                                                        </svg></span>
+                                                                                    <!--end::Svg Icon-->
+                                                                                    <!--end::Svg Icon-->
                                                                             </a>
-                                                                            <a data-bs-toggle="modal" 
-                                                                            data-bs-target="#delete{{ $image->id }}"
+                                                                            <a data-bs-toggle="modal"
+                                                                                data-bs-target="#delete{{ $image->id }}"
                                                                                 class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                                                                 <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                                                                                 <span class="svg-icon svg-icon-3">
@@ -880,21 +880,25 @@
                                                                 </tr>
 
 
-                                                                <div class="modal fade" tabindex="-1" id="delete{{ $image->id }}">
+                                                                <div class="modal fade" tabindex="-1"
+                                                                    id="delete{{ $image->id }}">
                                                                     <div class="modal-dialog mw-650px">
                                                                         <div class="modal-content">
                                                                             <div class="modal-body">
-                                                                                <form action="{{route('delete_picesjoint')}}"
-                                                                                    method="post" 
-                                                                                   >
+                                                                                <form
+                                                                                    action="{{ route('delete_picesjoint') }}"
+                                                                                    method="post">
                                                                                     @csrf
                                                                                     <!--begin::Heading-->
                                                                                     <div class="mb-13 text-center">
                                                                                         <!--begin::Title-->
-                                                                                        <h1 class="mb-3">Set First Target</h1>
+                                                                                        <h1 class="mb-3">Set First Target
+                                                                                        </h1>
                                                                                         <!--end::Title-->
                                                                                         <!--begin::Description-->
-                                                                                        <div class="text-muted fw-bold fs-5">If you need
+                                                                                        <div
+                                                                                            class="text-muted fw-bold fs-5">
+                                                                                            If you need
                                                                                             more info, please check
                                                                                             <a href="#"
                                                                                                 class="fw-bolder link-primary">Project
@@ -904,30 +908,44 @@
                                                                                     </div>
                                                                                     <!--end::Heading-->
                                                                                     <!--begin::Input group-->
-                                                                                    <div class="d-flex flex-column mb-8 fv-row">
+                                                                                    <div
+                                                                                        class="d-flex flex-column mb-8 fv-row">
                                                                                         <!--begin::Label-->
                                                                                         <label
                                                                                             class="d-flex align-items-center fs-6 fw-bold mb-2">
-                                                                                            <span class="required">voulez-vous
-                                                                                                supprimer une  piece de jointe </span>
+                                                                                            <span
+                                                                                                class="required">voulez-vous
+                                                                                                supprimer une piece de
+                                                                                                jointe </span>
                                                                                             <code>{{ $image->Nom_image }}</code>
-                                                                                            <input type="hidden" id="id" name="id"
+                                                                                            <input type="hidden"
+                                                                                                id="id"
+                                                                                                name="id"
                                                                                                 value="{{ $image->id }}">
-                                                                                            <input type="hidden" id="Nom_pices" name="Nom_pices"
+                                                                                            <input type="hidden"
+                                                                                                id="Nom_pices"
+                                                                                                name="Nom_pices"
                                                                                                 value="{{ $image->Nom_image }}">
-                                                                                            <input type="hidden" id="Nom_etudiant" name="Nom_etudiant"
+                                                                                            <input type="hidden"
+                                                                                                id="Nom_etudiant"
+                                                                                                name="Nom_etudiant"
                                                                                                 value="{{ $image->imageable->name }}">
-                                                                                            <input type="hidden" id="Etudiants_id" name="Etudiants_id"
+                                                                                            <input type="hidden"
+                                                                                                id="Etudiants_id"
+                                                                                                name="Etudiants_id"
                                                                                                 value="{{ $image->imageable->id }}">
 
 
-                                                                                                
+
                                                                                         </label>
                                                                                     </div>
                                                                                     <div class="modal-footer">
-                                                                                        <button type="button" class="btn btn-light"
+                                                                                        <button type="button"
+                                                                                            class="btn btn-light"
                                                                                             data-bs-dismiss="modal">Fermer</button>
-                                                                                        <button type="submit" class="btn btn-primary">Sauvegarder les modifications</button>
+                                                                                        <button type="submit"
+                                                                                            class="btn btn-primary">Sauvegarder
+                                                                                            les modifications</button>
                                                                                     </div>
                                                                                 </form>
                                                                             </div>

@@ -1,18 +1,28 @@
-<div id="kt_aside" class="aside aside-dark aside-hoverable" data-kt-drawer="true" data-kt-drawer-name="aside" data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true" data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="start" data-kt-drawer-toggle="#kt_aside_mobile_toggle">
+<div id="kt_aside" class="aside aside-dark aside-hoverable" data-kt-drawer="true" data-kt-drawer-name="aside"
+    data-kt-drawer-activate="{default: true, lg: false}" data-kt-drawer-overlay="true"
+    data-kt-drawer-width="{default:'200px', '300px': '250px'}" data-kt-drawer-direction="start"
+    data-kt-drawer-toggle="#kt_aside_mobile_toggle">
     <!--begin::Brand-->
     <div class="aside-logo flex-column-auto" id="kt_aside_logo">
         <!--begin::Logo-->
-        <a href="{{URL('/')}}">
-            <img alt="az" src="{{asset('assets/media/logos/archi1.png')}}" class="h-60px logo">
+        <a href="{{ URL('/') }}">
+            <img alt="az" src="{{ asset('assets/media/logos/archi1.png') }}" class="h-60px logo">
         </a>
         <!--end::Logo-->
         <!--begin::Aside toggler-->
-        <div id="kt_aside_toggle" class="btn btn-icon w-auto px-0 btn-active-color-primary aside-toggle" data-kt-toggle="true" data-kt-toggle-state="active" data-kt-toggle-target="body" data-kt-toggle-name="aside-minimize">
+        <div id="kt_aside_toggle" class="btn btn-icon w-auto px-0 btn-active-color-primary aside-toggle"
+            data-kt-toggle="true" data-kt-toggle-state="active" data-kt-toggle-target="body"
+            data-kt-toggle-name="aside-minimize">
             <!--begin::Svg Icon | path: icons/duotune/arrows/arr079.svg-->
             <span class="svg-icon svg-icon-1 rotate-180">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path opacity="0.5" d="M14.2657 11.4343L18.45 7.25C18.8642 6.83579 18.8642 6.16421 18.45 5.75C18.0358 5.33579 17.3642 5.33579 16.95 5.75L11.4071 11.2929C11.0166 11.6834 11.0166 12.3166 11.4071 12.7071L16.95 18.25C17.3642 18.6642 18.0358 18.6642 18.45 18.25C18.8642 17.8358 18.8642 17.1642 18.45 16.75L14.2657 12.5657C13.9533 12.2533 13.9533 11.7467 14.2657 11.4343Z" fill="black"></path>
-                    <path d="M8.2657 11.4343L12.45 7.25C12.8642 6.83579 12.8642 6.16421 12.45 5.75C12.0358 5.33579 11.3642 5.33579 10.95 5.75L5.40712 11.2929C5.01659 11.6834 5.01659 12.3166 5.40712 12.7071L10.95 18.25C11.3642 18.6642 12.0358 18.6642 12.45 18.25C12.8642 17.8358 12.8642 17.1642 12.45 16.75L8.2657 12.5657C7.95328 12.2533 7.95328 11.7467 8.2657 11.4343Z" fill="black"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                    fill="none">
+                    <path opacity="0.5"
+                        d="M14.2657 11.4343L18.45 7.25C18.8642 6.83579 18.8642 6.16421 18.45 5.75C18.0358 5.33579 17.3642 5.33579 16.95 5.75L11.4071 11.2929C11.0166 11.6834 11.0166 12.3166 11.4071 12.7071L16.95 18.25C17.3642 18.6642 18.0358 18.6642 18.45 18.25C18.8642 17.8358 18.8642 17.1642 18.45 16.75L14.2657 12.5657C13.9533 12.2533 13.9533 11.7467 14.2657 11.4343Z"
+                        fill="black"></path>
+                    <path
+                        d="M8.2657 11.4343L12.45 7.25C12.8642 6.83579 12.8642 6.16421 12.45 5.75C12.0358 5.33579 11.3642 5.33579 10.95 5.75L5.40712 11.2929C5.01659 11.6834 5.01659 12.3166 5.40712 12.7071L10.95 18.25C11.3642 18.6642 12.0358 18.6642 12.45 18.25C12.8642 17.8358 12.8642 17.1642 12.45 16.75L8.2657 12.5657C7.95328 12.2533 7.95328 11.7467 8.2657 11.4343Z"
+                        fill="black"></path>
                 </svg>
             </span>
             <!--end::Svg Icon-->
@@ -23,80 +33,95 @@
     <!--begin::Aside menu-->
     <div class="aside-menu flex-column-fluid">
         <!--begin::Aside Menu-->
-        <div class="hover-scroll-overlay-y my-5 my-lg-5" id="kt_aside_menu_wrapper" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_aside_logo, #kt_aside_footer" data-kt-scroll-wrappers="#kt_aside_menu" data-kt-scroll-offset="0" style="height: 447px;">
+        <div class="hover-scroll-overlay-y my-5 my-lg-5" id="kt_aside_menu_wrapper" data-kt-scroll="true"
+            data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-height="auto"
+            data-kt-scroll-dependencies="#kt_aside_logo, #kt_aside_footer" data-kt-scroll-wrappers="#kt_aside_menu"
+            data-kt-scroll-offset="0" style="height: 447px;">
             <!--begin::Menu-->
-            <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="#kt_aside_menu" data-kt-menu="true" data-kt-menu-expand="false">
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                    <span class="menu-link">
-                        <span class="menu-icon">
-                            <i class="bi bi-grid fs-3"></i>
+            @can('list_niveau')
+                <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500"
+                    id="#kt_aside_menu" data-kt-menu="true" data-kt-menu-expand="false">
+                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                        <span class="menu-link">
+                            <span class="menu-icon">
+                                <i class="bi bi-grid fs-3"></i>
+                            </span>
+                            <span class="menu-title">Niveaux des études</span>
+                            <span class="menu-arrow"></span>
                         </span>
-                        <span class="menu-title">Niveaux des études</span>
-                        <span class="menu-arrow"></span>
-                    </span>
-                    <div class="menu-sub menu-sub-accordion menu-active-bg">
-                        <div class="menu-item">
-                            <a class="menu-link" href="{{URL::route('niveauxdetudes.index')}}">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title"> lits Niveaux des études</span>
-                            </a>
+                        <div class="menu-sub menu-sub-accordion menu-active-bg">
+                            <div class="menu-item">
+                                <a class="menu-link" href="{{ URL::route('niveauxdetudes.index') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title"> lits Niveaux des études</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
 
-            </div>
+                </div>
+            @endcan
             <!--end::Menu-->
             <!--begin::Menu-->
-            <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="#kt_aside_menu" data-kt-menu="true" data-kt-menu-expand="false">
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                    <span class="menu-link">
-                        <span class="menu-icon">
-                            <i class="bi bi-grid fs-3"></i>
+            @can('list_classes')
+                <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500"
+                    id="#kt_aside_menu" data-kt-menu="true" data-kt-menu-expand="false">
+                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                        <span class="menu-link">
+                            <span class="menu-icon">
+                                <i class="bi bi-grid fs-3"></i>
+                            </span>
+                            <span class="menu-title">Classes</span>
+                            <span class="menu-arrow"></span>
                         </span>
-                        <span class="menu-title">Classes</span>
-                        <span class="menu-arrow"></span>
-                    </span>
-                    <div class="menu-sub menu-sub-accordion menu-active-bg">
-                        <div class="menu-item">
-                            <a class="menu-link" href="{{URL::route('classe.index')}}">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title"> Liste des Classes</span>
-                            </a>
+                        <div class="menu-sub menu-sub-accordion menu-active-bg">
+                            <div class="menu-item">
+                                <a class="menu-link" href="{{ URL::route('classe.index') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title"> Liste des Classes</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            @endcan
+
             <!--end::Menu-->
             <!--begin::Menu-->
-            <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="#kt_aside_menu" data-kt-menu="true" data-kt-menu-expand="false">
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                    <span class="menu-link">
-                        <span class="menu-icon">
-                            <i class="bi bi-grid fs-3"></i>
+            @can('list_parents')
+                <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500"
+                    id="#kt_aside_menu" data-kt-menu="true" data-kt-menu-expand="false">
+                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                        <span class="menu-link">
+                            <span class="menu-icon">
+                                <i class="bi bi-grid fs-3"></i>
+                            </span>
+                            <span class="menu-title">Parents</span>
+                            <span class="menu-arrow"></span>
                         </span>
-                        <span class="menu-title">Parents</span>
-                        <span class="menu-arrow"></span>
-                    </span>
-                    <div class="menu-sub menu-sub-accordion menu-active-bg">
-                        <div class="menu-item">
-                            <a class="menu-link" href="{{URL::route('parentes.index')}}">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title"> Liste des Parents</span>
-                            </a>
+                        <div class="menu-sub menu-sub-accordion menu-active-bg">
+                            <div class="menu-item">
+                                <a class="menu-link" href="{{ URL::route('parentes.index') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title"> Liste des Parents</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            @endcan
             <!--end::Menu-->
-                   <!--begin::Menu-->
-                   <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="#kt_aside_menu" data-kt-menu="true" data-kt-menu-expand="false">
+            <!--begin::Menu-->
+            @can('list_enseignants')
+                <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500"
+                    id="#kt_aside_menu" data-kt-menu="true" data-kt-menu-expand="false">
                     <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
                         <span class="menu-link">
                             <span class="menu-icon">
@@ -107,7 +132,7 @@
                         </span>
                         <div class="menu-sub menu-sub-accordion menu-active-bg">
                             <div class="menu-item">
-                                <a class="menu-link" href="{{URL::route('enseignants.index')}}">
+                                <a class="menu-link" href="{{ URL::route('enseignants.index') }}">
                                     <span class="menu-bullet">
                                         <span class="bullet bullet-dot"></span>
                                     </span>
@@ -117,76 +142,82 @@
                         </div>
                     </div>
                 </div>
-                <!--end::Menu-->
-            <!--begin::Menu-->
-            <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="#kt_aside_menu" data-kt-menu="true" data-kt-menu-expand="false">
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                    <span class="menu-link">
-                        <span class="menu-icon">
-                            <i class="bi bi-grid fs-3"></i>
-                        </span>
-                        <span class="menu-title">Sections</span>
-                        <span class="menu-arrow"></span>
-                    </span>
-                    <div class="menu-sub menu-sub-accordion menu-active-bg">
-                        <div class="menu-item">
-                            <a class="menu-link" href="{{URL::route('primaire')}}">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title"> Primaire</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="menu-sub menu-sub-accordion menu-active-bg">
-                        <div class="menu-item">
-                            <a class="menu-link" href="{{URL::route('lycee')}}">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title"> Lycée</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="menu-sub menu-sub-accordion menu-active-bg">
-                        <div class="menu-item">
-                            <a class="menu-link" href="{{URL::route('college')}}">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title"> Collége</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
+            @endcan
             <!--end::Menu-->
-              <!--begin::Menu-->
-              <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="#kt_aside_menu" data-kt-menu="true" data-kt-menu-expand="false">
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                    <span class="menu-link">
-                        <span class="menu-icon">
-                            <i class="bi bi-grid fs-3"></i>
+            <!--begin::Menu-->
+            @can('list_sections')
+                <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500"
+                    id="#kt_aside_menu" data-kt-menu="true" data-kt-menu-expand="false">
+                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                        <span class="menu-link">
+                            <span class="menu-icon">
+                                <i class="bi bi-grid fs-3"></i>
+                            </span>
+                            <span class="menu-title">Sections</span>
+                            <span class="menu-arrow"></span>
                         </span>
-                        <span class="menu-title">Etudaints</span>
-                        <span class="menu-arrow"></span>
-                    </span>
-
-
-                    <div class="menu-sub menu-sub-accordion menu-active-bg">
-                        <div class="menu-item">
-                            <a class="menu-link" href="{{URL::route('etudiants.index')}}">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title"> Liste des Etudaints</span>
-                            </a>
+                        <div class="menu-sub menu-sub-accordion menu-active-bg">
+                            <div class="menu-item">
+                                <a class="menu-link" href="{{ URL::route('primaire') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title"> Primaire</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="menu-sub menu-sub-accordion menu-active-bg">
+                            <div class="menu-item">
+                                <a class="menu-link" href="{{ URL::route('lycee') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title"> Lycée</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="menu-sub menu-sub-accordion menu-active-bg">
+                            <div class="menu-item">
+                                <a class="menu-link" href="{{ URL::route('college') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title"> Collége</span>
+                                </a>
+                            </div>
                         </div>
                     </div>
 
-                    {{-- <div class="menu-sub menu-sub-accordion menu-active-bg">
+
+                </div>
+            @endcan
+            <!--end::Menu-->
+            <!--begin::Menu-->
+            @can('list_etudaints')
+                <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500"
+                    id="#kt_aside_menu" data-kt-menu="true" data-kt-menu-expand="false">
+                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                        <span class="menu-link">
+                            <span class="menu-icon">
+                                <i class="bi bi-grid fs-3"></i>
+                            </span>
+                            <span class="menu-title">Etudaints</span>
+                            <span class="menu-arrow"></span>
+                        </span>
+
+
+                        <div class="menu-sub menu-sub-accordion menu-active-bg">
+                            <div class="menu-item">
+                                <a class="menu-link" href="{{ URL::route('etudiants.index') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title"> Liste des Etudaints</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        {{-- <div class="menu-sub menu-sub-accordion menu-active-bg">
                         <div class="menu-item">
                             <a class="menu-link" href="{{URL::route('etudiants.create')}}">
                                 <span class="menu-bullet">
@@ -196,75 +227,86 @@
                             </a>
                         </div>
                     </div> --}}
+                    </div>
+
+
                 </div>
-
-
-            </div>
-              <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500" id="#kt_aside_menu" data-kt-menu="true" data-kt-menu-expand="false">
-                <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                    <span class="menu-link">
-                        <span class="menu-icon">
-                            <i class="bi bi-grid fs-3"></i>
+            @endcan
+            @can('Comptes_Financiers')
+                <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500"
+                    id="#kt_aside_menu" data-kt-menu="true" data-kt-menu-expand="false">
+                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                        <span class="menu-link">
+                            <span class="menu-icon">
+                                <i class="bi bi-grid fs-3"></i>
+                            </span>
+                            <span class="menu-title">Comptes Financiers</span>
+                            <span class="menu-arrow"></span>
                         </span>
-                        <span class="menu-title">Comptes Financiers</span>
-                        <span class="menu-arrow"></span>
-                    </span>
 
 
-                    <div class="menu-sub menu-sub-accordion menu-active-bg">
-                        <div class="menu-item">
-                            <a class="menu-link" href="{{URL::route('frais.index')}}">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title"> Frais de scolarité</span>
-                            </a>
+                        @can("list_frais")
+                        <div class="menu-sub menu-sub-accordion menu-active-bg">
+                            <div class="menu-item">
+                                <a class="menu-link" href="{{ URL::route('frais.index') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title"> Frais de scolarité</span>
+                                </a>
+                            </div>
                         </div>
-                    </div>
+                        @endcan
+                        @can("list_factures")
+                        <div class="menu-sub menu-sub-accordion menu-active-bg">
+                            <div class="menu-item">
+                                <a class="menu-link" href="{{ URL::route('facture.index') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title"> Liste des Factures</span>
+                                </a>
+                            </div>
+                        </div>
+                        @endcan
+                        @can("list_paiements")
+                        <div class="menu-sub menu-sub-accordion menu-active-bg">
+                            <div class="menu-item">
+                                <a class="menu-link" href="{{ URL::route('RecuEtudaint.index') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title">Liste des paiements étudiants</span>
+                                </a>
+                            </div>
+                        </div>
+                        @endcan
+                        @can("list_traitements")
+                        <div class="menu-sub menu-sub-accordion menu-active-bg">
+                            <div class="menu-item">
+                                <a class="menu-link" href="{{ URL::route('FraisTraitement.index') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title">Liste des Frais Traitements </span>
+                                </a>
+                            </div>
+                        </div>                     
+                        @endcan
+                         @can("list_echanges")
+                        <div class="menu-sub menu-sub-accordion menu-active-bg">
+                            <div class="menu-item">
+                                <a class="menu-link" href="{{ URL::route('RecuDeEchange.index') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title">Liste des Recu de echanges </span>
+                                </a>
+                            </div>
+                        </div>                      
+                        @endcan
 
-                    <div class="menu-sub menu-sub-accordion menu-active-bg">
-                        <div class="menu-item">
-                            <a class="menu-link" href="{{URL::route('facture.index')}}">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title"> Liste des Factures</span>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="menu-sub menu-sub-accordion menu-active-bg">
-                        <div class="menu-item">
-                            <a class="menu-link" href="{{URL::route('RecuEtudaint.index')}}">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title">Liste des paiements étudiants</span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="menu-sub menu-sub-accordion menu-active-bg">
-                        <div class="menu-item">
-                            <a class="menu-link" href="{{URL::route('FraisTraitement.index')}}">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title">Liste des Frais Traitements </span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="menu-sub menu-sub-accordion menu-active-bg">
-                        <div class="menu-item">
-                            <a class="menu-link" href="{{URL::route('RecuDeEchange.index')}}">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title">Liste des Recu de echanges </span>
-                            </a>
-                        </div>
-                    </div>
-
-                    {{-- <div class="menu-sub menu-sub-accordion menu-active-bg">
+                        {{-- <div class="menu-sub menu-sub-accordion menu-active-bg">
                         <div class="menu-item">
                             <a class="menu-link" href="{{URL::route('etudiants.create')}}">
                                 <span class="menu-bullet">
@@ -274,17 +316,128 @@
                             </a>
                         </div>
                     </div> --}}
+                    </div>
                 </div>
+            @endcan
+            @can('presence')
+                <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500"
+                    id="#kt_aside_menu" data-kt-menu="true" data-kt-menu-expand="false">
+                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                        <span class="menu-link">
+                            <span class="menu-icon">
+                                <i class="bi bi-grid fs-3"></i>
+                            </span>
+                            <span class="menu-title">Presence</span>
+                            <span class="menu-arrow"></span>
+                        </span>
 
 
-            </div>
+                        <div class="menu-sub menu-sub-accordion menu-active-bg">
+                            <div class="menu-item">
+                                <a class="menu-link" href="{{ URL::route('Presence_Primaire') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title"> Primaire</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="menu-sub menu-sub-accordion menu-active-bg">
+                            <div class="menu-item">
+                                <a class="menu-link" href="{{ URL::route('Presence_Lycee') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title"> Lycée</span>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="menu-sub menu-sub-accordion menu-active-bg">
+                            <div class="menu-item">
+                                <a class="menu-link" href="{{ URL::route('Presence_College') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title"> Collége</span>
+                                </a>
+                            </div>
+                        </div>
+
+
+                        {{-- <div class="menu-sub menu-sub-accordion menu-active-bg">
+                        <div class="menu-item">
+                            <a class="menu-link" href="{{URL::route('etudiants.create')}}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title"> Ajouter Etudaints</span>
+                            </a>
+                        </div>
+                    </div> --}}
+                    </div>
+
+
+                </div>
+            @endcan
+            @can('gestions_roles')
+                <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500"
+                    id="#kt_aside_menu" data-kt-menu="true" data-kt-menu-expand="false">
+                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+                        <span class="menu-link">
+                            <span class="menu-icon">
+                                <i class="bi bi-grid fs-3"></i>
+                            </span>
+                            <span class="menu-title">Gestion roles</span>
+                            <span class="menu-arrow"></span>
+                        </span>
+
+
+                        <div class="menu-sub menu-sub-accordion menu-active-bg">
+                            <div class="menu-item">
+                                <a class="menu-link" href="{{ URL::route('roles.index') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title">Liste roles</span>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="menu-sub menu-sub-accordion menu-active-bg">
+                            <div class="menu-item">
+                                <a class="menu-link" href="{{ URL::route('users.index') }}">
+                                    <span class="menu-bullet">
+                                        <span class="bullet bullet-dot"></span>
+                                    </span>
+                                    <span class="menu-title">Liste users</span>
+                                </a>
+                            </div>
+                        </div>
+
+
+
+                        {{-- <div class="menu-sub menu-sub-accordion menu-active-bg">
+                        <div class="menu-item">
+                            <a class="menu-link" href="{{URL::route('etudiants.create')}}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title"> Ajouter Etudaints</span>
+                            </a>
+                        </div>
+                    </div> --}}
+                    </div>
+
+
+                </div>
+            @endcan
             <!--end::Menu-->
         </div>
         <!--end::Aside Menu-->
     </div>
     <!--end::Aside menu-->
     <!--begin::Footer-->
-    
+
     <!--end::Footer-->
 </div>
 
