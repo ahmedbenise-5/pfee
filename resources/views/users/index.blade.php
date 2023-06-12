@@ -228,7 +228,7 @@
                                             <td class="d-flex align-items-center">
                                                 <!--begin:: Avatar -->
                                                 <div class="symbol symbol-circle symbol-50px overflow-hidden me-3">
-                                                    <a href="../../demo1/dist/apps/user-management/users/view.html">
+                                                    <a>
                                                         <div class="symbol-label fs-3 bg-light-danger text-danger">
                                                             {{ $user->name[0] }}</div>
                                                     </a>
@@ -236,7 +236,7 @@
                                                 <!--end::Avatar-->
                                                 <!--begin::User details-->
                                                 <div class="d-flex flex-column">
-                                                    <a href="../../demo1/dist/apps/user-management/users/view.html"
+                                                    <a
                                                         class="text-gray-800 text-hover-primary mb-1">{{ $user->name }}</a>
                                                     <span>{{ $user->email }}</span>
                                                 </div>
@@ -264,14 +264,28 @@
                                             <!--begin::Action=-->
                                             <td>
                                                 <div class="d-flex justify-content flex-shrink-0">
+                                                    <a href="{{route('users.show' ,$user->id)}}"
+                                                        class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                        <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
+                                                        <span class="svg-icon svg-icon-3">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                height="24" viewBox="0 0 24 24" fill="none">
+                                                                <path
+                                                                    d="M6.28548 15.0861C7.34369 13.1814 9.35142 12 11.5304 12H12.4696C14.6486 12 16.6563 13.1814 17.7145 15.0861L19.3493 18.0287C20.0899 19.3618 19.1259 21 17.601 21H6.39903C4.87406 21 3.91012 19.3618 4.65071 18.0287L6.28548 15.0861Z"
+                                                                    fill="black" />
+                                                                <rect opacity="0.3" x="8" y="3"
+                                                                    width="8" height="8" rx="4"
+                                                                    fill="black" />
+                                                            </svg></span>
+                                                        <!--end::Svg Icon-->
+                                                    </a>
                                                     <a href="#" data-bs-toggle="modal"
                                                         data-bs-target="#update{{ $user->id }}"
                                                         class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                                         <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                                         <span class="svg-icon svg-icon-3">
-                                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                                width="24" height="24"
-                                                                viewBox="0 0 24 24" fill="none">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                height="24" viewBox="0 0 24 24" fill="none">
                                                                 <path opacity="0.3"
                                                                     d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z"
                                                                     fill="black" />
@@ -282,14 +296,13 @@
                                                         </span>
                                                         <!--end::Svg Icon-->
                                                     </a>
-                                                    <a data-bs-toggle="modal"
-                                                        data-bs-target="#delete{{ $user->id }}"
+
+                                                    <a data-bs-toggle="modal" data-bs-target="#delete{{ $user->id }}"
                                                         class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm">
                                                         <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                                                         <span class="svg-icon svg-icon-3">
-                                                            <svg xmlns="http://www.w3.org/2000/svg"
-                                                                width="24" height="24"
-                                                                viewBox="0 0 24 24" fill="none">
+                                                            <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                height="24" viewBox="0 0 24 24" fill="none">
                                                                 <path
                                                                     d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z"
                                                                     fill="black" />
@@ -303,21 +316,22 @@
                                                         </span>
                                                         <!--end::Svg Icon-->
                                                     </a>
+
                                                 </div>
                                             </td>
                                             <!--end::Action=-->
                                         </tr>
-                                      
 
 
-                                   <!--model upadte -->
-                                   
-                                        <div class="modal fade" tabindex="-1" id="update{{$user->id}}">
+
+                                        <!--model upadte -->
+
+                                        <div class="modal fade" tabindex="-1" id="update{{ $user->id }}">
                                             <div class="modal-dialog mw-650px">
                                                 <div class="modal-content">
                                                     <div class="modal-body">
-                                                        <form action="{{ route('users.update','$user->id') }}" method="POST"
-                                                            id="kt_modal_new_target_form" class="form">
+                                                        <form action="{{ route('users.update', '$user->id') }}"
+                                                            method="POST" id="kt_modal_new_target_form" class="form">
                                                             @csrf
                                                             @method('patch')
                                                             <!--begin::Heading-->
@@ -328,7 +342,8 @@
                                                                 <!--begin::Description-->
                                                                 <div class="text-muted fw-bold fs-5">If you need
                                                                     more info, please check
-                                                                    <a href="#" class="fw-bolder link-primary">Project
+                                                                    <a href="#"
+                                                                        class="fw-bolder link-primary">Project
                                                                         Guidelines</a>.
                                                                 </div>
                                                                 <!--end::Description-->
@@ -336,106 +351,133 @@
                                                             <div class="modal-body scroll-y ">
                                                                 <!--begin::Form-->
                                                                 <div id="kt_modal_add_user_form"
-                                                                    class="form fv-plugins-bootstrap5 fv-plugins-framework" action="#">
+                                                                    class="form fv-plugins-bootstrap5 fv-plugins-framework"
+                                                                    action="#">
                                                                     <!--begin::Scroll-->
                                                                     <div class="d-flex flex-column scroll-y me-n7 pe-7"
-                                                                        id="kt_modal_add_user_scroll" data-kt-scroll="true"
+                                                                        id="kt_modal_add_user_scroll"
+                                                                        data-kt-scroll="true"
                                                                         data-kt-scroll-activate="{default: false, lg: true}"
                                                                         data-kt-scroll-max-height="auto"
                                                                         data-kt-scroll-dependencies="#kt_modal_add_user_header"
                                                                         data-kt-scroll-wrappers="#kt_modal_add_user_scroll"
-                                                                        data-kt-scroll-offset="300px" style="max-height: 399px;">
+                                                                        data-kt-scroll-offset="300px"
+                                                                        style="max-height: 399px;">
                                                                         <!--begin::Input group-->
                                                                         <div class="fv-row mb-7 fv-plugins-icon-container">
-                                                                        <input type="hidden" value="{{$user->id}}" name="id">
+                                                                            <input type="hidden"
+                                                                                value="{{ $user->id }}"
+                                                                                name="id">
                                                                             <!--begin::Label-->
-                                                                            <label class="required fw-bold fs-6 mb-2">le Nom et Pénom</label>
+                                                                            <label class="required fw-bold fs-6 mb-2">le
+                                                                                Nom et Pénom</label>
                                                                             <!--end::Label-->
                                                                             <!--begin::Input-->
                                                                             <input type="text" name="name"
                                                                                 class="form-control form-control-solid mb-3 mb-lg-0"
-                                                                                placeholder="Nom et prénom" value="{{$user->name}}">
+                                                                                placeholder="Nom et prénom"
+                                                                                value="{{ $user->name }}">
                                                                             <!--end::Input-->
-                                                                            <div class="fv-plugins-message-container invalid-feedback"></div>
+                                                                            <div
+                                                                                class="fv-plugins-message-container invalid-feedback">
+                                                                            </div>
                                                                         </div>
                                                                         <!--end::Input group-->
                                                                         <!--begin::Input group-->
                                                                         <div class="fv-row mb-7 fv-plugins-icon-container">
                                                                             <!--begin::Label-->
-                                                                            <label class="required fw-bold fs-6 mb-2">Email</label>
+                                                                            <label
+                                                                                class="required fw-bold fs-6 mb-2">Email</label>
                                                                             <!--end::Label-->
                                                                             <!--begin::Input-->
                                                                             <input type="email" name="email"
                                                                                 class="form-control form-control-solid mb-3 mb-lg-0"
-                                                                                 value="{{$user->email}}">
+                                                                                value="{{ $user->email }}">
                                                                             <!--end::Input-->
-                                                                            <div class="fv-plugins-message-container invalid-feedback"></div>
+                                                                            <div
+                                                                                class="fv-plugins-message-container invalid-feedback">
+                                                                            </div>
                                                                         </div>
                                                                         <!--end::Input group-->
                                                                         <!--begin::Input group-->
                                                                         <div class="fv-row mb-7 fv-plugins-icon-container">
                                                                             <!--begin::Label-->
-                                                                            <label class="required fw-bold fs-6 mb-2">Password</label>
+                                                                            <label
+                                                                                class="required fw-bold fs-6 mb-2">Password</label>
                                                                             <!--end::Label-->
                                                                             <!--begin::Input-->
                                                                             <input type="Password" name="password"
-                                                                                class="form-control form-control-solid mb-3 mb-lg-0" autocomplete="off" >
+                                                                                class="form-control form-control-solid mb-3 mb-lg-0"
+                                                                                autocomplete="off">
                                                                             <!--end::Input-->
-                                                                            <div class="fv-plugins-message-container invalid-feedback"></div>
+                                                                            <div
+                                                                                class="fv-plugins-message-container invalid-feedback">
+                                                                            </div>
                                                                         </div>
                                                                         <!--end::Input group-->
                                                                         <!--begin::Input group-->
                                                                         <div class="mb-7">
                                                                             <!--begin::Label-->
-                                                                            <label class="required fw-bold fs-6 mb-5">Role</label>
+                                                                            <label
+                                                                                class="required fw-bold fs-6 mb-5">Role</label>
                                                                             <!--end::Label-->
                                                                             <!--begin::Roles-->
                                                                             <!--begin::Input row-->
                                                                             <div class="d-flex fv-row">
                                                                                 <!--begin::Radio-->
-                                                                                <div class="form-check form-check-custom form-check-solid">
+                                                                                <div
+                                                                                    class="form-check form-check-custom form-check-solid">
                                                                                     <!--begin::Input-->
-                                                                                    <input class="form-check-input me-3" name="role_id"
-                                                                                        type="radio" value="1"
-                                                                                        id="kt_modal_update_role_option_0" checked="checked">
+                                                                                    <input class="form-check-input me-3"
+                                                                                        name="role_id" type="radio"
+                                                                                        value="1"
+                                                                                        id="kt_modal_update_role_option_0"
+                                                                                        checked="checked">
                                                                                     <!--end::Input-->
                                                                                     <!--begin::Label-->
                                                                                     <label class="form-check-label"
                                                                                         for="kt_modal_update_role_option_0">
-                                                                                        <div class="fw-bolder text-gray-800">Administrateur</div>
+                                                                                        <div
+                                                                                            class="fw-bolder text-gray-800">
+                                                                                            Administrateur</div>
                                                                                     </label>
                                                                                     <!--end::Label-->
                                                                                 </div>
                                                                                 <!--end::Radio-->
                                                                             </div>
                                                                             <!--end::Input row-->
-                                                                            <div class="separator separator-dashed my-5"></div>
+                                                                            <div class="separator separator-dashed my-5">
+                                                                            </div>
                                                                         </div>
                                                                         <!--end::Input group-->
                                                                         <div class="mb-7">
                                                                             <!--begin::Label-->
-                                                                            <label class="form-label fw-bold">Statut:</label>
+                                                                            <label
+                                                                                class="form-label fw-bold">Statut:</label>
                                                                             <!--end::Label-->
                                                                             <!--begin::Switch-->
                                                                             <div
                                                                                 class="form-check form-switch form-switch-sm form-check-custom form-check-solid">
                                                                                 @if ($user->statut == 1)
-                                                                                <input class="form-check-input" type="checkbox" name="statut"
-                                                                                checked="checked">
-                                                                            <label class="form-check-label">Active</label>
+                                                                                    <input class="form-check-input"
+                                                                                        type="checkbox" name="statut"
+                                                                                        checked="checked">
+                                                                                    <label
+                                                                                        class="form-check-label">Active</label>
                                                                                 @else
-                                                                                <input class="form-check-input" type="checkbox" name="statut"
-                                                                                >
-                                                                            <label class="form-check-label">Active</label>
+                                                                                    <input class="form-check-input"
+                                                                                        type="checkbox" name="statut">
+                                                                                    <label
+                                                                                        class="form-check-label">Active</label>
                                                                                 @endif
-                                                                               
+
                                                                             </div>
                                                                             <!--end::Switch-->
                                                                         </div>
                                                                     </div>
                                                                     <!--end::Scroll-->
                                                                     <!--begin::Actions-->
-                        
+
                                                                     <!--end::Actions-->
                                                                     <div></div>
                                                                 </div>
@@ -453,60 +495,58 @@
                                                 </div>
                                             </div>
                                         </div>
-                                   <!--model upadte -->
+                                        <!--model upadte -->
 
-                                   <!--model delete -->
-                                      <!-- modul delte -->
-                                      <div class="modal fade" tabindex="-1" id="delete{{ $user->id }}">
-                                        <div class="modal-dialog mw-650px">
-                                            <div class="modal-content">
-                                                <div class="modal-body">
-                                                    <form action="{{ URL::route('users.destroy', 'delete') }}"
-                                                        method="POST" id="kt_modal_new_target_form"
-                                                        class="form">
-                                                        @method('delete')
-                                                        @csrf
-                                                        <!--begin::Heading-->
-                                                        <div class="mb-13 text-center">
-                                                            <!--begin::Title-->
-                                                            <h1 class="mb-3">Set First Target</h1>
-                                                            <!--end::Title-->
-                                                            <!--begin::Description-->
-                                                            <div class="text-muted fw-bold fs-5">If you need
-                                                                more info, please check
-                                                                <a href="#"
-                                                                    class="fw-bolder link-primary">Project
-                                                                    Guidelines</a>.
+                                        <!--model delete -->
+                                        <!-- modul delte -->
+                                        <div class="modal fade" tabindex="-1" id="delete{{ $user->id }}">
+                                            <div class="modal-dialog mw-650px">
+                                                <div class="modal-content">
+                                                    <div class="modal-body">
+                                                        <form action="{{ URL::route('users.destroy', 'delete') }}"
+                                                            method="POST" id="kt_modal_new_target_form" class="form">
+                                                            @method('delete')
+                                                            @csrf
+                                                            <!--begin::Heading-->
+                                                            <div class="mb-13 text-center">
+                                                                <!--begin::Title-->
+                                                                <h1 class="mb-3">Set First Target</h1>
+                                                                <!--end::Title-->
+                                                                <!--begin::Description-->
+                                                                <div class="text-muted fw-bold fs-5">If you need
+                                                                    more info, please check
+                                                                    <a href="#"
+                                                                        class="fw-bolder link-primary">Project
+                                                                        Guidelines</a>.
+                                                                </div>
+                                                                <!--end::Description-->
                                                             </div>
-                                                            <!--end::Description-->
-                                                        </div>
-                                                        <!--end::Heading-->
-                                                        <!--begin::Input group-->
-                                                        <div class="d-flex flex-column mb-8 fv-row">
-                                                            <!--begin::Label-->
-                                                            <label
-                                                                class="d-flex align-items-center fs-6 fw-bold mb-2">
-                                                                <span class="required">voulez-vous
-                                                                    supprimer User </span>
-                                                                <code>{{ $user->name }}</code>
-                                                                <input type="hidden" id="id" name="id"
-                                                                    value="{{ $user->id }}">
-                                                            </label>
-                                                        </div>
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-light"
-                                                                data-bs-dismiss="modal">Close</button>
-                                                            <button type="submit" class="btn btn-primary">Save
-                                                                changes</button>
-                                                        </div>
-                                                    </form>
+                                                            <!--end::Heading-->
+                                                            <!--begin::Input group-->
+                                                            <div class="d-flex flex-column mb-8 fv-row">
+                                                                <!--begin::Label-->
+                                                                <label class="d-flex align-items-center fs-6 fw-bold mb-2">
+                                                                    <span class="required">voulez-vous
+                                                                        supprimer User </span>
+                                                                    <code>{{ $user->name }}</code>
+                                                                    <input type="hidden" id="id" name="id"
+                                                                        value="{{ $user->id }}">
+                                                                </label>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-light"
+                                                                    data-bs-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-primary">Save
+                                                                    changes</button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <!-- end modal delete -->
-                                   <!--model delete -->
-                                        @endforeach
+                                        <!-- end modal delete -->
+                                        <!--model delete -->
+                                    @endforeach
 
                                 </tbody>
                                 <!--end::Table body-->

@@ -15,6 +15,7 @@ class PresenceRepository implements PresenceRepositoryInterface
 
     public function index()
     {
+
     }
     public function create($id)
     {
@@ -26,6 +27,9 @@ class PresenceRepository implements PresenceRepositoryInterface
     }
     public function edit($id)
     {
+        $Presence = Presence::orderBy('presences_date', 'desc')->where('id_sections', $id)->get();
+        return view('Presence.index', compact('Presence')); 
+
     }
     public function update($request)
     {
@@ -69,7 +73,8 @@ class PresenceRepository implements PresenceRepositoryInterface
                 $presnce->id_sections = $request->id_sections;
                 $presnce->presences_date =$presences_date;
                 $presnce->presences_status =$presences_status;
-                $presnce->id_enseignants =id_enseignants;
+                $presnce->id_enseignants =$id_enseignants;
+                // $presnce->id_enseignants =1;
                 $presnce->save();
             }
             toastr()->success('Data has been saved successfully!');

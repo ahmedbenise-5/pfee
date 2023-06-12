@@ -267,10 +267,8 @@
                                     <!--begin::Actions-->
                                     <div class="d-flex my-4">
 
-                                        @can('modifier_etudiant')
                                             <a href="{{ route('etudiants.edit', $Etudiants->id) }}"
                                                 class="btn btn-sm btn-primary me-2">Modifier etudaint</a>
-                                        @endcan
                                         <!--begin::Menu-->
                                         <div class="me-0">
                                             <button class="btn btn-sm btn-icon btn-bg-light btn-active-color-primary"

@@ -182,6 +182,7 @@ class  EtudiantsRepository implements EtudiantsRepositoryInterface
                $users->email=$request->email;
                $users->password=bcrypt($request->password);
                $users->name=$request->name;
+               $users->statut= 1;
                $users->assignRole(2);
                $users->save();
                $Etudiants->user_id=$users->id;
@@ -254,6 +255,7 @@ class  EtudiantsRepository implements EtudiantsRepositoryInterface
         $users->password=bcrypt($request->password);
         $users->name=$request->name;
         DB::table('model_has_roles')->where('model_id',$Etudiants->user_id)->delete();
+        $users->statut= 1;
         $users->assignRole(2);
         $users->save();
 

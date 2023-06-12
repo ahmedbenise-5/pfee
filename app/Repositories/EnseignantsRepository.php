@@ -75,6 +75,7 @@ class  EnseignantsRepository  implements EnseignantsRepositoryInterface
          $users->email=$request->email;
          $users->password=bcrypt($request->password);
          $users->name=$request->Nom_enseignants;
+         $users->statut= 1;
          $users->assignRole(3);
          $users->save();
          $Enseignants->user_id=$users->id;
@@ -128,6 +129,7 @@ class  EnseignantsRepository  implements EnseignantsRepositoryInterface
         $users = User::where('id',$Enseignants->user_id)->first();
         $users->email=$request->email;
         $users->password=bcrypt($request->password);
+        $users->statut= 1;
         $users->name=$Enseignants->Nom_enseignants;
         DB::table('model_has_roles')->where('model_id',$Enseignants->user_id)->delete();
         $users->assignRole(3);

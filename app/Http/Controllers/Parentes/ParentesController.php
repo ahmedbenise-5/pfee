@@ -118,6 +118,7 @@ class ParentesController extends Controller
          $users->email=$request->Email;
          $users->password=bcrypt($request->Password);
          $users->name=$request->NomPraent;
+         $users->statut= 1;
          $users->assignRole(4);
          $users->save();
          $parentes->user_id=$users->id;
@@ -218,10 +219,12 @@ class ParentesController extends Controller
                     $file_name=$request->file->getClientOriginalName();
                     $request->file->move(public_path('parent_attachments/'.$Nom_parentes),$file_name);
             }
+
             $users = User::where('id',$parentes->user_id)->first();
             $users->email=$request->Email;
             $users->password=bcrypt($request->Password);
             $users->name=$request->NomPraent;
+            $users->statut= 1;
             DB::table('model_has_roles')->where('model_id',$parentes->user_id)->delete();
             $users->assignRole(4);
             $users->save();

@@ -84,8 +84,11 @@ class usersController extends Controller
      */
     public function show($id)
     {
-        //
-    }
+       $user = User::where('id',$id)->first();
+       return view('users.show',compact('user'));
+    //    dd($user);
+     
+}
 
     /**
      * Show the form for editing the specified resource.
@@ -107,6 +110,8 @@ class usersController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        // dd($request);
         try {
             $validator = Validator::make($request->all(), [
                 "email" => 'required|unique:users,email,' . $request->id,

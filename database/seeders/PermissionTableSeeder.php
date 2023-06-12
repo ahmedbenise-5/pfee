@@ -56,7 +56,7 @@ class PermissionTableSeeder extends Seeder
                  "paiements_etudaints",
          // les permission pour               
 
-         "Comptes_Financiers",
+              "Comptes_Financiers",
              // Frais de scolarité
                 "list_frais",
                 "ajouter_frais",
