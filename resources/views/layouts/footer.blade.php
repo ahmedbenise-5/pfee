@@ -9,15 +9,11 @@
         <!--end::Copyright-->
         <!--begin::Menu-->
         <ul class="menu menu-gray-600 menu-hover-primary fw-bold order-1">
+           
             <li class="menu-item">
-                <a href="https://keenthemes.com" target="_blank" class="menu-link px-2">About</a>
+                <a href="https://www.linkedin.com/in/aziz-fakir-dev/" target="_blank" class="menu-link px-2">fakir</a>
             </li>
-            <li class="menu-item">
-                <a href="https://keenthemes.com/support" target="_blank" class="menu-link px-2">fakir</a>
-            </li>
-            <li class="menu-item">
-                <a href="https://1.envato.market/EA4JP" target="_blank" class="menu-link px-2">Purchase</a>
-            </li>
+
         </ul>
         <!--end::Menu-->
     </div>

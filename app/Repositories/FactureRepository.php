@@ -5,10 +5,11 @@ namespace App\Repositories;
 use App\Models\Frais;
 use App\Models\facture;
 use App\Models\Etudiants;
-use App\Models\niveauxdetudes;
 use App\Models\CompteEtudiant;
+use App\Models\niveauxdetudes;
 use PhpParser\Node\Stmt\TryCatch;
 use Illuminate\Support\Facades\DB;
+use PDF;
 
 class FactureRepository implements  FactureRepositoryInterface{
 
@@ -140,6 +141,15 @@ class FactureRepository implements  FactureRepositoryInterface{
             return redirect()->route("facture.index");
     }
 
+
+    public function facture_pdf($id){
+        $facture = facture::where('id',1)->first();
+        // dd($Frais);
+      
+        $pdf = PDF::loadView('Facture.myPDF', compact('facture'))->setPaper(array(0, 0, 400, 600), 'landscape');
+    
+        return $pdf->stream('Facture.pdf');
+    }
 
 
 }

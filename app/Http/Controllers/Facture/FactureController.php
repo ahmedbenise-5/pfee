@@ -45,6 +45,11 @@ class FactureController extends Controller
         return   $this->Facture->show($id);
     }
 
+    public function facture_pdf($id)
+    {
+        return   $this->Facture->facture_pdf($id);
+    }
+
     public function edit(Request $request,$id)
     {
         return $this->Facture->edit($id);

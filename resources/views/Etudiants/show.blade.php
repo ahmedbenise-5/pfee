@@ -19,7 +19,7 @@
                     data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}"
                     class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
                     <!--begin::Title-->
-                    <h1 class="d-flex text-dark fw-bolder fs-3 align-items-center my-1">Security</h1>
+                    <h1 class="d-flex text-dark fw-bolder fs-3 align-items-center my-1">Profil</h1>
                     <!--end::Title-->
                     <!--begin::Separator-->
                     <span class="h-20px border-gray-300 border-start mx-4"></span>
@@ -28,141 +28,14 @@
                     <ul class="breadcrumb breadcrumb-separatorless fw-bold fs-7 my-1">
                         <!--begin::Item-->
                         <li class="breadcrumb-item text-muted">
-                            <a href="../../demo1/dist/index.html" class="text-muted text-hover-primary">Home</a>
+                            <a href="../../demo1/dist/index.html" class="text-muted text-hover-primary">Etudiant</a>
                         </li>
-                        <!--end::Item-->
-                        <!--begin::Item-->
-                        <li class="breadcrumb-item">
-                            <span class="bullet bg-gray-300 w-5px h-2px"></span>
-                        </li>
-                        <!--end::Item-->
-                        <!--begin::Item-->
-                        <li class="breadcrumb-item text-muted">Account</li>
-                        <!--end::Item-->
-                        <!--begin::Item-->
-                        <li class="breadcrumb-item">
-                            <span class="bullet bg-gray-300 w-5px h-2px"></span>
-                        </li>
-                        <!--end::Item-->
-                        <!--begin::Item-->
-                        <li class="breadcrumb-item text-dark">Security</li>
+                        
                         <!--end::Item-->
                     </ul>
                     <!--end::Breadcrumb-->
                 </div>
                 <!--end::Page title-->
-                <!--begin::Actions-->
-                <div class="d-flex align-items-center gap-2 gap-lg-3">
-                    <!--begin::Filter menu-->
-                    <div class="m-0">
-                        <!--begin::Menu toggle-->
-                        <a href="#" class="btn btn-sm btn-flex btn-light btn-active-primary fw-bolder"
-                            data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                            <!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
-                            <span class="svg-icon svg-icon-5 svg-icon-gray-500 me-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                    fill="none">
-                                    <path
-                                        d="M19.0759 3H4.72777C3.95892 3 3.47768 3.83148 3.86067 4.49814L8.56967 12.6949C9.17923 13.7559 9.5 14.9582 9.5 16.1819V19.5072C9.5 20.2189 10.2223 20.7028 10.8805 20.432L13.8805 19.1977C14.2553 19.0435 14.5 18.6783 14.5 18.273V13.8372C14.5 12.8089 14.8171 11.8056 15.408 10.964L19.8943 4.57465C20.3596 3.912 19.8856 3 19.0759 3Z"
-                                        fill="currentColor" />
-                                </svg>
-                            </span>
-                            <!--end::Svg Icon-->Filter
-                        </a>
-                        <!--end::Menu toggle-->
-                        <!--begin::Menu 1-->
-                        <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true"
-                            id="kt_menu_6244761321132">
-                            <!--begin::Header-->
-                            <div class="px-7 py-5">
-                                <div class="fs-5 text-dark fw-bolder">Filter Options</div>
-                            </div>
-                            <!--end::Header-->
-                            <!--begin::Menu separator-->
-                            <div class="separator border-gray-200"></div>
-                            <!--end::Menu separator-->
-                            <!--begin::Form-->
-                            <div class="px-7 py-5">
-                                <!--begin::Input group-->
-                                <div class="mb-10">
-                                    <!--begin::Label-->
-                                    <label class="form-label fw-bold">Status:</label>
-                                    <!--end::Label-->
-                                    <!--begin::Input-->
-                                    <div>
-                                        <select class="form-select form-select-solid" data-kt-select2="true"
-                                            data-placeholder="Select option" data-dropdown-parent="#kt_menu_6244761321132"
-                                            data-allow-clear="true">
-                                            <option></option>
-                                            <option value="1">Approved</option>
-                                            <option value="2">Pending</option>
-                                            <option value="2">In Process</option>
-                                            <option value="2">Rejected</option>
-                                        </select>
-                                    </div>
-                                    <!--end::Input-->
-                                </div>
-                                <!--end::Input group-->
-                                <!--begin::Input group-->
-                                <div class="mb-10">
-                                    <!--begin::Label-->
-                                    <label class="form-label fw-bold">Member Type:</label>
-                                    <!--end::Label-->
-                                    <!--begin::Options-->
-                                    <div class="d-flex">
-                                        <!--begin::Options-->
-                                        <label class="form-check form-check-sm form-check-custom form-check-solid me-5">
-                                            <input class="form-check-input" type="checkbox" value="1" />
-                                            <span class="form-check-label">Author</span>
-                                        </label>
-                                        <!--end::Options-->
-                                        <!--begin::Options-->
-                                        <label class="form-check form-check-sm form-check-custom form-check-solid">
-                                            <input class="form-check-input" type="checkbox" value="2"
-                                                checked="checked" />
-                                            <span class="form-check-label">Customer</span>
-                                        </label>
-                                        <!--end::Options-->
-                                    </div>
-                                    <!--end::Options-->
-                                </div>
-                                <!--end::Input group-->
-                                <!--begin::Input group-->
-                                <div class="mb-10">
-                                    <!--begin::Label-->
-                                    <label class="form-label fw-bold">Notifications:</label>
-                                    <!--end::Label-->
-                                    <!--begin::Switch-->
-                                    <div class="form-check form-switch form-switch-sm form-check-custom form-check-solid">
-                                        <input class="form-check-input" type="checkbox" value="" name="notifications"
-                                            checked="checked" />
-                                        <label class="form-check-label">Enabled</label>
-                                    </div>
-                                    <!--end::Switch-->
-                                </div>
-                                <!--end::Input group-->
-                                <!--begin::Actions-->
-                                <div class="d-flex justify-content-end">
-                                    <button type="reset" class="btn btn-sm btn-light btn-active-light-primary me-2"
-                                        data-kt-menu-dismiss="true">Reset</button>
-                                    <button type="submit" class="btn btn-sm btn-primary"
-                                        data-kt-menu-dismiss="true">Apply</button>
-                                </div>
-                                <!--end::Actions-->
-                            </div>
-                            <!--end::Form-->
-                        </div>
-                        <!--end::Menu 1-->
-                    </div>
-                    <!--end::Filter menu-->
-                    <!--begin::Secondary button-->
-                    <!--end::Secondary button-->
-                    <!--begin::Primary button-->
-                    <a href="../../demo1/dist/.html" class="btn btn-sm btn-primary" data-bs-toggle="modal"
-                        data-bs-target="#kt_modal_create_app">Create</a>
-                    <!--end::Primary button-->
-                </div>
-                <!--end::Actions-->
             </div>
             <!--end::Container-->
         </div>
@@ -204,10 +77,7 @@
                                                 </span>
                                                 <!--end::Svg Icon-->
                                             </a>
-                                            <a href="#"
-                                                class="btn btn-sm btn-light-success fw-bolder ms-2 fs-8 py-1 px-3"
-                                                data-bs-toggle="modal" data-bs-target="#kt_modal_upgrade_plan">Upgrade to
-                                                Pro</a>
+                                           
                                         </div>
                                         <!--end::Name-->
                                         <!--begin::Info-->
@@ -275,98 +145,50 @@
                                                 data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
                                                 <i class="bi bi-three-dots fs-3"></i>
                                             </button>
-                                            <!--begin::Menu 3-->
                                             <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-bold w-200px py-3"
-                                                data-kt-menu="true">
-                                                <!--begin::Heading-->
-                                                <div class="menu-item px-3">
-                                                    <div class="menu-content text-muted pb-2 px-3 fs-7 text-uppercase">
-                                                        Payments</div>
-                                                </div>
-                                                <!--end::Heading-->
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3">
-                                                    <a href="#" class="menu-link px-3">Create Invoice</a>
-                                                </div>
-                                                <!--end::Menu item-->
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3">
-                                                    <a href="#" class="menu-link flex-stack px-3">Create Payment
-                                                        <i class="fas fa-exclamation-circle ms-2 fs-7"
-                                                            data-bs-toggle="tooltip"
-                                                            title="Specify a target name for future usage and reference"></i></a>
-                                                </div>
-                                                <!--end::Menu item-->
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3">
-                                                    <a href="#" class="menu-link px-3">Generate Bill</a>
-                                                </div>
-                                                <!--end::Menu item-->
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3" data-kt-menu-trigger="hover"
-                                                    data-kt-menu-placement="right-end">
-                                                    <a href="#" class="menu-link px-3">
-                                                        <span class="menu-title">Subscription</span>
-                                                        <span class="menu-arrow"></span>
-                                                    </a>
-                                                    <!--begin::Menu sub-->
-                                                    <div class="menu-sub menu-sub-dropdown w-175px py-4">
-                                                        <!--begin::Menu item-->
-                                                        <div class="menu-item px-3">
-                                                            <a href="#" class="menu-link px-3">Plans</a>
-                                                        </div>
-                                                        <!--end::Menu item-->
-                                                        <!--begin::Menu item-->
-                                                        <div class="menu-item px-3">
-                                                            <a href="#" class="menu-link px-3">Billing</a>
-                                                        </div>
-                                                        <!--end::Menu item-->
-                                                        <!--begin::Menu item-->
-                                                        <div class="menu-item px-3">
-                                                            <a href="#" class="menu-link px-3">Statements</a>
-                                                        </div>
-                                                        <!--end::Menu item-->
-                                                        <!--begin::Menu separator-->
-                                                        <div class="separator my-2"></div>
-                                                        <!--end::Menu separator-->
-                                                        <!--begin::Menu item-->
-                                                        <div class="menu-item px-3">
-                                                            <div class="menu-content px-3">
-                                                                <!--begin::Switch-->
-                                                                <label
-                                                                    class="form-check form-switch form-check-custom form-check-solid">
-                                                                    <!--begin::Input-->
-                                                                    <input class="form-check-input w-30px h-20px"
-                                                                        type="checkbox" value="1" checked="checked"
-                                                                        name="notifications" />
-                                                                    <!--end::Input-->
-                                                                    <!--end::Label-->
-                                                                    <span
-                                                                        class="form-check-label text-muted fs-6">Recuring</span>
-                                                                    <!--end::Label-->
-                                                                </label>
-                                                                <!--end::Switch-->
-                                                            </div>
-                                                        </div>
-                                                        <!--end::Menu item-->
-                                                    </div>
-                                                    <!--end::Menu sub-->
-                                                </div>
-                                                <!--end::Menu item-->
-                                                <!--begin::Menu item-->
-                                                <div class="menu-item px-3 my-1">
-                                                    <a href="#" class="menu-link px-3">Settings</a>
-                                                </div>
-                                                <!--end::Menu item-->
+                                            data-kt-menu="true" style="">
+                                            <!--begin::Heading-->
+                                            <div class="menu-item px-3">
+                                                <div
+                                                    class="menu-content text-muted pb-2 px-3 fs-7 text-uppercase">
+                                                    Paiements</div>
                                             </div>
-                                            <!--end::Menu 3-->
+                                            <!--end::Heading-->
+                                            <!--begin::Menu item-->
+                                            <div class="menu-item px-3">
+                                                <a  href="{{ route('craete_facture', $Etudiants->id) }}" class="menu-link px-3">Ajouter une Facture
+                                                </a>
+                                            </div>
+                                            <!--end::Menu item-->
+                                            <!--begin::Menu item-->
+                                            <div class="menu-item px-3">
+                                                <a href="{{route('RecuEtudaint.show',$Etudiants->id)}}"
+                                                    class="menu-link flex-stack px-3">Créer un paiement
+                                                   </a>
+                                            </div>
+                                            <div class="menu-item px-3">
+                                                <a href="{{route('FraisTraitement.show',$Etudiants->id)}}"
+                                                    class="menu-link flex-stack px-3">Créer un Frais Traitement
+                                                   </a>
+                                            </div>
+                                            <div class="menu-item px-3">
+                                                <a href="{{route('RecuDeEchange.show',$Etudiants->id)}}"
+                                                    class="menu-link flex-stack px-3">Créer un Recu De Echange
+                                                   </a>
+                                            </div>
+                                            <!--end::Menu item-->
+                                            <!--begin::Menu item-->
+                                           
+                                            <!--end::Menu item-->
+                                           
+                                        </div>
                                         </div>
                                         <!--end::Menu-->
                                     </div>
                                     <!--end::Actions-->
                                 </div>
                                 <!--end::Title-->
-                                <!--begin::Stats-->
+                                {{-- <!--begin::Stats-->
                                 <div class="d-flex flex-wrap flex-stack">
                                     <!--begin::Wrapper-->
                                     <div class="d-flex flex-column flex-grow-1 pe-8">
@@ -470,7 +292,7 @@
                                     </div>
                                     <!--end::Progress-->
                                 </div>
-                                <!--end::Stats-->
+                                <!--end::Stats--> --}}
                             </div>
                             <!--end::Info-->
                         </div>
@@ -708,46 +530,7 @@
                                                     </div>
                                                     <!--begin::Label-->
                                                 </div>
-                                                <!--end::Input group-->
-                                                <!--begin::Notice-->
-                                                <div
-                                                    class="notice d-flex bg-light-warning rounded border-warning border border-dashed p-6">
-                                                    <!--begin::Icon-->
-                                                    <!--begin::Svg Icon | path: icons/duotune/general/gen044.svg-->
-                                                    <span class="svg-icon svg-icon-2tx svg-icon-warning me-4">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" width="24"
-                                                            height="24" viewBox="0 0 24 24" fill="none">
-                                                            <rect opacity="0.3" x="2" y="2"
-                                                                width="20" height="20" rx="10"
-                                                                fill="currentColor" />
-                                                            <rect x="11" y="14" width="7"
-                                                                height="2" rx="1"
-                                                                transform="rotate(-90 11 14)" fill="currentColor" />
-                                                            <rect x="11" y="17" width="2"
-                                                                height="2" rx="1"
-                                                                transform="rotate(-90 11 17)" fill="currentColor" />
-                                                        </svg>
-                                                    </span>
-                                                    <!--end::Svg Icon-->
-                                                    <!--end::Icon-->
-                                                    <!--begin::Wrapper-->
-                                                    <div class="d-flex flex-stack flex-grow-1">
-                                                        <!--begin::Content-->
-                                                        <div class="fw-bold">
-                                                            <h4 class="text-gray-900 fw-bolder">We need your attention!
-                                                            </h4>
-                                                            <div class="fs-6 text-gray-700">Your payment was declined. To
-                                                                start using tools, please
-                                                                <a class="fw-bolder"
-                                                                    href="../../demo1/dist/account/billing.html">Add
-                                                                    Payment Method</a>.
-                                                            </div>
-                                                        </div>
-                                                        <!--end::Content-->
-                                                    </div>
-                                                    <!--end::Wrapper-->
-                                                </div>
-                                                <!--end::Notice-->
+                                               
                                             </div>
                                             <!--end::Card body-->
                                         </div>
@@ -760,7 +543,7 @@
                                             <div class="card-header">
                                                 <!--begin::Heading-->
                                                 <div class="card-title">
-                                                    <h6>License Usage</h6>
+                                                    <h6>Les Fiche étudiants</h6>
                                                 </div>
                                                 <!--end::Heading-->
                                                 <!--begin::Toolbar-->
@@ -890,19 +673,11 @@
                                                                                     <!--begin::Heading-->
                                                                                     <div class="mb-13 text-center">
                                                                                         <!--begin::Title-->
-                                                                                        <h1 class="mb-3">Set First Target
+                                                                                        <h1 class="mb-3">Supprimer un  Pices de Joint
                                                                                         </h1>
                                                                                         <!--end::Title-->
                                                                                         <!--begin::Description-->
-                                                                                        <div
-                                                                                            class="text-muted fw-bold fs-5">
-                                                                                            If you need
-                                                                                            more info, please check
-                                                                                            <a href="#"
-                                                                                                class="fw-bolder link-primary">Project
-                                                                                                Guidelines</a>.
-                                                                                        </div>
-                                                                                        <!--end::Description-->
+                                                                                        
                                                                                     </div>
                                                                                     <!--end::Heading-->
                                                                                     <!--begin::Input group-->
@@ -942,8 +717,8 @@
                                                                                             class="btn btn-light"
                                                                                             data-bs-dismiss="modal">Fermer</button>
                                                                                         <button type="submit"
-                                                                                            class="btn btn-primary">Sauvegarder
-                                                                                            les modifications</button>
+                                                                                            class="btn btn-primary">supprimer
+                                                                                            </button>
                                                                                     </div>
                                                                                 </form>
                                                                             </div>
@@ -979,15 +754,8 @@
                                                         <!--begin::Heading-->
                                                         <div class="mb-13 text-center">
                                                             <!--begin::Title-->
-                                                            <h1 class="mb-3">Set First Target</h1>
+                                                            <h1 class="mb-3">Ajouter un  pices de joint</h1>
                                                             <!--end::Title-->
-                                                            <!--begin::Description-->
-                                                            <div class="text-muted fw-bold fs-5">If you need more info,
-                                                                please check
-                                                                <a href="#" class="fw-bolder link-primary">Project
-                                                                    Guidelines</a>.
-                                                            </div>
-                                                            <!--end::Description-->
                                                         </div>
                                                         <!--end::Heading-->
                                                         <!--begin::Input group-->
@@ -1025,14 +793,12 @@
                                                             </div>
                                                             <!--end::Input group-->
                                                             <!--begin::Description-->
-                                                            <div class="text-muted fs-7">Set the product media gallery.
-                                                            </div>
-                                                            <!--end::Description-->
+                                                            
                                                         </div>
                                                         <!--end::Input group-->
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-light"
-                                                                data-bs-dismiss="modal">ferme</button>
+                                                                data-bs-dismiss="modal">fermer</button>
                                                             <button type="submit"
                                                                 class="btn btn-primary">Ajouter</button>
                                                         </div>

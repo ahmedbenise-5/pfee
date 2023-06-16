@@ -32,12 +32,12 @@ Ajouter une Frais
                     data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}"
                     class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
                     <!--begin::Title-->
-                    <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Fakir
+                    <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Modifier
                         <!--begin::Separator-->
                         <span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
                         <!--end::Separator-->
                         <!--begin::Description-->
-                        <small class="text-muted fs-7 fw-bold my-1 ms-1">inass</small>
+                        <small class="text-muted fs-7 fw-bold my-1 ms-1"> une Frais</small>
                         <!--end::Description-->
                     </h1>
                     <!--end::Title-->
@@ -90,17 +90,7 @@ Ajouter une Frais
                     <!--end::Aside column-->
                     <!--begin::Main column-->
                     <div class="d-flex flex-column flex-row-fluid gap-7 gap-lg-10">
-                        <!--begin:::Tabs-->
-                        <ul class="nav nav-custom nav-tabs nav-line-tabs nav-line-tabs-2x border-0 fs-4 fw-bold mb-n2">
-                            <!--begin:::Tab item-->
-                            <li class="nav-item">
-                                <a class="nav-link text-active-primary pb-4 active" data-bs-toggle="tab"
-                                    href="#kt_ecommerce_add_product_general">Ajouter une Frais</a>
-                            </li>
-                            <!--end:::Tab item-->
-                            <!--begin:::Tab item-->
-
-                        </ul>
+                    
                         <!--end:::Tabs-->
                         <!--begin::Tab content-->
                         <div class="tab-content">

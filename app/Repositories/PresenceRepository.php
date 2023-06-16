@@ -101,13 +101,13 @@ class PresenceRepository implements PresenceRepositoryInterface
         $niveauetudes = niveauxdetudes::with(['Sections'])->where('Nom', 'Lycee')->first();
         $list_niveauetudes = niveauxdetudes::all();
         $enseignants = Enseignants::all();
-        return view('Presence.primaire', compact('list_niveauetudes', 'niveauetudes', 'enseignants'));
+        return view('Presence.lycee', compact('list_niveauetudes', 'niveauetudes', 'enseignants'));
     }
     public function College_index()
     {
         $niveauetudes = niveauxdetudes::with(['Sections'])->where('Nom', 'College')->first();
         $list_niveauetudes = niveauxdetudes::all();
         $enseignants = Enseignants::all();
-        return view('Presence.primaire', compact('list_niveauetudes', 'niveauetudes', 'enseignants'));
+        return view('Presence.college', compact('list_niveauetudes', 'niveauetudes', 'enseignants'));
     }
 }

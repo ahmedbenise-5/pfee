@@ -88,6 +88,7 @@ Route::group(['namespace'=>'niveauxdetudes'],function(){
 
 Route::group(['namespace'=>'Frais'],function(){
     Route::resource('frais', 'FraisController');
+
 });
 
 //---------------Facture
@@ -97,6 +98,8 @@ Route::group(['namespace'=>'Facture'],function(){
     Route::get('craete_facture/{id}','FactureController@show')->name('craete_facture');
     // Route::get('edit/{id}','FactureController@edit')->name('edit');
     Route::get('/getmontante/{id}','FactureController@getmontante');
+    Route::get('facture_pdf/{id}','FactureController@facture_pdf')->name('facture_pdf');
+
 
 });
 
@@ -106,6 +109,7 @@ Route::group(['namespace'=>'Facture'],function(){
 
 Route::group(['namespace'=>'RecuEtudaint'],function(){
     Route::resource('RecuEtudaint','RecuEtudiantController');
+    Route::get('paiement_pdf/{id}','RecuEtudiantController@paiement_pdf')->name('paiement_pdf');
 });
 
 
@@ -114,6 +118,7 @@ Route::group(['namespace'=>'RecuEtudaint'],function(){
 
 Route::group(['namespace'=>'FraisTraitement'],function(){
     Route::resource('FraisTraitement','FraisTraitementController');
+    Route::get('Ftraitements_pdf/{id}','FraisTraitementController@Ftraitements_pdf')->name('Ftraitements_pdf');
 });
 
 
@@ -122,6 +127,7 @@ Route::group(['namespace'=>'FraisTraitement'],function(){
 Route::group(['namespace'=>'RecuDeEchange'],function(){
 
     Route::resource('RecuDeEchange','RecuDeEchangeController');
+    Route::get('RecuEechanges_pdf/{id}','RecuDeEchangeController@RecuEechanges_pdf')->name('RecuEechanges_pdf');
 });
 
 

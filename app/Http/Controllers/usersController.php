@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Monolog\Handler\IFTTTHandler;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\DB;
+use Spatie\Permission\Models\Role;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -23,7 +24,11 @@ class usersController extends Controller
     {
 
         $users = User::all();
-        return view('users.index', compact('users'));
+        $roles = Role::get();
+        // dd($roles);
+
+        // @dd();
+        return view('users.index', compact('users','roles'));
     }
 
     /**
@@ -59,12 +64,13 @@ class usersController extends Controller
                     ->withInput();
             }
 
+            $role_id = $request->role_id;
             $users = new User();
             $users->name = $request->name;
             $users->email = $request->email;
             $users->password = Hash::make($request->password);
             $users->statut = $request->statut == "on" ? 1 : 0;
-            $users->assignRole(1);
+            $users->assignRole($role_id);
             $users->save();
             toastr()->success('Data has been save successfully!');
             return redirect()->back();
@@ -126,13 +132,14 @@ class usersController extends Controller
                     ->withInput();
             }
 
+            $role_id = $request->role_id;
             $users = User::where('id', $request->id)->first();
             $users->name = $request->name;
             $users->email = $request->email;
             $users->password = Hash::make($request->password);
             $users->statut = $request->statut == "on" ? 1 : 0;
             DB::table('model_has_roles')->where('model_id', $users->id)->delete();
-            $users->assignRole(1);
+            $users->assignRole($role_id);
             $users->save();
             toastr()->success('Data has been update successfully!');
             return redirect()->back();

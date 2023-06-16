@@ -59,4 +59,8 @@ class RecuDeEchangeController extends Controller
     {
         return $this->RecuDeEchange->destroy($request);
     }
+
+    public function RecuEechanges_pdf($id){
+        return $this->RecuDeEchange->RecuEechanges_pdf($id);
+    }
 }

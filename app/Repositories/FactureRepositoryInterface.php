@@ -11,6 +11,7 @@ namespace App\Repositories;
 
    public function index();
     public function show($id);
+    public function facture_pdf($id);
     public function getmontante($id);
     public function store($request);
     public function edit($id);

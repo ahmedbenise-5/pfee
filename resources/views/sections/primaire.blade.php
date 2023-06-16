@@ -142,7 +142,7 @@
                                 </div>
                                 <!--end::Wrapper-->
 
-                                <a href="#" class="btn btn-sm btn-light btn-active-primary" data-bs-toggle="modal"
+                                <a href="#" class="btn  btn-primary" data-bs-toggle="modal"
                                     data-bs-target="#kt_modal_new_target">
                                     <!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
                                     <span class="svg-icon svg-icon-3">
@@ -370,8 +370,8 @@
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-light"
-                                                                    data-bs-dismiss="modal">Close</button>
-                                                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                                                    data-bs-dismiss="modal">Fermer</button>
+                                                                <button type="submit" class="btn btn-primary">Modiefer</button>
                                                             </div>
                                                         </form>
                                                     </div>
@@ -394,16 +394,8 @@
                                                             <!--begin::Heading-->
                                                             <div class="mb-13 text-center">
                                                                 <!--begin::Title-->
-                                                                <h1 class="mb-3">Set First Target</h1>
-                                                                <!--end::Title-->
-                                                                <!--begin::Description-->
-                                                                <div class="text-muted fw-bold fs-5">If you need
-                                                                    more info, please check
-                                                                    <a href="#"
-                                                                        class="fw-bolder link-primary">Project
-                                                                        Guidelines</a>.
-                                                                </div>
-                                                                <!--end::Description-->
+                                                                <h1 class="mb-3">Supperimer un section</h1>
+                                                        
                                                             </div>
                                                             <!--end::Heading-->
                                                             <!--begin::Input group-->
@@ -420,9 +412,9 @@
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-light"
-                                                                    data-bs-dismiss="modal">Close</button>
-                                                                <button type="submit" class="btn btn-primary">Save
-                                                                    changes</button>
+                                                                    data-bs-dismiss="modal">Fermer</button>
+                                                                <button type="submit" class="btn btn-primary">Supprimer
+                                                                    </button>
                                                             </div>
                                                         </form>
                                                     </div>
@@ -526,8 +518,8 @@
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-light"
-                                                    data-bs-dismiss="modal">Close</button>
-                                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                                    data-bs-dismiss="modal">Fermer</button>
+                                                <button type="submit" class="btn btn-primary">Ajouter</button>
                                             </div>
                                         </form>
                                     </div>

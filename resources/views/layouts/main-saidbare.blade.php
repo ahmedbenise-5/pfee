@@ -379,7 +379,6 @@
 
                 </div>
             @endcan
-            @can('gestions_roles')
                 <div class="menu menu-column menu-title-gray-800 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500"
                     id="#kt_aside_menu" data-kt-menu="true" data-kt-menu-expand="false">
                     <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
@@ -430,7 +429,6 @@
 
 
                 </div>
-            @endcan
             <!--end::Menu-->
         </div>
         <!--end::Aside Menu-->

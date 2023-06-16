@@ -17,4 +17,5 @@ interface  FraisRepositoryInterface {
     public function update($request ,$id);
 
     public function destroy($request);
+    public function pdf($id);
 }

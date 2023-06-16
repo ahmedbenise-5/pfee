@@ -20,10 +20,10 @@ class EtudiantsController extends Controller
     public function __construct(EtudiantsRepositoryInterface $EtudiantsRepository )
     {
         $this->Etudiants = $EtudiantsRepository;
-        $this->middleware('permission:list_etudaints|ajouter_etudaints|modifier_etudaints|supprimer_etudaints', ['only' => ['index','store']]);
-        $this->middleware('permission:ajouter_etudaints', ['only' => ['create','store']]);
-        $this->middleware('permission:modifier_etudaints', ['only' => ['edit','update']]);
-        $this->middleware('permission:supprimer_etudaints', ['only' => ['destroy']]);
+        // $this->middleware('permission:list_etudaints|ajouter_etudaints|modifier_etudaints|supprimer_etudaints', ['only' => ['index','store']]);
+        // $this->middleware('permission:ajouter_etudaints', ['only' => ['create','store']]);
+        // $this->middleware('permission:modifier_etudaints', ['only' => ['edit','update']]);
+        // $this->middleware('permission:supprimer_etudaints', ['only' => ['destroy']]);
     }
 
     public function index()

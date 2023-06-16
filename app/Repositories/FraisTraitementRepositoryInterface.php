@@ -16,6 +16,7 @@ interface FraisTraitementRepositoryInterface {
     public function update($request);
     public function store($request);
     public function destroy($request);
+    public function Ftraitements_pdf($id);
 
 
 }

@@ -9,6 +9,7 @@ use App\Models\CompteEtudiant;
 use App\Models\Comptefinancier;
 use App\Models\FraisTraitement;
 use Illuminate\Support\Facades\DB;
+use PDF;
 
 class  FraisTraitementRepository  implements FraisTraitementRepositoryInterface {
 
@@ -120,6 +121,19 @@ class  FraisTraitementRepository  implements FraisTraitementRepositoryInterface 
         toastr()->success('Les données ont été supprimer avec succès !');
         return redirect()->route("FraisTraitement.index");
         
+    }
+
+
+    public function Ftraitements_pdf($id){
+        $FraisTraitement = FraisTraitement::where('id',$id)->first();
+        $etudaint = Etudiants::where('id' ,$FraisTraitement->Etudaint_id)->first();
+
+        // dd($etudaint->Classes->Nom_Classe);
+        // dd( $paiement->description );
+
+        $pdf = PDF::loadView('FraisTraitement.Ftraitements', compact('FraisTraitement','etudaint'))->setPaper(array(0, 0, 400, 600), 'landscape');
+    
+        return $pdf->stream('Ftraitements.pdf');
     }
 
 

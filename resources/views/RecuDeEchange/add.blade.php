@@ -20,7 +20,7 @@
             <!--begin::Page title-->
             <div data-kt-swapper="true" data-kt-swapper-mode="prepend" data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}" class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
                 <!--begin::Title-->
-                <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Frais Traitement</h1>
+                <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Recu de echange</h1>
                 <!--end::Title-->
                 <!--begin::Separator-->
                 <span class="h-20px border-gray-200 border-start mx-4"></span>
@@ -42,7 +42,7 @@
                     <!--begin::Card header-->
                     <div class="card-header">
                         <!--begin::Card header-->
-                        <div class="card-title fs-3 fw-bolder"> Traitement Frais  un Etudaint :  <code>{{$Etudiants->name}}</code></div>
+                        <div class="card-title fs-3 fw-bolder"> Recu de echange  un Etudaint :  <code>{{$Etudiants->name}}</code></div>
                         <!--end::Card header-->
                     </div>
                     <!--end::Card header-->

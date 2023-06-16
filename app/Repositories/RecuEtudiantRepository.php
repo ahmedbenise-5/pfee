@@ -8,6 +8,8 @@ use App\Models\RecuEtudiant;
 use App\Models\CompteEtudiant;
 use App\Models\Comptefinancier;
 use Illuminate\Support\Facades\DB;
+use PDF;
+
 
 class RecuEtudiantRepository implements RecuEtudiantRepositoryInterface
 {
@@ -140,4 +142,22 @@ class RecuEtudiantRepository implements RecuEtudiantRepositoryInterface
         toastr()->success('Les données ont été supprimer avec succès !');
         return redirect()->route("RecuEtudaint.index");
     }
+
+    public function paiement_pdf($id){
+
+        $paiement = RecuEtudiant::where('id',$id)->first();
+        $etudaint = Etudiants::where('id' ,$paiement->Etudaint_id)->first();
+
+        // dd($etudaint->Classes->Nom_Classe);
+        // dd( $paiement->description );
+
+        $pdf = PDF::loadView('RecuEtudaint.myPaiemnt', compact('paiement','etudaint'))->setPaper(array(0, 0, 400, 600), 'landscape');
+    
+        return $pdf->stream('RecuEtudaint.pdf');
+        
+          
+    }
+
+
 }
+

@@ -20,6 +20,7 @@ interface RecuEtudiantRepositoryInterface {
   public function update($request);
 
   public function destroy($request);
+  public function paiement_pdf($id);
 
 
 

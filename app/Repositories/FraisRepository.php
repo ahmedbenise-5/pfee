@@ -5,8 +5,11 @@ namespace App\Repositories;
 
 use App\Models\Frais;
 use App\Models\Classes;
+use App\Models\facture;
 use App\Models\niveauxdetudes;
 use Illuminate\Support\Facades\Validator;
+use PDF;
+
 
 
 
@@ -114,11 +117,16 @@ class  FraisRepository implements FraisRepositoryInterface {
         Frais::where('id',$request->id)->delete();
         toastr()->success('Data has been delete successfully!');
         return redirect()->back();
-
-
-
     }
 
+    public function pdf($id){
+        $facture = facture::where('id',1)->first();
+        // dd($Frais);
+      
+        $pdf = PDF::loadView('Frais.myPDF', compact('facture'))->setPaper(array(0, 0, 400, 600), 'landscape');
+    
+        return $pdf->stream('Frais.pdf');
+    }
 
 
 

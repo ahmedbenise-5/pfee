@@ -31,12 +31,14 @@
                     data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}"
                     class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
                     <!--begin::Title-->
-                    <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Fakir
+                    <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">
+                        Niveaux des études
                         <!--begin::Separator-->
                         <span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
                         <!--end::Separator-->
                         <!--begin::Description-->
-                        <small class="text-muted fs-7 fw-bold my-1 ms-1">inass</small>
+                        <small class="text-muted fs-7 fw-bold my-1 ms-1">liste 
+                            Niveaux des études</small>
                         <!--end::Description-->
                     </h1>
                     <!--end::Title-->
@@ -76,8 +78,8 @@
 
                         <div class="card-header border-0 pt-5">
                             <h3 class="card-title align-items-start flex-column">
-                                <span class="card-label fw-bolder fs-3 mb-1">Members Statistics</span>
-                                <span class="text-muted mt-1 fw-bold fs-7">Over 500 members</span>
+                                <span class="card-label fw-bolder fs-3 mb-1"></span>
+                                <span class="text-muted mt-1 fw-bold fs-7"></span>
                             </h3>
                             <div class="card-toolbar" data-bs-toggle="tooltip" data-bs-placement="top"
                                 data-bs-trigger="hover" title="Click to add a user">
@@ -92,7 +94,7 @@
                                             <rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="black" />
                                         </svg>
                                     </span>
-                                    <!--end::Svg Icon-->New Member
+                                    <!--end::Svg Icon-->Ajouter un Niveaux 
                                 </a>
                             </div>
                         </div>
@@ -211,15 +213,10 @@
                                                                     <!--begin::Heading-->
                                                                     <div class="mb-13 text-center">
                                                                         <!--begin::Title-->
-                                                                        <h1 class="mb-3">Set First Target</h1>
+                                                                        <h1 class="mb-3">Modifier un Niveaux de Etude </h1>
                                                                         <!--end::Title-->
                                                                         <!--begin::Description-->
-                                                                        <div class="text-muted fw-bold fs-5">If you need
-                                                                            more info, please check
-                                                                            <a href="#"
-                                                                                class="fw-bolder link-primary">Project
-                                                                                Guidelines</a>.
-                                                                        </div>
+                                                                        
                                                                         <!--end::Description-->
                                                                     </div>
                                                                     <!--end::Heading-->
@@ -228,7 +225,8 @@
                                                                         <!--begin::Label-->
                                                                         <label
                                                                             class="d-flex align-items-center fs-6 fw-bold mb-2">
-                                                                            <span class="required">Target Title</span>
+                                                                            <span class="required">Le nom du niveau d'études
+                                                                            </span>
                                                                             <i class="fas fa-exclamation-circle ms-2 fs-7"
                                                                                 data-bs-toggle="tooltip"
                                                                                 title="Specify a target name for future usage and reference"></i>
@@ -236,27 +234,27 @@
                                                                         <!--end::Label-->
                                                                         <input type="text" name='Nom' value="{{$niveauxdetude->Nom}}"
                                                                             class="form-control form-control-solid"
-                                                                            placeholder="Enter Target Title"
+                                                                            placeholder=""
                                                                             name="target_title" />
                                                                             <input type="hidden" id="id" name="id" value="{{$niveauxdetude->id}}">
                                                                     </div>
                                                                     <!--end::Input group-->
                                                                     <!--begin::Input group-->
                                                                     <div class="d-flex flex-column mb-8">
-                                                                        <label class="fs-6 fw-bold mb-2">Target
-                                                                            Details</label>
+                                                                        <label class="fs-6 fw-bold mb-2">
+                                                                            Description</label>
                                                                         <textarea class="form-control form-control-solid"
                                                                             rows="3" name="Description"
-                                                                            placeholder="Type Target Details">{{$niveauxdetude->Description}}</textarea>
+                                                                            placeholder="">{{$niveauxdetude->Description}}</textarea>
                                                                     </div>
                                                                     <!--end::Input group-->
 
 
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn btn-light"
-                                                                            data-bs-dismiss="modal">Close</button>
-                                                                        <button type="submit" class="btn btn-primary">Save
-                                                                            changes</button>
+                                                                            data-bs-dismiss="modal">fermer</button>
+                                                                        <button type="submit" class="btn btn-primary">
+                                                                            Modifier</button>
                                                                     </div>
                                                                 </form>
                                                             </div>
@@ -276,15 +274,10 @@
                                                                     <!--begin::Heading-->
                                                                     <div class="mb-13 text-center">
                                                                         <!--begin::Title-->
-                                                                        <h1 class="mb-3">Set First Target</h1>
+                                                                        <h1 class="mb-3"> supprimer  niveau d'études                                                                        </h1>
                                                                         <!--end::Title-->
                                                                         <!--begin::Description-->
-                                                                        <div class="text-muted fw-bold fs-5">If you need
-                                                                            more info, please check
-                                                                            <a href="#"
-                                                                                class="fw-bolder link-primary">Project
-                                                                                Guidelines</a>.
-                                                                        </div>
+                                                                        
                                                                         <!--end::Description-->
                                                                     </div>
                                                                     <!--end::Heading-->
@@ -300,9 +293,9 @@
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn btn-light"
-                                                                            data-bs-dismiss="modal">Close</button>
-                                                                        <button type="submit" class="btn btn-primary">Save
-                                                                            changes</button>
+                                                                            data-bs-dismiss="modal">fermer</button>
+                                                                        <button type="submit" class="btn btn-primary">
+                                                                            supprimer</button>
                                                                     </div>
                                                                 </form>
                                                             </div>
@@ -340,12 +333,10 @@
                         <!--begin::Heading-->
                         <div class="mb-13 text-center">
                             <!--begin::Title-->
-                            <h1 class="mb-3">Set First Target</h1>
+                            <h1 class="mb-3">Ajouter un Niveaux  De Etudes</h1>
                             <!--end::Title-->
                             <!--begin::Description-->
-                            <div class="text-muted fw-bold fs-5">If you need more info, please check
-                                <a href="#" class="fw-bolder link-primary">Project Guidelines</a>.
-                            </div>
+                           
                             <!--end::Description-->
                         </div>
                         <!--end::Heading-->
@@ -353,25 +344,26 @@
                         <div class="d-flex flex-column mb-8 fv-row">
                             <!--begin::Label-->
                             <label class="d-flex align-items-center fs-6 fw-bold mb-2">
-                                <span class="required">Target Title</span>
+                                <span class="required">Le nom du niveau d'études
+                                </span>
                                 <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
                                     title="Specify a target name for future usage and reference"></i>
                             </label>
                             <!--end::Label-->
                             <input type="text" name='Nom' class="form-control form-control-solid"
-                                placeholder="Enter Target Title" name="target_title" />
+                                placeholder="" name="target_title" />
                         </div>
                         <!--end::Input group-->
                         <!--begin::Input group-->
                         <div class="d-flex flex-column mb-8">
-                            <label class="fs-6 fw-bold mb-2">Target Details</label>
+                            <label class="fs-6 fw-bold mb-2">Description</label>
                             <textarea class="form-control form-control-solid" rows="3" name="Description"
-                                placeholder="Type Target Details"></textarea>
+                                placeholder=""></textarea>
                         </div>
                         <!--end::Input group-->
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                            <button type="submit" class="btn btn-primary">Save changes</button>
+                            <button type="button" class="btn btn-light" data-bs-dismiss="modal">fermer</button>
+                            <button type="submit" class="btn btn-primary">Ajouter</button>
                         </div>
                     </form>
                 </div>

@@ -14,5 +14,6 @@ interface RecuDeEchangeRepositoryInterface {
     public function update($request);
     public function store($request);
     public function destroy($request);
+    public function RecuEechanges_pdf($id);
 
 }

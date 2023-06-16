@@ -7,6 +7,7 @@ use App\Models\RecuDeEchange;
 use App\Models\CompteEtudiant;
 use App\Models\Comptefinancier;
 use Illuminate\Support\Facades\DB;
+use Pdf;
 
 class RecuDeEchangeRepository  implements RecuDeEchangeRepositoryInterface
 {
@@ -134,6 +135,21 @@ class RecuDeEchangeRepository  implements RecuDeEchangeRepositoryInterface
         return redirect()->route("RecuDeEchange.index");
         
     }
+
+    public function RecuEechanges_pdf($id){
+        $RecuEechange = RecuDeEchange::where('id',$id)->first();
+        $etudaint = Etudiants::where('id' ,$RecuEechange->Etudaint_id)->first();
+
+        // dd($etudaint->Classes->Nom_Classe);
+        // dd( $paiement->description );
+
+        $pdf = PDF::loadView('RecuDeEchange.RecuEechange_pdf', compact('RecuEechange','etudaint'))->setPaper(array(0, 0, 400, 600), 'landscape');
+    
+        return $pdf->stream('RecuDeEchange.pdf');
+    }
+
+
+   
 
 
 

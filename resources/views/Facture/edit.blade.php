@@ -102,7 +102,7 @@
                                 class="form mb-15 fv-plugins-bootstrap5 fv-plugins-framework"  id="kt_contact_form">
                                 @csrf
                                 @method('PATCH')
-                                <h1 class="fw-bolder text-dark mb-9">Ajouter une Facture</h1>
+                                <h1 class="fw-bolder text-dark mb-9">Modifier une Facture</h1>
                                     <!--begin::Input group-->
                                     <div class="row mb-5">
                                         <!--begin::Col-->

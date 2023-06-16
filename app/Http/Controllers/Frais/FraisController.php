@@ -71,4 +71,7 @@ class FraisController extends Controller
         return  $this->Frais->destroy($request);
 
     }
+    public  function pdf($id){
+        return $this->Frais->pdf($id);
+    }
 }

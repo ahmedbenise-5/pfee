@@ -142,7 +142,7 @@
                                 </div>
                                 <!--end::Wrapper-->
 
-                                <a href="{{ URL::route('frais.create') }}" class="btn btn-sm btn-light btn-active-primary" >
+                                <a href="{{ URL::route('frais.create') }}" class="btn  btn-primary" >
                                     <!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
                                     <span class="svg-icon svg-icon-3">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -260,6 +260,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="d-flex justify-content flex-shrink-0">
+                                                        
                                                         <a
                                                         href="{{route('frais.edit' ,$Fraiss->id)}}"
                                                             class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">

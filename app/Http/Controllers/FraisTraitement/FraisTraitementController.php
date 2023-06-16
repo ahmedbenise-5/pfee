@@ -59,4 +59,8 @@ class FraisTraitementController extends Controller
     {
         return $this->FraisTraitement->destroy($request);
     }
+
+    public function Ftraitements_pdf($id){
+        return $this->FraisTraitement->Ftraitements_pdf($id);
+    }
 }

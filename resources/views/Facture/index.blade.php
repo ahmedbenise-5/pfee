@@ -30,12 +30,12 @@
                     data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}"
                     class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
                     <!--begin::Title-->
-                    <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Enseignant
+                    <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Factures
                         <!--begin::Separator-->
                         <span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
                         <!--end::Separator-->
                         <!--begin::Description-->
-                        <small class="text-muted fs-7 fw-bold my-1 ms-1">list Enseignants</small>
+                        <small class="text-muted fs-7 fw-bold my-1 ms-1">list Factures</small>
                         <!--end::Description-->
                     </h1>
                     <!--end::Title-->
@@ -93,97 +93,6 @@
                     <div class="card mb-5 mb-xl-8">
                         <!--begin::Header-->
 
-                        <div class="card-header border-0 pt-5">
-                            <h3 class="card-title align-items-start flex-column">
-                                {{-- <span class="card-label fw-bolder fs-3 mb-1">Members Statistics</span>
-                                <span class="text-muted mt-1 fw-bold fs-7">Over 500 members</span> --}}
-                            </h3>
-                            <div class="card-toolbar" data-bs-toggle="tooltip" data-bs-placement="top"
-                                data-bs-trigger="hover" title="Click to add a user">
-
-                                <div class="me-4">
-                                    <!--begin::Menu-->
-                                    <button type="button" class="btn btn-light-primary me-3" data-kt-menu-trigger="click"
-                                        data-kt-menu-placement="bottom-end">
-                                        <!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
-                                        <span class="svg-icon svg-icon-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none">
-                                                <path
-                                                    d="M19.0759 3H4.72777C3.95892 3 3.47768 3.83148 3.86067 4.49814L8.56967 12.6949C9.17923 13.7559 9.5 14.9582 9.5 16.1819V19.5072C9.5 20.2189 10.2223 20.7028 10.8805 20.432L13.8805 19.1977C14.2553 19.0435 14.5 18.6783 14.5 18.273V13.8372C14.5 12.8089 14.8171 11.8056 15.408 10.964L19.8943 4.57465C20.3596 3.912 19.8856 3 19.0759 3Z"
-                                                    fill="black"></path>
-                                            </svg>
-                                        </span>
-                                        <!--end::Svg Icon-->Filter
-                                    </button>
-                                    <!--begin::Menu 1-->
-                                    <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true"
-                                        id="kt_menu_621214a8b8f66">
-                                        <!--begin::Header-->
-                                        <div class="px-7 py-5">
-                                            <div class="fs-5 text-dark fw-bolder">Filter Options</div>
-                                        </div>
-                                        <!--end::Header-->
-                                        <!--begin::Menu separator-->
-                                        <div class="separator border-gray-200"></div>
-                                        <!--end::Menu separator-->
-                                        <!--begin::Form-->
-                                        <form action="{{ URL::route('primaire') }}" method="get">
-                                            @csrf
-                                            <div class="px-7 py-5">
-                                                <!--begin::Input group-->
-                                                <div class="mb-10">
-                                                    <!--begin::Label-->
-                                                    <label class="form-label fw-bold">Parent:</label>
-                                                    <!--end::Label-->
-                                                    <!--begin::Input-->
-                                                    <div>
-                                                        <select class="form-select form-select-solid" data-control="select2"
-                                                            name="Statut" data-placeholder="Select an option"
-                                                            data-allow-clear="true">
-                                                            <option disabled selected> statuts </option>
-                                                            <option value="10">tous</option>
-                                                            <option value="1">Active</option>
-                                                            <option value="0">desactive</option>
-                                                        </select>
-                                                    </div>
-                                                    <!--end::Input-->
-                                                </div>
-                                                <!--end::Input group-->
-                                                <!--begin::Actions-->
-                                                <div class="d-flex justify-content-end">
-                                                    <button type="reset"
-                                                        class="btn btn-sm btn-light btn-active-light-primary me-2">Reset</button>
-                                                    <button type="submit" class="btn btn-sm btn-primary">Apply</button>
-                                                </div>
-                                                <!--end::Actions-->
-                                            </div>
-                                        </form>
-                                        <!--end::Form-->
-                                    </div>
-                                    <!--end::Menu 1-->
-                                    <!--end::Menu-->
-                                </div>
-                                <!--end::Wrapper-->
-
-                                <a href="#" class="btn btn-sm btn-light btn-active-primary" data-bs-toggle="modal"
-                                    data-bs-target="#kt_modal_new_target">
-                                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
-                                    <span class="svg-icon svg-icon-3">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none">
-                                            <rect opacity="0.5" x="11.364" y="20.364" width="16" height="2"
-                                                rx="1" transform="rotate(-90 11.364 20.364)" fill="black" />
-                                            <rect x="4.36396" y="11.364" width="16" height="2"
-                                                rx="1" fill="black" />
-                                        </svg>
-                                    </span>
-                                    <!--end::Svg Icon-->Ajouter une Enseignant
-                                </a>
-
-                            </div>
-
-                        </div>
                         <!--end::Header-->
                         <!--begin::Body-->
                         <div class="card-body py-3">
@@ -217,14 +126,13 @@
                                                 <td>
                                                     <div
                                                         class="form-check form-check-sm form-check-custom form-check-solid">
-                                                        <input class="form-check-input widget-9-check"
-                                                            type="checkbox" value="1" />
+                                                        <input class="form-check-input widget-9-check" type="checkbox"
+                                                            value="1" />
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="d-flex align-items-center">
-                                                        <div
-                                                            class="d-flex justify-content-start flex-column">
+                                                        <div class="d-flex justify-content-start flex-column">
                                                             <a href="#"
                                                                 class="text-dark fw-bolder text-hover-primary fs-6">
                                                                 {{ $factures->etudaint->name ? $factures->etudaint->name : ' aucun name  ' }}
@@ -234,8 +142,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="d-flex align-items-center">
-                                                        <div
-                                                            class="d-flex justify-content-start flex-column">
+                                                        <div class="d-flex justify-content-start flex-column">
                                                             <a href="#"
                                                                 class="text-dark fw-bolder text-hover-primary fs-6">
                                                                 {{ $factures->Frais->type_frais ? $factures->Frais->type_frais : ' aucun name  ' }}
@@ -246,11 +153,10 @@
 
                                                 <td>
                                                     <div class="d-flex align-items-center">
-                                                        <div
-                                                            class="d-flex justify-content-start flex-column">
+                                                        <div class="d-flex justify-content-start flex-column">
                                                             <a href="#"
                                                                 class="text-dark fw-bolder text-hover-primary fs-6">
-                                                                {{ $factures->montante ? $factures->montante.' MAD' : ' aucun name  ' }}
+                                                                {{ $factures->montante ? $factures->montante . ' MAD' : ' aucun name  ' }}
 
                                                             </a>
                                                         </div>
@@ -261,8 +167,7 @@
 
                                                 <td>
                                                     <div class="d-flex align-items-center">
-                                                        <div
-                                                            class="d-flex justify-content-start flex-column">
+                                                        <div class="d-flex justify-content-start flex-column">
                                                             <a href="#"
                                                                 class="text-dark fw-bolder text-hover-primary fs-6">
                                                                 {{ $factures->niveauxdetudes->Nom ? $factures->niveauxdetudes->Nom : ' aucun niveauxdetudes  ' }}
@@ -272,8 +177,7 @@
                                                 </td>
                                                 <td>
                                                     <div class="d-flex align-items-center">
-                                                        <div
-                                                            class="d-flex justify-content-start flex-column">
+                                                        <div class="d-flex justify-content-start flex-column">
                                                             <a href="#"
                                                                 class="text-dark fw-bolder text-hover-primary fs-6">
                                                                 {{ $factures->Classes->Nom_Classe ? $factures->Classes->Nom_Classe : ' aucun classes  ' }}
@@ -284,14 +188,12 @@
 
                                                 <td>
                                                     <div class="d-flex justify-content flex-shrink-0">
-                                                        <a
-                                                        href="{{route('facture.edit' ,$factures->id)}}"
+                                                        <a href="{{ route('facture.edit', $factures->id) }}"
                                                             class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                                             <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
                                                             <span class="svg-icon svg-icon-3">
-                                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                                    width="24" height="24"
-                                                                    viewBox="0 0 24 24" fill="none">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                    height="24" viewBox="0 0 24 24" fill="none">
                                                                     <path opacity="0.3"
                                                                         d="M21.4 8.35303L19.241 10.511L13.485 4.755L15.643 2.59595C16.0248 2.21423 16.5426 1.99988 17.0825 1.99988C17.6224 1.99988 18.1402 2.21423 18.522 2.59595L21.4 5.474C21.7817 5.85581 21.9962 6.37355 21.9962 6.91345C21.9962 7.45335 21.7817 7.97122 21.4 8.35303ZM3.68699 21.932L9.88699 19.865L4.13099 14.109L2.06399 20.309C1.98815 20.5354 1.97703 20.7787 2.03189 21.0111C2.08674 21.2436 2.2054 21.4561 2.37449 21.6248C2.54359 21.7934 2.75641 21.9115 2.989 21.9658C3.22158 22.0201 3.4647 22.0084 3.69099 21.932H3.68699Z"
                                                                         fill="black" />
@@ -302,14 +204,14 @@
                                                             </span>
                                                             <!--end::Svg Icon-->
                                                         </a>
+                                                      
                                                         <a data-bs-toggle="modal"
                                                             data-bs-target="#delete{{ $factures->id }}"
                                                             class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                                             <!--begin::Svg Icon | path: icons/duotune/general/gen027.svg-->
                                                             <span class="svg-icon svg-icon-3">
-                                                                <svg xmlns="http://www.w3.org/2000/svg"
-                                                                    width="24" height="24"
-                                                                    viewBox="0 0 24 24" fill="none">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                    height="24" viewBox="0 0 24 24" fill="none">
                                                                     <path
                                                                         d="M5 9C5 8.44772 5.44772 8 6 8H18C18.5523 8 19 8.44772 19 9V18C19 19.6569 17.6569 21 16 21H8C6.34315 21 5 19.6569 5 18V9Z"
                                                                         fill="black" />
@@ -323,16 +225,29 @@
                                                             </span>
                                                             <!--end::Svg Icon-->
                                                         </a>
-
+                                                        <a href="{{ route('facture_pdf', $factures->id) }}"
+                                                            class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
+                                                            <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
+                                                            <span class="svg-icon svg-icon-3">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" width="24"
+                                                                    height="24" viewBox="0 0 24 24" fill="none">
+                                                                    <path opacity="0.3"
+                                                                        d="M19 22H5C4.4 22 4 21.6 4 21V3C4 2.4 4.4 2 5 2H14L20 8V21C20 21.6 19.6 22 19 22ZM13 15.4V10C13 9.4 12.6 9 12 9C11.4 9 11 9.4 11 10V15.4H8L11.3 18.7C11.7 19.1 12.3 19.1 12.7 18.7L16 15.4H13Z"
+                                                                        fill="black" />
+                                                                    <path d="M15 8H20L14 2V7C14 7.6 14.4 8 15 8Z"
+                                                                        fill="black" />
+                                                                </svg></span>
+                                                            <!--end::Svg Icon-->
+                                                        </a>
 
                                                     </div>
                                                 </td>
                                             </tr>
 
-                                            
+
                                             <!-- end modal delete -->
-                                             <!-- modul delte -->
-                                             <div class="modal fade" tabindex="-1" id="delete{{ $factures->id }}">
+                                            <!-- modul delte -->
+                                            <div class="modal fade" tabindex="-1" id="delete{{ $factures->id }}">
                                                 <div class="modal-dialog mw-650px">
                                                     <div class="modal-content">
                                                         <div class="modal-body">
@@ -380,8 +295,8 @@
                                                 </div>
                                             </div>
                                             <!-- end modal delete -->
-                                    
-                                        <!-- end modal delete -->
+
+                                            <!-- end modal delete -->
                                         @endforeach
                                     @endif
                                 </tbody>
@@ -392,7 +307,7 @@
                         </div>
                         <!--begin::Body-->
 
-                      
+
 
                         <!-- end -->
                     </div>

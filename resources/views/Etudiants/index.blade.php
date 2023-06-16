@@ -21,7 +21,7 @@
                     data-kt-swapper-parent="{default: '#kt_content_container', 'lg': '#kt_toolbar_container'}"
                     class="page-title d-flex align-items-center flex-wrap me-3 mb-5 mb-lg-0">
                     <!--begin::Title-->
-                    <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">List
+                    <h1 class="d-flex align-items-center text-dark fw-bolder fs-3 my-1">Liste
                         <!--begin::Separator-->
                         <span class="h-20px border-gray-200 border-start ms-3 mx-2"></span>
                         <!--end::Separator-->
@@ -158,7 +158,7 @@
                                 <!--end::Wrapper-->
 
                                 <a href="{{ URL::route('etudiants.create') }}"
-                                    class="btn btn-sm btn-light btn-active-primary">
+                                    class="btn  btn-primary">
                                     <!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
                                     <span class="svg-icon svg-icon-3">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
@@ -318,7 +318,6 @@
                                                             </span>
                                                             <!--end::Svg Icon-->
                                                         </a>
-                                                        @can("paiment_etudiant")
                                                             
                                                         <div class="me-0">
                                                             <button
@@ -379,7 +378,7 @@
                                                             <!--end::Menu 3-->
                                                         </div>
 
-                                                        @endcan
+                                                        
 
                                                     
                                                     </div>
@@ -441,7 +440,6 @@
 
                                                 <td>
                                                     <div class="d-flex justify-content flex-shrink-0">
-                                                        @can("modifier_etudiant")
                                                         <a href="{{ route('etudiants.edit', $Etudiant->id) }}"
                                                             class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
                                                             <!--begin::Svg Icon | path: icons/duotune/art/art005.svg-->
@@ -458,8 +456,6 @@
                                                             </span>
                                                             <!--end::Svg Icon-->
                                                         </a>
-                                                        @endcan
-                                                        @can("delete_etudiant")
                                                         <a data-bs-toggle="modal"
                                                             data-bs-target="#delete{{ $Etudiant->id }}"
                                                             class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">
@@ -480,7 +476,6 @@
                                                             </span>
                                                             <!--end::Svg Icon-->
                                                         </a>
-                                                        @endcan
 
                                                         <a href="{{ route('etudiants.show', $Etudiant->id) }}"
                                                             class="btn btn-icon btn-bg-light btn-active-color-primary btn-sm me-1">

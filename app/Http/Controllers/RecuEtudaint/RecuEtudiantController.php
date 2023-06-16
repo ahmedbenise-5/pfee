@@ -65,4 +65,8 @@ class RecuEtudiantController extends Controller
     {
         return $this->RecuEtudiant->destroy($request);
     }
+
+    public function paiement_pdf($id){
+        return $this->RecuEtudiant->paiement_pdf($id);
+    }
 }

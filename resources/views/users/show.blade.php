@@ -262,6 +262,7 @@
                                                     </div>
                                                     <!--end::Col-->
                                                 </div>
+
                                                 <div class="row mb-7">
                                                     <!--begin::Label-->
                                                     <label class="col-lg-4 fw-bold text-muted">statut
@@ -415,6 +416,8 @@
                                                         class="col-lg-4 col-form-label required fw-bold fs-6">Pssword</label>
                                                     <!--end::Label-->
                                                     <!--begin::Col-->
+                                                    <input type="hidden"  name="role_id" value="{{$user->roles[0]->id}}">
+
                                                     <div class="col-lg-8">
                                                         <!--begin::Row-->
                                                         <div class="row">

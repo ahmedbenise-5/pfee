@@ -81,74 +81,8 @@
                                 <span class="text-muted mt-1 fw-bold fs-7">Over 500 members</span> --}}
                             </h3>
                             <div class="card-toolbar" data-bs-toggle="tooltip" data-bs-placement="top"
-                                data-bs-trigger="hover">
-                                <div class="me-4">
-                                    <!--begin::Menu-->
-                                    <button type="button" class="btn btn-light-primary me-3" data-kt-menu-trigger="click"
-                                        data-kt-menu-placement="bottom-end">
-                                        <!--begin::Svg Icon | path: icons/duotune/general/gen031.svg-->
-                                        <span class="svg-icon svg-icon-2">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                                viewBox="0 0 24 24" fill="none">
-                                                <path
-                                                    d="M19.0759 3H4.72777C3.95892 3 3.47768 3.83148 3.86067 4.49814L8.56967 12.6949C9.17923 13.7559 9.5 14.9582 9.5 16.1819V19.5072C9.5 20.2189 10.2223 20.7028 10.8805 20.432L13.8805 19.1977C14.2553 19.0435 14.5 18.6783 14.5 18.273V13.8372C14.5 12.8089 14.8171 11.8056 15.408 10.964L19.8943 4.57465C20.3596 3.912 19.8856 3 19.0759 3Z"
-                                                    fill="black"></path>
-                                            </svg>
-                                        </span>
-                                        <!--end::Svg Icon-->Filter
-                                    </button>
-                                    <!--begin::Menu 1-->
-                                    <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true"
-                                        id="kt_menu_621214a8b8f66">
-                                        <!--begin::Header-->
-                                        <div class="px-7 py-5">
-                                            <div class="fs-5 text-dark fw-bolder">Filter Options</div>
-                                        </div>
-                                        <!--end::Header-->
-                                        <!--begin::Menu separator-->
-                                        <div class="separator border-gray-200"></div>
-                                        <!--end::Menu separator-->
-                                        <!--begin::Form-->
-                                        <form action="{{ URL::route('college') }}" method="get">
-                                            @csrf
-                                            <div class="px-7 py-5">
-                                                <!--begin::Input group-->
-                                                <div class="mb-10">
-                                                    <!--begin::Label-->
-                                                    <label class="form-label fw-bold">Parent:</label>
-                                                    <!--end::Label-->
-                                                    <!--begin::Input-->
-                                                    <div>
-                                                        <select class="form-select form-select-solid" data-control="select2"
-                                                            name="Statut" data-placeholder="Select an option"
-                                                            data-allow-clear="true">
-                                                            <option disabled selected> statuts </option>
-                                                            <option value="10">tous</option>
-                                                            <option value="1">Active</option>
-                                                            <option value="0">desactive</option>
-                                                        </select>
-                                                    </div>
-                                                    <!--end::Input-->
-                                                </div>
-                                                <!--end::Input group-->
-                                                <!--begin::Actions-->
-                                                <div class="d-flex justify-content-end">
-                                                    <button type="reset"
-                                                        class="btn btn-sm btn-light btn-active-light-primary me-2">Reset</button>
-                                                    <button type="submit" class="btn btn-sm btn-primary">Apply</button>
-                                                </div>
-                                                <!--end::Actions-->
-                                            </div>
-                                        </form>
-                                        <!--end::Form-->
-                                    </div>
-                                    <!--end::Menu 1-->
-                                    <!--end::Menu-->
-                                </div>
-                                <!--end::Wrapper-->
-
-
-                                <a href="#" class="btn btn-sm btn-light btn-active-primary" data-bs-toggle="modal"
+                               >
+                                <a href="#" class="btn btn-primary" data-bs-toggle="modal"
                                     data-bs-target="#kt_modal_new_target">
                                     <!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
                                     <span class="svg-icon svg-icon-3">
@@ -160,7 +94,7 @@
                                                 rx="1" fill="black" />
                                         </svg>
                                     </span>
-                                    <!--end::Svg Icon-->New Member
+                                    <!--end::Svg Icon-->Ajouter un utilisateur
                                 </a>
                             </div>
                         </div>
@@ -337,16 +271,10 @@
                                                             <!--begin::Heading-->
                                                             <div class="mb-13 text-center">
                                                                 <!--begin::Title-->
-                                                                <h1 class="mb-3">Set First Target</h1>
+                                                                <h1 class="mb-3">Modifier un utilisateur</h1>
                                                                 <!--end::Title-->
                                                                 <!--begin::Description-->
-                                                                <div class="text-muted fw-bold fs-5">If you need
-                                                                    more info, please check
-                                                                    <a href="#"
-                                                                        class="fw-bolder link-primary">Project
-                                                                        Guidelines</a>.
-                                                                </div>
-                                                                <!--end::Description-->
+                                                                
                                                             </div>
                                                             <div class="modal-body scroll-y ">
                                                                 <!--begin::Form-->
@@ -423,6 +351,8 @@
                                                                             <!--end::Label-->
                                                                             <!--begin::Roles-->
                                                                             <!--begin::Input row-->
+                                                                            @foreach ($roles as $role )
+                                                                                
                                                                             <div class="d-flex fv-row">
                                                                                 <!--begin::Radio-->
                                                                                 <div
@@ -430,16 +360,17 @@
                                                                                     <!--begin::Input-->
                                                                                     <input class="form-check-input me-3"
                                                                                         name="role_id" type="radio"
-                                                                                        value="1"
+                                                                                        value="{{$role->id}}"
                                                                                         id="kt_modal_update_role_option_0"
-                                                                                        checked="checked">
+                                                                                       >
+                                                                                       {{-- <input type="text" value="{{$role->users}}"> --}}
                                                                                     <!--end::Input-->
                                                                                     <!--begin::Label-->
                                                                                     <label class="form-check-label"
                                                                                         for="kt_modal_update_role_option_0">
                                                                                         <div
                                                                                             class="fw-bolder text-gray-800">
-                                                                                            Administrateur</div>
+                                                                                            {{$role->name }}</div>
                                                                                     </label>
                                                                                     <!--end::Label-->
                                                                                 </div>
@@ -448,6 +379,8 @@
                                                                             <!--end::Input row-->
                                                                             <div class="separator separator-dashed my-5">
                                                                             </div>
+                                                                            @endforeach
+
                                                                         </div>
                                                                         <!--end::Input group-->
                                                                         <div class="mb-7">
@@ -510,15 +443,10 @@
                                                             <!--begin::Heading-->
                                                             <div class="mb-13 text-center">
                                                                 <!--begin::Title-->
-                                                                <h1 class="mb-3">Set First Target</h1>
+                                                                <h1 class="mb-3">Supprimer un utilisateur</h1>
                                                                 <!--end::Title-->
                                                                 <!--begin::Description-->
-                                                                <div class="text-muted fw-bold fs-5">If you need
-                                                                    more info, please check
-                                                                    <a href="#"
-                                                                        class="fw-bolder link-primary">Project
-                                                                        Guidelines</a>.
-                                                                </div>
+                                                                
                                                                 <!--end::Description-->
                                                             </div>
                                                             <!--end::Heading-->
@@ -535,9 +463,9 @@
                                                             </div>
                                                             <div class="modal-footer">
                                                                 <button type="button" class="btn btn-light"
-                                                                    data-bs-dismiss="modal">Close</button>
-                                                                <button type="submit" class="btn btn-primary">Save
-                                                                    changes</button>
+                                                                    data-bs-dismiss="modal">Fermer</button>
+                                                                <button type="submit" class="btn btn-primary">
+                                                                    Supprimer</button>
                                                             </div>
                                                         </form>
                                                     </div>
@@ -570,15 +498,10 @@
                                     <!--begin::Heading-->
                                     <div class="mb-13 text-center">
                                         <!--begin::Title-->
-                                        <h1 class="mb-3">Set First Target</h1>
+                                        <h1 class="mb-3">Ajouter un utilisateur  </h1>
                                         <!--end::Title-->
                                         <!--begin::Description-->
-                                        <div class="text-muted fw-bold fs-5">If you need
-                                            more info, please check
-                                            <a href="#" class="fw-bolder link-primary">Project
-                                                Guidelines</a>.
-                                        </div>
-                                        <!--end::Description-->
+                                    
                                     </div>
                                     <div class="modal-body scroll-y ">
                                         <!--begin::Form-->
@@ -629,35 +552,35 @@
                                                     <!--end::Input-->
                                                     <div class="fv-plugins-message-container invalid-feedback"></div>
                                                 </div>
-                                                <!--end::Input group-->
-                                                <!--begin::Input group-->
-                                                <div class="mb-7">
-                                                    <!--begin::Label-->
-                                                    <label class="required fw-bold fs-6 mb-5">Role</label>
-                                                    <!--end::Label-->
-                                                    <!--begin::Roles-->
-                                                    <!--begin::Input row-->
-                                                    <div class="d-flex fv-row">
-                                                        <!--begin::Radio-->
-                                                        <div class="form-check form-check-custom form-check-solid">
-                                                            <!--begin::Input-->
-                                                            <input class="form-check-input me-3" name="role_id"
-                                                                type="radio" value="1"
-                                                                id="kt_modal_update_role_option_0" checked="checked">
-                                                            <!--end::Input-->
-                                                            <!--begin::Label-->
-                                                            <label class="form-check-label"
-                                                                for="kt_modal_update_role_option_0">
-                                                                <div class="fw-bolder text-gray-800">Administrateur</div>
-                                                            </label>
-                                                            <!--end::Label-->
-                                                        </div>
-                                                        <!--end::Radio-->
+                                                @foreach ($roles as $role )
+                                                                                
+                                                <div class="d-flex fv-row">
+                                                    <!--begin::Radio-->
+                                                    <div
+                                                        class="form-check form-check-custom form-check-solid">
+                                                        <!--begin::Input-->
+                                                        <input class="form-check-input me-3"
+                                                            name="role_id" type="radio"
+                                                            value="{{$role->id}}"
+                                                            id="kt_modal_update_role_option_0"
+                                                           >
+                                                           {{-- <input type="text" value="{{$role->users}}"> --}}
+                                                        <!--end::Input-->
+                                                        <!--begin::Label-->
+                                                        <label class="form-check-label"
+                                                            for="kt_modal_update_role_option_0">
+                                                            <div
+                                                                class="fw-bolder text-gray-800">
+                                                                {{$role->name }}</div>
+                                                        </label>
+                                                        <!--end::Label-->
                                                     </div>
-                                                    <!--end::Input row-->
-                                                    <div class="separator separator-dashed my-5"></div>
+                                                    <!--end::Radio-->
                                                 </div>
-                                                <!--end::Input group-->
+                                                <!--end::Input row-->
+                                                <div class="separator separator-dashed my-5">
+                                                </div>
+                                                @endforeach
                                                 <div class="mb-7">
                                                     <!--begin::Label-->
                                                     <label class="form-label fw-bold">Statut:</label>
@@ -683,9 +606,9 @@
                                     <!--end::Heading-->
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-light"
-                                            data-bs-dismiss="modal">Close</button>
-                                        <button type="submit" class="btn btn-primary">Save
-                                            changes</button>
+                                            data-bs-dismiss="modal">Fermer</button>
+                                        <button type="submit" class="btn btn-primary">Ajouter
+                                            </button>
                                     </div>
                                 </form>
                             </div>
