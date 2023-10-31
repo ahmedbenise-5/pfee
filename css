@@ -1,0 +1,48 @@
+  <!--begin::Page Vendor Stylesheets(used by this page)-->
+    {{-- <link href="{{ asset('assets/plugins/custom/datatables/datatables.bundle.css') }}" rel="stylesheet" type="text/css" />
+    <!--end::Page Vendor Stylesheets-->
+    <!--begin::Global Stylesheets Bundle(used by all pages)-->
+    <link href="{{ asset('assets/plugins/global/plugins.bundle.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('assets/css/style.bundle.css') }}" rel="stylesheet" type="text/css" /> --}}
+    <!--end::Global Stylesheets Bundle-->
+
+      {{-- <link href="{{ asset('assets/plugins/custom/fullcalendar/fullcalendar.bundle.css')}}" rel="stylesheet" type="text/css" />
+		<!--end::Page Vendor Stylesheets-->
+		<!--begin::Global Stylesheets Bundle(used by all pages)-->
+		<link href="{{ asset('assets/plugins/global/plugins.bundle.css')}}" rel="stylesheet" type="text/css" />
+		<link href="{{ asset('assets/css/style.bundle.css')}}" rel="stylesheet" type="text/css" />
+		<link href="{{ asset('assets/plugins/custom/datatables/datatables.bundle.css')}}" rel="stylesheet" type="text/css"/>
+		<link href="{{ asset('assets/css/fontawesome.min.css')}}" rel="stylesheet" type="text/css"/> --}}
+
+
+
+
+
+
+
+
+
+
+        jss
+
+
+
+
+        {{-- <script src="{{ URL::asset('assets/plugins/global/plugins.bundle.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/scripts.bundle.js') }}"></script>
+    <!--end::Global Javascript Bundle-->
+    <!--begin::Page Vendors Javascript(used by this page)-->
+    <script src="{{ URL::asset('assets/plugins/custom/datatables/datatables.bundle.js') }}"></script>
+    <!--end::Page Vendors Javascript-->
+    <!--begin::Page Custom Javascript(used by this page)-->
+    <script src="{{ URL::asset('assets/js/custom/apps/subscriptions/list/export.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/custom/apps/subscriptions/list/list.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/custom/widgets.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/custom/apps/chat/chat.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/custom/modals/create-app.js') }}"></script>
+    <script src="{{ URL::asset('assets/js/custom/modals/upgrade-plan.js') }}"></script>--}}
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.repeater/1.2.1/jquery.repeater.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-ui-sortable@1.0.0/jquery-ui.min.js"></script>
+
+    <script  src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script> --}}
+

@@ -1,0 +1,139 @@
+<?php
+
+namespace App\Repositories;
+
+use App\Models\Presence;
+use App\Models\Etudiants;
+use App\Models\Enseignants;
+use App\Models\niveauxdetudes;
+use App\Models\Sections;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
+
+class PresenceRepository implements PresenceRepositoryInterface
+{
+
+    public function index()
+    {
+
+    }
+    public function create($id)
+    {
+    }
+    public function show($id)
+    {
+        $Etudiants = Etudiants::with('Presence')->where('id_sections', $id)->get();
+        return view('Presence.show', compact('Etudiants'));
+    }
+    public function edit($id)
+    {
+        $Presence = Presence::orderBy('presences_date', 'desc')->where('id_sections', $id)->get();
+        return view('Presence.index', compact('Presence')); 
+
+    }
+    public function update($request)
+    {
+    }
+    public function store($request)
+    {
+        try {
+
+            // // id_enseignants
+            // $id_enseignants_section =Sections::where('id',$request->id_sections)->get()->pluck('enseignant_id');
+            // // dd($id_enseignants_section->toArray());
+
+            // // $bs = in_array($enseignant,))
+
+           
+            // // $ens = Enseignants::all()->pluck('id');
+            // // // dd(json_decode($ens));
+            // // dd(json_decode($id_enseignants_section));
+            // // // $varss = json_decode($id_enseignants_section);
+            // // if(in_array($id_enseignants_section->toArray(), json_decode($ens))){
+            // //     dd("oui");
+                
+            // // }else{
+            // //     dd("non");
+            // // }
+
+
+
+            // // dd($id_enseignants_section);
+            // $var1 = Auth()->id();
+            // $var2 = $id_enseignants_section->toArray();
+
+            // // dd($var2);
+            
+
+
+
+
+            // if(in_array($var1 ,$var2 )){
+            //  $id_enseignants =  Auth()->id();
+
+            // } else{
+            //     return redirect()
+            //     ->back()
+            //     ->withErrors("Vous n'avez pas le droit d'ajouter une absence")
+            //     ->withInput();
+
+            // } 
+            
+            // date presnces 
+            $presences_date = date('Y-m-d');
+            //insert in table presences
+            foreach ($request->presnces as $id_etudiant => $presnce) {
+
+
+                // $presences_status = '';
+                if ($presnce == "present") {
+                    $presences_status = true;
+                } elseif ($presnce == "absent") {
+                    $presences_status = false;
+                }
+
+                $presnce = new Presence();
+                $presnce->id_etudiant= $id_etudiant;
+                $presnce->id_niveauxdetudes = $request->id_niveauxdetudes;
+                $presnce->id_classes = $request->id_classes;
+                $presnce->id_sections = $request->id_sections;
+                $presnce->presences_date =$presences_date;
+                $presnce->presences_status =$presences_status;
+                // $presnce->id_enseignants =$id_enseignants;
+                $presnce->id_enseignants =8;
+                $presnce->save();
+            }
+            toastr()->success('Data has been saved successfully!');
+            return redirect()->back();
+        } catch (\Exception $e) {
+            // An error occured; cancel the transaction...
+            DB::rollback();
+            throw $e;
+        }
+    }
+    public function destroy($request)
+    {
+    }
+    public function Primaire_index()
+    {
+
+        $niveauetudes = niveauxdetudes::with(['Sections'])->where('Nom', 'Primaire')->first();
+        $list_niveauetudes = niveauxdetudes::all();
+        $enseignants = Enseignants::all();
+        return view('Presence.primaire', compact('list_niveauetudes', 'niveauetudes', 'enseignants'));
+    }
+    public function Lycee_index()
+    {
+        $niveauetudes = niveauxdetudes::with(['Sections'])->where('Nom', 'Lycee')->first();
+        $list_niveauetudes = niveauxdetudes::all();
+        $enseignants = Enseignants::all();
+        return view('Presence.lycee', compact('list_niveauetudes', 'niveauetudes', 'enseignants'));
+    }
+    public function College_index()
+    {
+        $niveauetudes = niveauxdetudes::with(['Sections'])->where('Nom', 'College')->first();
+        $list_niveauetudes = niveauxdetudes::all();
+        $enseignants = Enseignants::all();
+        return view('Presence.college', compact('list_niveauetudes', 'niveauetudes', 'enseignants'));
+    }
+}
